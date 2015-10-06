@@ -1,0 +1,64 @@
+:host {
+  display: inline-block;
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border: 5px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: white;
+  background-color: black;
+  overflow: hidden;
+}
+
+#title {
+  position: absolute;
+  color: #AAA;
+  font-weight: bold;
+  font-size: 4em;
+  width: 100%;
+  top: 20px;
+  text-align: center;
+  justify-content: center;
+}
+
+#content-wrapper {
+  position: absolute;
+  color: #555;
+  font-weight: bold;
+  font-size: 1em;
+  top: 120px;
+  left: 35px;
+  width: 180px;
+  height: 80px;
+  text-align: justify;
+}
+
+::content iron-icon {
+  width: 1em;
+  height: 1em;
+}
+
+#cost {
+  position: absolute;
+  color: yellow;
+  top: 50px;
+  left: 50px;
+  font-size: 32px;
+}
+
+iron-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

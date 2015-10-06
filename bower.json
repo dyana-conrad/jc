@@ -1,0 +1,16 @@
+{
+  "name": "testpolymer",
+  "version": "0.0.0",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0",
+    "iron-icons": "PolymerElements/iron-icons#~1.0.4"
+  }
+}
