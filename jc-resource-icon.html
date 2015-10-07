@@ -1,0 +1,16 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+
+<dom-module id="jc-resource-icon">
+  <template>
+    <style>
+      :host[resource="food"] { color: green; }
+      :host[resource="water"] { color: blue; }
+      :host[resource="energy"] { color: yellow; }
+      :host[resource="ore"] { color: gray; }
+      :host[resource="crew"] { color: white; }
+    </style>
+    <iron-icon icon="[[_icon]]"></iron-icon>
+  </template>
+  <script src="jc-resource-icon.js"></script>
+</dom-module>
