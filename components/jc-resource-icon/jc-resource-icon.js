@@ -1,10 +1,11 @@
 (function () {
   var iconMap = {
-    food: 'icons:icons:group-work',
-    energy: 'icons:icons:group-work',
-    water: 'icons:icons:group-work',
-    ore: 'icons:icons:group-work',
-    crew: 'icons:icons:group-work',
+    food: 'icons:image:nature',
+    energy: 'image:flash-on',
+    water: 'icons:invert-colors',
+    ore: 'image:landscape',
+    crew: 'social:person',
+    money: 'editor:attach-money',
   };
 
   Polymer({
@@ -12,6 +13,7 @@
     properties: {
       resource: {
         type: String,
+        reflectToAttribute: true,
       },
       _icon: {
         type: String,
@@ -20,7 +22,7 @@
       },
     },
     _computeIcon: function (resource) {
-      return iconMap[resource] | 'icons:close';
+      return iconMap[resource] || 'icons:close';
     },
   });
 })();

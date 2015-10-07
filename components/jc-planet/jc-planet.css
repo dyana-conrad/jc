@@ -15,7 +15,7 @@
   position: absolute;
   color: #AAA;
   font-weight: bold;
-  font-size: 4em;
+  font-size: 3em;
   width: 100%;
   top: 20px;
   text-align: center;
@@ -34,7 +34,7 @@
   text-align: justify;
 }
 
-::content iron-icon {
+::content jc-resource-icon {
   width: 1em;
   height: 1em;
 }
@@ -42,15 +42,15 @@
 #cost {
   position: absolute;
   color: yellow;
-  top: 50px;
-  left: 50px;
-  font-size: 32px;
+  top: 75px;
+  left: 25px;
+  font-size: 24px;
 }
 
-iron-icon {
-  width: 32px;
-  height: 32px;
-}
+ #cost jc-resource-icon {
+   width: 24px;
+   height: 24px;
+ }
 
 .container {
   position: absolute;
