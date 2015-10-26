@@ -34,6 +34,15 @@
         padding: 0.05in;
         box-sizing: border-box;
       }
+      .traits {
+        min-height: 0.2in;
+        font-weight: 700;
+        text-align: center;
+        font-variant: small-caps;
+      }
+      .traits ::content > span + span::before {
+        content: " - ";
+      }
       .flavor {
         position: absolute;
         bottom: 0;
@@ -123,6 +132,9 @@
     <div class="portrait"><content select=".portrait"></content></div>
 
     <div class="text">
+      <div class="traits">
+        <content select=".trait"></content>
+      </div>
       <content select=".rules"></content>
       <div class="flavor">
         <content select=".flavor"></content>
