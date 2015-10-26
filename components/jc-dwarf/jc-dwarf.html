@@ -1,0 +1,150 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="jc-icon.html">
+<link rel="import" href="jc-ribbon.html">
+
+<dom-module id="jc-dwarf">
+  <template>
+    <style>
+      :host {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, rgba(105,117,130,1) 0%,rgba(57,52,71,1) 100%);
+        z-index: 0;
+      }
+      .portrait {
+        position: absolute;
+        box-sizing: border-box;
+        top: 0.15in;
+        left: 0.15in;
+        right: 0.15in;
+        height: 1.375in;
+        background-color: darkgray;
+      }
+      .text {
+        position: absolute;
+        left: 0.15in;
+        right: 0.15in;
+        bottom: 0.15in;
+        height: 1.375in;
+        background-color: lightgray;
+        font-size: 0.125in;
+        padding: 0.05in;
+        box-sizing: border-box;
+      }
+      .flavor {
+        position: absolute;
+        bottom: 0;
+        font-family: "Roboto Slab";
+     	  font-weight: 400;
+        font-style: italic;
+      }
+      .prestige-req {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0.45in;
+        height: 0.24in;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%);
+        border-radius: 0.08in;
+        border-style: solid;
+        border-width: 0.015in;
+        border-color: black;
+        z-index: 1;
+        font-size: 0.15in;
+        line-height: 0.15in;
+      }
+      .prestige-req > * {
+        margin: 0 0.03in;
+      }
+
+      jc-ribbon {
+        z-index: 1;
+        margin-top: 0.015in;
+      }
+
+      jc-ribbon:first-of-type {
+        margin-top: 0.2in;
+      }
+    </style>
+
+    <template is="dom-if" if="[[attack]]">
+      <jc-ribbon red>
+        <jc-icon attack></jc-icon><span>[[attack]]</span>
+      </jc-ribbon>
+    </template>
+
+    <template is="dom-if" if="[[explore]]">
+      <jc-ribbon green>
+        <jc-icon explore></jc-icon><span>[[explore]]</span>
+      </jc-ribbon>
+    </template>
+
+    <template is="dom-if" if="[[build]]">
+      <jc-ribbon blue>
+        <jc-icon build></jc-icon><span>[[build]]</span>
+      </jc-ribbon>
+    </template>
+
+    <template is="dom-if" if="[[genius]]">
+      <jc-ribbon white>
+        <jc-icon genius></jc-icon><span>[[genius]]</span>
+      </jc-ribbon>
+    </template>
+
+    <template is="dom-if" if="[[mine]]">
+      <jc-ribbon gray>
+        <jc-icon mine></jc-icon><span>[[mine]]</span>
+      </jc-ribbon>
+    </template>
+
+    <template is="dom-if" if="[[trade]]">
+      <jc-ribbon yellow>
+        <jc-icon caravan></jc-icon><span>[[trade]]</span>
+      </jc-ribbon>
+    </template>
+
+    <template is="dom-if" if="[[prestige]]">
+      <jc-ribbon purple>
+        <jc-icon prestige></jc-icon><span>[[prestige]]</span>
+      </jc-ribbon>
+    </template>
+
+    <div class="prestige-req">
+      <jc-icon prestige></jc-icon><span>[[prestigeRequirement]]</span>
+    </div>
+
+    <div class="portrait"><content select=".portrait"></content></div>
+
+    <div class="text">
+      <content select=".rules"></content>
+      <div class="flavor">
+        <content select=".flavor"></content>
+      </div>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'jc-dwarf',
+      properties: {
+        attack: Number,
+        mine: Number,
+        trade: Number,
+        explore: Number,
+        prestige: Number,
+        build: Number,
+        genius: Number,
+        prestigeRequirement: {
+          type: Number,
+          value: 0,
+        },
+      },
+    });
+  </script>
+</dom-module>

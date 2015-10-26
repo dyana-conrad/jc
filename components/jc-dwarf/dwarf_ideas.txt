@@ -1,0 +1,105 @@
+14 rounds * 3.5 actions = 49 actions per game.
+
+4 years * 3 seasons = 12 rounds
+
+2 characters x 3 seasons =  6
+3 characters x 3 seasons =  9
+4 characters x 3 seasons = 12
+5 characters x 3 seasons = 15
+                           42 character actions
+                            4 drafts
+       ----------------------------
+                           48 actions per game
+
+
+4 player game 20 seconds per action + 5 minutes/year misc
+80 * 48 + 300
+3840 + 300
+4140 seconds
+---------------
+69 minutes
+
+
+Number of explore/mine cards:
+Average mine/explore action card count: 2.5
+Number of miner/explorers (assuming about 50%)
+year 1:  4 x 2.5 x 3 = 30
+year 2:  6 x 2.5 x 3 = 45
+year 3:  8 x 2.5 x 3 = 60
+year 4: 10 x 2.5 x 3 = 75
+
+ 70 explore
+140 mine
+------------
+210 total cards drawn.
+
+average threat/explore card = 0.25
+average threat/game         = 0.25 x 210 = 52.5
+
+number of 'desired' revealed threats per game:
+year 1: 2
+year 2: 3
+year 3: 3
+year 4: 4
+        12 total threats per game
+
+average threat/revealed threat = 4.375
+
+
+Example threats revealed:
+
+year 1: 2 + 3         =  5
+year 2: 3 + 4 + 4     = 11
+year 3: 5 + 5 + 5     = 15
+year 4: 5 + 6 + 6 + 7 = 21
+                        52 total threat cost of all 12 revealed threat cards
+
+
+8 characters year 1
+20 characters year 4
+
+Resource breakdown
+Explore: (90 total)
+        Special location:  3
+                Mushroom: 20
+            Red Mushroom: 10
+              Light Wood: 27
+               Dark Wood: 20
+                    Gold:  5
+             Light Stone:  5
+
+Mine: (150 total)
+        Special location:  6
+              Dark Stone: 25
+             Light Stone: 25
+              Fungi Wood:  8
+            Red Mushroom:  5
+           Blue Mushroom: 10
+                    Gold:  6
+                  Silver: 15
+                  Copper: 20
+                 Emerald:  6
+                    Ruby: 10
+                 Diamond: 14
+
+   Location:  9
+       Wood: 55
+      Stone: 55
+   Mushroom: 45
+      Metal: 46
+        Gem: 30
+
+
+[][][][][]    []
+[][][][][]    []  [][][][]
+[][][][][]    []  [][][][]
+[][][][][]    []  [][][][]
+              []  [][][][]
+              []
+
+Card totals:
+40 Characters (half drafted each game)
+90 Explore cards (3 special locations)
+150 Mine cards (25/level) (6 special locations)
+36 Threat cards (1/3 revealed each game)
+60 Item cards (1/3 built per game)

@@ -1,0 +1,94 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700' rel='stylesheet' type='text/css'>
+<link rel="import" href="jc-icon.html">
+
+<dom-module id="jc-card">
+  <template>
+    <style>
+      :host {
+        font-family: "Roboto Slab";
+     	  font-weight: 700;
+        display: inline-block;
+        position: relative;
+        width: 2.5in;
+        min-width: 2.5in;
+        height: 3.5in;
+        min-height: 3.5in;
+        border: 0.125in;
+        border-radius: 0.125in;
+        border-style: solid;
+        border-color: black;
+        font-size: 0.22in;
+        overflow: hidden;
+        box-sizing: border-box;
+      }
+
+      @media print {
+        :host {
+          border-radius: 0;
+        }
+      }
+
+      :host([landscape]) {
+        width: 3.5in;
+        min-width: 3.5in;
+        height: 2.5in;
+        min-height: 2.5in;
+      }
+
+      .title {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 0.11in;
+        color: black;
+        margin: 0 0.15in;
+        z-index: 1;
+      }
+
+      .collection {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: 0.1in;
+        color: black;
+        z-index: 1;
+      }
+
+      jc-icon {
+        margin: 0 0.02in;
+      }
+    </style>
+
+    <div class="title">[[title]]</div>
+
+    <template is="dom-if" if="[[cardNumber]]">
+      <div class="collection">
+        <jc-icon castle></jc-icon> <span><span>[[formatCardNumber(cardNumber)]]</span>/<span style="font-size: 0.75em;">511</span></span>
+      </div>
+    </template>
+
+    <content></content>
+  </template>
+  <script>
+    Polymer({
+      is: 'jc-card',
+      properties: {
+        title: {
+          type: String,
+        },
+        cardNumber: {
+          type: Number,
+        },
+        landscape: Boolean,
+      },
+      formatCardNumber: function (number) {
+        var s = '000' + number;
+        return s.substr(s.length - 3);
+      },
+    });
+  </script>
+</dom-module>

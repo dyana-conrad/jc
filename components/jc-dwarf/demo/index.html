@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jc-dwarf demo</title>
+    <script>
+      window.Polymer = window.Polymer || {};
+      window.Polymer.dom = 'shadow';
+    </script>
+    <link rel="import" href="../jc-dwarf.html">
+    <link rel="import" href="../jc-explore.html">
+    <link rel="import" href="../jc-item.html">
+    <link rel="import" href="../jc-card.html">
+    <style>
+
+    @media print {
+      @page {
+        margin-top: 0.25in;
+        margin-bottom: 0in;
+        margin-left: 0.5in;
+        margin-right: 0.5in;
+      }
+      html,body {
+        width: 7.5in;
+        font-size: 0;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <jc-card title="Crown of Command"
+             card-number="48"
+             landscape>
+      <jc-item>
+        <jc-ribbon red>
+          <jc-icon attack></jc-icon>+1
+        </jc-ribbon>
+        <jc-ribbon yellow>
+          <jc-icon caravan></jc-icon>+1
+        </jc-ribbon>
+        <jc-ribbon white>
+          <jc-icon genius></jc-icon>+1
+        </jc-ribbon>
+        <jc-ribbon purple>
+          <jc-icon prestige></jc-icon>+1
+        </jc-ribbon>
+        <div class="cost">
+          <jc-icon metal-gold></jc-icon>
+          <jc-icon gem-emerald></jc-icon>
+          <jc-icon gem-ruby></jc-icon>
+          <jc-icon gem-diamond></jc-icon>
+        </div>
+      </jc-item>
+    </jc-card>
+
+    <jc-card title="Saw Mill"
+             card-number="49"
+             landscape>
+      <jc-item>
+        <div class="cost">
+          <jc-icon wood></jc-icon>
+          <jc-icon stone></jc-icon>
+          <jc-icon metal></jc-icon>
+        </div>
+      </jc-item>
+    </jc-card>
+
+    <jc-card title="Stone Pick Axe"
+             card-number="50"
+             landscape>
+      <jc-item>
+        <jc-ribbon gray>
+          <jc-icon mine></jc-icon> +1
+        </jc-ribbon>
+        <div class="cost">
+          <jc-icon wood></jc-icon>
+          <jc-icon stone></jc-icon>
+        </div>
+      </jc-item>
+    </jc-card>
+
+    <jc-card title="Silver Throne"
+             card-number="51"
+             landscape>
+      <jc-item>
+        <div class="cost">
+          <jc-icon metal-silver></jc-icon>
+          <jc-icon stone></jc-icon>
+          <jc-icon stone></jc-icon>
+        </div>
+      </jc-item>
+    </jc-card>
+
+    <jc-card title="Orb of Vision"
+             card-number="52"
+             landscape>
+      <jc-item>
+        <jc-ribbon green>
+          <jc-icon explore></jc-icon><jc-icon look></jc-icon>
+        </jc-ribbon>
+        <div class="cost">
+          <jc-icon gem></jc-icon>
+          <jc-icon stone></jc-icon>
+        </div>
+      </jc-item>
+    </jc-card>
+
+    <jc-card title="Trebuchet"
+             card-number="53"
+             landscape>
+      <jc-item>
+        <div class="rules">
+          <jc-icon activate></jc-icon>: Discard <jc-icon stone></jc-icon> to add
+          <span style="white-space: nowrap;"><jc-icon attack></jc-icon>+2</span> to one combat.
+        </div>
+        <div class="cost">
+          <jc-icon wood></jc-icon>
+          <jc-icon metal></jc-icon>
+        </div>
+      </jc-item>
+    </jc-card>
+
+    <jc-card title="Crossbow"
+             card-number="54"
+             landscape>
+      <jc-item>
+        <jc-ribbon red>
+          <jc-icon attack></jc-icon>+1
+        </jc-ribbon>
+        <div class="cost">
+          <jc-icon metal></jc-icon>
+          <jc-icon metal></jc-icon>
+        </div>
+    </jc-card>
+
+    <jc-card title="Mace of Power"
+             card-number="55"
+             landscape>
+      <jc-item>
+        <jc-ribbon red>
+          <jc-icon attack></jc-icon>+2
+        </jc-ribbon>
+        <jc-ribbon purple>
+          <jc-icon prestige></jc-icon>+2
+        </jc-ribbon>
+        <div class="cost">
+          <jc-icon metal></jc-icon>
+          <jc-icon gem-ruby></jc-icon>
+        </div>
+        <div class="flavor">
+          This is a pretty sweet mace.  Yes, it really is a good deal, don't sell
+          it to the <jc-icon caravan></jc-icon>
+        </div>
+      </jc-item>
+    </jc-card>
+
+    <jc-card title="Forest"
+             card-number="12">
+      <jc-explore wood-light></jc-explore>
+    </jc-card>
+
+    <jc-card title="Forest"
+             card-number="13">
+      <jc-explore wood-light></jc-explore>
+    </jc-card>
+
+    <jc-card title="Forest"
+             card-number="14">
+      <jc-explore wood-light threat="1"></jc-explore>
+    </jc-card>
+
+    <jc-card title="Dark Forest"
+             card-number="15">
+      <jc-explore wood-dark threat="1"></jc-explore>
+    </jc-card>
+
+    <jc-card title="Dark Forest"
+             card-number="16">
+      <jc-explore wood-dark threat="2"></jc-explore>
+    </jc-card>
+
+    <jc-card title="Gold"
+             card-number="17">
+      <jc-explore metal-gold threat="1"></jc-explore>
+    </jc-card>
+
+    <jc-card title="Light Stone Quarry"
+             card-number="18">
+      <jc-explore stone-light></jc-explore>
+    </jc-card>
+
+    <jc-card title="Mushroom"
+             card-number="19">
+      <jc-explore mushroom-brown threat="2"></jc-explore>
+    </jc-card>
+
+    <jc-card title="Red Mushroom"
+             card-number="20">
+      <jc-explore mushroom-red></jc-explore>
+    </jc-card>
+
+    <jc-card title="Fungiwood Forest"
+             card-number="14">
+      <jc-explore wood-fungi mine threat="3"></jc-explore>
+    </jc-card>
+
+    <jc-card title="Ruby"
+             card-number="15">
+      <jc-explore gem-ruby mine></jc-explore>
+    </jc-card>
+
+    <jc-card title="Diamond"
+             card-number="16">
+      <jc-explore gem-diamond mine></jc-explore>
+    </jc-card>
+
+    <jc-card title="Emerald"
+             card-number="17">
+      <jc-explore gem-emerald mine></jc-explore>
+    </jc-card>
+
+    <jc-card title="Rough Hewn Light Stone"
+             card-number="18">
+      <jc-explore stone-light mine></jc-explore>
+    </jc-card>
+
+    <jc-card title="Rough Hewn Dark Stone"
+             card-number="19">
+      <jc-explore stone-dark mine threat="1">
+        <div class="flavor">
+          A cold wind blows from down below...
+        </div>
+      </jc-explore>
+    </jc-card>
+
+    <jc-card title="Copper Mine"
+             card-number="20">
+      <jc-explore metal-copper mine></jc-explore>
+    </jc-card>
+
+    <jc-card title="Silver Mine"
+             card-number="21">
+      <jc-explore metal-silver mine threat="1"></jc-explore>
+    </jc-card>
+
+    <jc-card title="Gold Mine"
+             card-number="22">
+      <jc-explore metal-gold mine></jc-explore>
+    </jc-card>
+
+    <jc-card title="Red Mushroom"
+             card-number="24">
+      <jc-explore mushroom-red mine>
+        <div class="flavor">
+          Spicy mushrooms!!!
+        </div>
+      </jc-explore>
+    </jc-card>
+
+    <jc-card title="Blue Mushroom"
+             card-number="25">
+      <jc-explore mushroom-blue mine  threat="3">
+        <div class="flavor">
+          Is this thing really edible?
+        </div>
+      </jc-explore>
+    </jc-card>
+
+    <jc-card title="Legendary Miner" card-number="1">
+      <jc-dwarf attack="3"
+               mine="4"
+               prestige-requirement="6">
+        <div class="rules">
+          <jc-icon mine></jc-icon>:
+          <jc-icon look></jc-icon><jc-icon look></jc-icon><jc-icon look></jc-icon>
+        </div>
+        <div class="flavor">
+          Best miner in the west.
+        </div>
+      </jc-dwarf>
+    </jc-card>
+
+    <jc-card title="Stone Crafter" card-number="2">
+      <jc-dwarf attack="2"
+                mine="1"
+                build="3"
+                genius="2"
+                prestige-requirement="1">
+        <div class="rules">
+          <jc-icon caravan></jc-icon>:
+          Sell up to two <jc-icon stone></jc-icon>
+        </div>
+        <div class="flavor">
+          This guy can really cut some stone...<br>
+        </div>
+      </jc-dwarf>
+    </jc-card>
+
+    <jc-card title="Explorer" card-number="3">
+      <jc-dwarf attack="3"
+                explore="3"
+                prestige-requirement="1">
+        <div class="rules">
+          <jc-icon explore></jc-icon>:
+          <jc-icon look></jc-icon><jc-icon look></jc-icon>
+        </div>
+        <div class="flavor">
+          He can <jc-icon explore></jc-icon> with the best of them.
+        </div>
+      </jc-dwarf>
+    </jc-card>
+
+    <jc-card title="Brewer" card-number="4">
+      <jc-dwarf explore="2"
+                build="3"
+                prestige-requirement="1">
+        <div class="rules">
+          <jc-icon activate></jc-icon>:
+          Return <jc-icon mushroom></jc-icon><jc-icon mushroom></jc-icon> from
+          the supply.  Gain 3 <jc-icon prestige></jc-icon>
+        </div>
+      </jc-dwarf>
+    </jc-card>
+
+    <jc-card title="Merchant" card-number="5">
+      <jc-dwarf build="1"
+                trade="3"
+                prestige="3"
+                attack="1"
+                prestige-requirement="1">
+        <div class="rules">
+          <jc-icon caravan></jc-icon>:
+          Sell one each of the following:
+            <jc-icon wood></jc-icon>
+            <jc-icon metal></jc-icon>
+            <jc-icon gem></jc-icon>
+        </div>
+        <div class="flavor">
+          Buy or sell, he's got what it takes when it comes to <jc-icon caravan></jc-icon>
+        </div>
+      </jc-dwarf>
+    </jc-card>
+
+    <jc-card title="Fisherdwarf" card-number="6">
+      <jc-dwarf explore="3"
+                build="3"
+                attack="2"
+                prestige-requirement="3">
+      </jc-dwarf>
+    </jc-card>
+  </body>
+</html>

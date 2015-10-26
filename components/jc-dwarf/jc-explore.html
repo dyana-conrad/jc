@@ -1,0 +1,127 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="jc-icon.html">
+
+<dom-module id="jc-explore">
+  <template>
+    <style>
+      :host {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 0;
+        background: linear-gradient(135deg, rgba(228,239,192,1) 0%,rgba(171,189,115,1) 100%);
+      }
+
+      :host([mine]) {
+        background: linear-gradient(135deg, rgba(216,224,222,1) 0%,rgba(174,191,188,1) 22%,rgba(153,175,171,1) 33%,rgba(142,166,162,1) 50%,rgba(130,157,152,1) 67%,rgba(78,92,90,1) 82%,rgba(14,14,14,1) 100%);
+      }
+
+      .portrait {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        box-sizing: border-box;
+        top: 0.15in;
+        left: 0.15in;
+        right: 0.15in;
+        bottom: 0.15in;
+        background-color: rgba(0, 55, 0, 0.25);
+        border-radius: 0.1in;
+
+      }
+      :host([mine]) > .portrait {
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+
+      .portrait jc-icon {
+        width: 1.25in;
+        height: 1.25in;
+      }
+
+      .threat {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-width: 0.02in;
+        border-color: black;
+        border-style: solid;
+        border-radius: 0.1in;
+        background: linear-gradient(to bottom, rgba(248,80,50,1) 0%,rgba(241,111,92,1) 50%,rgba(246,41,12,1) 51%,rgba(240,47,23,1) 71%,rgba(231,56,39,1) 100%);
+        font-size: 0.2in;
+      }
+
+      .threat jc-icon {
+        width: 1em;
+        height: 1em;
+      }
+      .threat > * {
+        margin: 0.05in;
+      }
+
+      .flavor {
+        position: absolute;
+        left: 0.15in;
+        right: 0.15in;
+        bottom: 0.15in;
+        font-size: 0.125in;
+        padding: 0.05in;
+        box-sizing: border-box;
+        font-family: "Roboto Slab";
+     	  font-weight: 400;
+        font-style: italic;
+      }
+
+    </style>
+
+    <div class="portrait">
+      <jc-icon wood-light$="[[woodLight]]"
+               wood-dark$="[[woodDark]]"
+               wood-fungi$="[[woodFungi]]"
+               stone-light$="[[stoneLight]]"
+               stone-dark$="[[stoneDark]]"
+               gem-ruby$="[[gemRuby]]"
+               gem-emerald$="[[gemEmerald]]"
+               gem-diamond$="[[gemDiamond]]"
+               metal-gold$="[[metalGold]]"
+               metal-silver$="[[metalSilver]]"
+               metal-copper$="[[metalCopper]]"
+               mushroom-red$="[[mushroomRed]]"
+               mushroom-blue$="[[mushroomBlue]]"
+               mushroom-brown$="[[mushroomBrown]]">
+      </jc-icon><br>
+      <template is="dom-if" if="[[threat]]">
+        <div class="threat"><jc-icon threat></jc-icon><span>[[threat]]<span></div>
+      </template>
+    </div>
+    <div class="flavor"><content select=".flavor"></content></div>
+  </template>
+  <script>
+    Polymer({
+      is: 'jc-explore',
+      properties: {
+        woodLight: Boolean,
+        woodDark: Boolean,
+        woodFungi: Boolean,
+        stoneLight: Boolean,
+        stoneDark: Boolean,
+        gemDiamond: Boolean,
+        gemEmerald: Boolean,
+        gemRuby: Boolean,
+        metalGold: Boolean,
+        metalSilver: Boolean,
+        metalCopper: Boolean,
+        mushroomRed: Boolean,
+        mushroomBlue: Boolean,
+        mushroomBrown: Boolean,
+        threat: {
+          type: Number,
+          value: 0,
+        },
+      },
+    });
+  </script>
+</dom-module>

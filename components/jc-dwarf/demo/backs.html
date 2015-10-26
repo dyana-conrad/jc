@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jc-dwarf demo</title>
+    <script>
+      window.Polymer = window.Polymer || {};
+      window.Polymer.dom = 'shadow';
+    </script>
+    <link rel="import" href="../jc-icon.html">
+    <link rel="import" href="../jc-card.html">
+    <style>
+
+    @media print {
+      @page {
+        margin-top: 0.25in;
+        margin-bottom: 0in;
+        margin-left: 0.5in;
+        margin-right: 0.5in;
+      }
+      html,body {
+        width: 7.5in;
+        font-size: 0;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <dom-module id="jc-backs">
+      <template>
+        <style>
+          .back {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+          }
+
+          .character {
+            background: linear-gradient(15deg, rgba(255,255,255,1) 19%,rgba(229,229,229,1) 67%,rgba(129,211,234,1) 100%);
+          }
+
+          .explore {
+            background: linear-gradient(135deg, rgba(255,255,255,1) 19%,rgba(229,229,229,1) 67%,rgba(155,237,132,1) 100%);
+          }
+
+          .mine {
+            background: linear-gradient(135deg, rgba(255,255,255,1) 19%,rgba(114,114,114,1) 67%,rgba(67,98,119,1) 100%);
+          }
+
+          .item {
+            background: linear-gradient(135deg, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%);
+          }
+
+          .back > jc-icon {
+            width: 1.5in;
+            height: 1.5in;
+          }
+        </style>
+
+        <template is="dom-repeat" items="[[characterItems]]">
+          <jc-card>
+            <div class="character back">
+              <jc-icon character></jc-card>
+            </div>
+          </jc-card>
+        </template>
+        <template is="dom-repeat" items="[[exploreItems]]">
+          <jc-card>
+            <div class="explore back">
+              <jc-icon explore></jc-card>
+            </div>
+          </jc-card>
+        </template>
+        <template is="dom-repeat" items="[[mineItems]]">
+          <jc-card>
+            <div class="mine back">
+              <jc-icon mine></jc-card>
+            </div>
+          </jc-card>
+        </template>
+        <template is="dom-repeat" items="[[itemItems]]">
+          <jc-card>
+            <div class="item back">
+              <jc-icon build></jc-card>
+            </div>
+          </jc-card>
+        </template>
+      </template>
+      <script>
+        Polymer({
+          is: 'jc-backs',
+          properties: {
+            characterCount: Number,
+            characterItems: {
+              computed: 'makeArray(characterCount)',
+            },
+            mineCount: Number,
+            mineItems: {
+              computed: 'makeArray(mineCount)',
+            },
+            exploreCount: Number,
+            exploreItems: {
+              computed: 'makeArray(exploreCount)',
+            },
+            itemCount: Number,
+            itemItems: {
+              computed: 'makeArray(itemCount)',
+            },
+          },
+          makeArray: function (count) {
+            return Array(count);
+          }
+        });
+      </script>
+    </dom-module>
+
+    <jc-backs character-count="9" explore-count="9" mine-count="9" item-count="9">
+    </jc-backs>
+  </body>
+</html>

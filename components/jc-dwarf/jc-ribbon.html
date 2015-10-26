@@ -1,0 +1,57 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="jc-ribbon">
+  <template>
+    <style>
+      :host {
+        display: block;
+        position: relative;
+        background-image: url('images/banner.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 0.31in;
+        width: 0.75in;
+      }
+      :host([red]) {
+        background-image: url('images/banner-red.png');
+      }
+      :host([green]) {
+        background-image: url('images/banner-green.png');
+      }
+      :host([blue]) {
+        background-image: url('images/banner-blue.png');
+      }
+      :host([yellow]) {
+        background-image: url('images/banner-yellow.png');
+      }
+      :host([purple]) {
+        background-image: url('images/banner-purple.png');
+      }
+      :host([gray]) {
+        background-image: url('images/banner-gray.png');
+      }
+      :host([white]) {
+        background-image: url('images/banner-white.png');
+      }
+
+      #content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        position: absolute;
+        top: 0.0in;
+        left: 0.0in;
+        width: 0.572in;
+        height: 0.242in;
+        overflow: hidden;
+        font-size: 0.22in;
+      }
+    </style>
+    <div id="content"><content></content></div>
+  </template>
+  <script>
+    Polymer({
+      is: 'jc-ribbon',
+    });
+  </script>
+</dom-module>
