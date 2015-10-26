@@ -17,14 +17,57 @@
         margin-left: 0.5in;
         margin-right: 0.5in;
       }
-      html,body {
+      html, body {
         width: 7.5in;
         font-size: 0;
+      }
+      hr, jc-selector {
+        display: none;
       }
     }
     </style>
   </head>
   <body>
+    <dom-module id="jc-selector">
+      <template>
+        <style>
+        :host {
+          display: inline-block;
+          border-width: 2px;
+          border-radius: 8px;
+          border-color: black;
+          border-style: solid;
+          padding: 8px;
+        }
+        </style>
+        <content></content>
+        <input id="input" type="number" value="[[value]]"></input>
+      </template>
+      <script>
+        Polymer({
+          is: 'jc-selector',
+          listeners: {
+            'input.input': 'handleInput',
+          },
+          properties: {
+            value: {
+              type: Number,
+              value: 0,
+              notify: true,
+            },
+          },
+          handleInput: function (event) {
+            var newValue = parseFloat(this.$.input.value);
+            if (isNaN(newValue) || newValue < 0) {
+              this.value = 0;
+              this.$.input.value = '0';
+            } else {
+              this.value = newValue;
+            }
+          },
+        });
+      </script>
+    </dom-module>
     <dom-module id="jc-backs">
       <template>
         <style>
@@ -118,7 +161,17 @@
       </script>
     </dom-module>
 
-    <jc-backs character-count="9" explore-count="9" mine-count="9" item-count="9">
-    </jc-backs>
+    <template is="dom-bind">
+      <jc-selector value="{{mineCount}}">Mine</jc-selector>
+      <jc-selector value="{{exploreCount}}">Explore</jc-selector>
+      <jc-selector value="{{itemCount}}">Item</jc-selector>
+      <jc-selector value="{{characterCount}}">Character</jc-selector>
+      <hr>
+      <jc-backs character-count="[[characterCount]]"
+                explore-count="[[exploreCount]]"
+                mine-count="[[mineCount]]"
+                item-count="[[itemCount]]">
+      </jc-backs>
+    </template>
   </body>
 </html>
