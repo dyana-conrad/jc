@@ -1,0 +1,58 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="jc-banner">
+  <template>
+    <style>
+      :host {
+        display: block;
+        position: relative;
+        background-image: url('images/vbanner.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 0.7in;
+        width: 0.4in;
+      }
+      :host([red]) {
+        background-image: url('images/vbanner-red.png');
+      }
+      :host([green]) {
+        background-image: url('images/vbanner-green.png');
+      }
+      :host([blue]) {
+        background-image: url('images/vbanner-blue.png');
+      }
+      :host([yellow]) {
+        background-image: url('images/vbanner-yellow.png');
+      }
+      :host([purple]) {
+        background-image: url('images/vbanner-purple.png');
+      }
+      :host([gray]) {
+        background-image: url('images/vbanner-gray.png');
+      }
+      :host([white]) {
+        background-image: url('images/vbanner-white.png');
+      }
+
+      #content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0.0in;
+        left: 0.0in;
+        width: 0.37in;
+        height: 0.52in;
+        overflow: hidden;
+        font-size: 0.2in;
+      }
+    </style>
+    <div id="content"><content></content></div>
+  </template>
+  <script>
+    Polymer({
+      is: 'jc-banner',
+    });
+  </script>
+</dom-module>

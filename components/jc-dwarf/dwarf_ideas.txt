@@ -103,3 +103,71 @@ Card totals:
 150 Mine cards (25/level) (6 special locations)
 36 Threat cards (1/3 revealed each game)
 60 Item cards (1/3 built per game)
+
+
+
+Threat
+
+Attack   24
+Mining    2
+Explore   2
+Prestige  2
+Build     2
+Genius    2
+Trade     2
+         36  total threat cards
+
+Losses:
+Kill Character(s)
+Lose Resources from pool
+Lose Prestige
+Discard Build Cards
+Increase Threat (start next round with threat)
+Discard Items in play
+Lose the Game
+
+Gains:
+Gain Prestige
+Free Recruit
+Draw Build Cards
+
+Effects:
+Increased threat for actions or resource draws
+Stat penalty
+
+2 Attack 4
+2 Attack 4
+2 Prestige 4
+2 Attack 4
+3 Build 6
+3 Attack 6
+3 Attack 6
+3 Mining 6
+3 Attack 6
+3 Attack 6
+4 Genius 8
+4 Attack 8
+4 Attack 8
+4 Trade 8
+4 Attack 8
+4 Attack 8
+4 Explore 8
+4 Attack 8
+5 Attack 10
+5 Prestige 10
+5 Attack 10
+5 Attack 10
+5 Build 10
+5 Attack 10
+5 Attack 10
+5 Genius 10
+5 Attack 10
+6 Attack 12
+6 Mining 12
+6 Attack 12
+6 Attack 12
+6 Explore 12
+6 Trade 12
+7 Attack 14
+7 Attack 14
+7 Attack 14
