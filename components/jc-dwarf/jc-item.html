@@ -1,5 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="jc-icon.html">
+<link rel="import" href="jc-req.html">
 
 <dom-module id="jc-item">
   <template>
@@ -72,6 +73,20 @@
       ::content jc-ribbon:first-of-type {
         margin-top: 0.2in;
       }
+
+      .requirements {
+        display: flex;
+        bottom: 0.4in;
+        width: 100%;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+      }
+
+      .requirements > ::content jc-req {
+        font-size: 0.15in;
+      }
     </style>
 
     <div class="portrait">
@@ -84,6 +99,16 @@
       <div class="cost">
         <content select=".cost"></content>
       </div>
+    </div>
+
+    <div class="requirements">
+      <content select="jc-req[attack]"></content>
+      <content select="jc-req[explore]"></content>
+      <content select="jc-req[build]"></content>
+      <content select="jc-req[genius]"></content>
+      <content select="jc-req[mine]"></content>
+      <content select="jc-req[trade]"></content>
+      <content select="jc-req[prestige]"></content>
     </div>
 
     <content select="jc-ribbon"></content>

@@ -9,7 +9,7 @@
                            42 character actions
                             4 drafts
        ----------------------------
-                           48 actions per game
+                           46 actions per game
 
 
 4 player game 20 seconds per action + 5 minutes/year misc
@@ -103,6 +103,7 @@ Card totals:
 150 Mine cards (25/level) (6 special locations)
 36 Threat cards (1/3 revealed each game)
 60 Item cards (1/3 built per game)
+9 Caravan cards (4 used per game)
 
 
 
@@ -171,3 +172,51 @@ Stat penalty
 7 Attack 14
 7 Attack 14
 7 Attack 14
+
+Item Types:
+Weapon
+Armor
+Tool
+Jewelry
+Furniture
+Sculpture
+Structure
+Potion
+
+Caravan Cards:
+
+*** Sculpture
+ ** Furniture
+  * Weapon
+
+*** Sculpture
+ ** Jewelry
+  * Armor
+
+*** Sculpture
+ ** Tool
+  * Weapon
+
+*** Furniture
+ ** Sculpture
+  * Armor
+
+*** Furniture
+ ** Jewelry
+  * Tool
+
+*** Furniture
+ ** Weapon
+  * Armor
+
+*** Jewelry
+ ** Sculpture
+  * Tool
+
+*** Jewelry
+ ** Furniture
+  * Weapon
+
+*** Jewelry
+ ** Armor
+  * Tool

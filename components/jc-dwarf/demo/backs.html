@@ -98,6 +98,10 @@
             background: linear-gradient(135deg, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%);
           }
 
+          .caravan {
+            background: linear-gradient(135deg, #f6e6b4 0%,#ed9017 100%);
+          }
+
           .back > jc-icon {
             width: 1.5in;
             height: 1.5in;
@@ -132,6 +136,13 @@
             </div>
           </jc-card>
         </template>
+        <template is="dom-repeat" items="[[caravanItems]]">
+          <jc-card>
+            <div class="caravan back">
+              <jc-icon caravan></jc-card>
+            </div>
+          </jc-card>
+        </template>
       </template>
       <script>
         Polymer({
@@ -153,7 +164,10 @@
             itemItems: {
               computed: 'makeArray(itemCount)',
             },
-          },
+            caravanCount: Number,
+            caravanItems: {
+              computed: 'makeArray(caravanCount)',
+            },          },
           makeArray: function (count) {
             return Array(count);
           }
@@ -166,11 +180,13 @@
       <jc-selector value="{{exploreCount}}">Explore</jc-selector>
       <jc-selector value="{{itemCount}}">Item</jc-selector>
       <jc-selector value="{{characterCount}}">Character</jc-selector>
+      <jc-selector value="{{caravanCount}}">Caravan</jc-selector>
       <hr>
       <jc-backs character-count="[[characterCount]]"
                 explore-count="[[exploreCount]]"
                 mine-count="[[mineCount]]"
-                item-count="[[itemCount]]">
+                item-count="[[itemCount]]"
+                caravan-count="[[caravanCount]]">
       </jc-backs>
     </template>
   </body>

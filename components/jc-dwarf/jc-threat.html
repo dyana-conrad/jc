@@ -74,62 +74,67 @@
         margin: 0 0.03in;
       }
 
+      #banners {
+        font-size: 0;
+      }
+
       jc-banner {
         transform-origin: top left;
-        transform: scale(1.5, 1.5);
       }
 
       jc-banner {
         z-index: 1;
-        margin-left: 0.015in;
+        margin: 0;
       }
 
       jc-banner:first-of-type {
-        margin-left: 0.2in;
+        margin-left: 0.05in;
       }
     </style>
 
-    <template is="dom-if" if="[[attack]]">
-      <jc-banner red>
-        <jc-icon attack></jc-icon><span>[[attack]]</span>
-      </jc-banner>
-    </template>
+    <div id="banners">
+      <template is="dom-if" if="[[attack]]">
+        <jc-banner red>
+          <jc-icon attack></jc-icon><span>[[attack]]</span>
+        </jc-banner>
+      </template>
 
-    <template is="dom-if" if="[[explore]]">
-      <jc-banner green>
-        <jc-icon explore></jc-icon><span>[[explore]]</span>
-      </jc-banner>
-    </template>
+      <template is="dom-if" if="[[explore]]">
+        <jc-banner green>
+          <jc-icon explore></jc-icon><span>[[explore]]</span>
+        </jc-banner>
+      </template>
 
-    <template is="dom-if" if="[[build]]">
-      <jc-banner blue>
-        <jc-icon build></jc-icon><span>[[build]]</span>
-      </jc-banner>
-    </template>
+      <template is="dom-if" if="[[build]]">
+        <jc-banner blue>
+          <jc-icon build></jc-icon><span>[[build]]</span>
+        </jc-banner>
+      </template>
 
-    <template is="dom-if" if="[[genius]]">
-      <jc-banner white>
-        <jc-icon genius></jc-icon><span>[[genius]]</span>
-      </jc-banner>
-    </template>
+      <template is="dom-if" if="[[genius]]">
+        <jc-banner white>
+          <jc-icon genius></jc-icon><span>[[genius]]</span>
+        </jc-banner>
+      </template>
 
-    <template is="dom-if" if="[[mine]]">
-      <jc-banner gray>
-        <jc-icon mine></jc-icon><span>[[mine]]</span>
-      </jc-banner>
-    </template>
+      <template is="dom-if" if="[[mine]]">
+        <jc-banner gray>
+          <jc-icon mine></jc-icon><span>[[mine]]</span>
+        </jc-banner>
+      </template>
 
-    <template is="dom-if" if="[[trade]]">
-      <jc-ribbon yellow>
-        <jc-icon caravan></jc-icon><span>[[trade]]</span>
-      </jc-ribbon>
-    </template>
+      <template is="dom-if" if="[[trade]]">
+        <jc-banner yellow>
+          <jc-icon caravan></jc-icon><span>[[trade]]</span>
+        </jc-banner>
+      </template>
 
-    <template is="dom-if" if="[[prestige]]">
-      <jc-banner purple>
-        <jc-icon prestige></jc-icon><span>[[prestige]]</span>
-      </jc-banner>
-    </template>
+      <template is="dom-if" if="[[prestige]]">
+        <jc-banner purple>
+          <jc-icon prestige></jc-icon><span>[[prestige]]</span>
+        </jc-banner>
+      </template>
+    </div>
 
     <div class="threat-cost">
       <jc-icon threat></jc-icon><span>[[threatCost]]</span>

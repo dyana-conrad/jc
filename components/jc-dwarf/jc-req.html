@@ -1,0 +1,92 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="jc-req">
+  <template>
+    <style>
+      :host {
+        display: inline-flex;
+        align-items: center;
+        height: 1em;
+        min-height: 1em;
+        margin: 0 0.25ch;
+        border-radius: 0.25em;
+        padding: 0.3ch 0.5ch;
+        border-style: solid;
+        border-width: 0.015in;
+        border-color: black;
+      }
+      :host([genius]) {
+        background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%);
+      }
+      :host([attack]) {
+        background: linear-gradient(to bottom, #f85032 0%,#f16f5c 50%,#bc1e1e 51%,#f02f17 66%,#e73827 100%);
+      }
+      :host([build]) {
+        background: linear-gradient(to bottom, #b7deed 0%,#71ceef 50%,#18a5e3 51%,#b7deed 100%);
+      }
+      :host([explore]) {
+        background: linear-gradient(to bottom, #abf993 0%,#5ffc67 50%,#25dc0c 51%,#0bb710 100%);
+      }
+      :host([prestige]) {
+        background: linear-gradient(to bottom, #dbbef4 0%,#cb88ef 50%,#8e13f6 51%,#9a6cb7 100%);
+      }
+      :host([trade]) {
+        background: linear-gradient(to bottom, #fceabb 0%,#fffa7f 50%,#ffd906 51%,#fbdf93 100%);
+      }
+      :host([mine]) {
+        background: linear-gradient(to bottom, #d3d3d3 0%,#dbdbdb 50%,#bababa 51%,#efefef 100%);
+      }
+    </style>
+    <jc-icon mine$="[[mine]]"
+             explore$="[[explore]]"
+             genius$="[[genius]]"
+             caravan$="[[trade]]"
+             attack$="[[attack]]"
+             prestige$="[[prestige]]"
+             build$="[[build]]">
+    </jc-icon>
+    <content></content>
+  </template>
+  <script>
+    Polymer({
+      is: 'jc-req',
+      properties: {
+        attack: {
+          type: Boolean,
+          value: false,
+          reflectToAttribute: true,
+        },
+        mine: {
+          type: Boolean,
+          value: false,
+          reflectToAttribute: true,
+        },
+        trade: {
+          type: Boolean,
+          value: false,
+          reflectToAttribute: true,
+        },
+        explore: {
+          type: Boolean,
+          value: false,
+          reflectToAttribute: true,
+        },
+        prestige: {
+          type: Boolean,
+          value: false,
+          reflectToAttribute: true,
+        },
+        build: {
+          type: Boolean,
+          value: false,
+          reflectToAttribute: true,
+        },
+        genius: {
+          type: Boolean,
+          value: false,
+          reflectToAttribute: true,
+        },
+      },
+    });
+  </script>
+</dom-module>

@@ -1,0 +1,81 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="jc-icon.html">
+
+<dom-module id="jc-caravan">
+  <template>
+    <style>
+      :host {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 0;
+        background: linear-gradient(135deg, #feffe8 0%,#d6dbbf 100%);
+      }
+
+      .portrait {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        box-sizing: border-box;
+        top: 0.15in;
+        left: 0.15in;
+        right: 0.15in;
+        bottom: 0.15in;
+        background-color: rgba(255, 255, 255, 0.75);
+        border-radius: 0.1in;
+
+      }
+
+      .portrait jc-icon {
+        width: 1.25in;
+        height: 1.25in;
+      }
+
+      .sale {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        top: 0.15in;
+        left: 0.15in;
+        right: 0.15in;
+        bottom: 0.15in;
+        border-radius: 0.1in;
+        background-color: rgba(230, 241, 218, 0.9);
+        text-align: center;
+      }
+      .sale > ::content * {
+        margin: 0.02in 0;
+      }
+      .sale > ::content div:nth-child(1),
+      .sale > ::content div:nth-child(1) * {
+        font-size: 0.25in;
+      }
+      .sale > ::content div:nth-child(2),
+      .sale > ::content div:nth-child(2) * {
+        font-size: 0.2in;
+      }
+      .sale > ::content div:nth-child(3),
+      .sale > ::content div:nth-child(3) * {
+        font-size: 0.15in;
+      }
+    </style>
+
+    <div class="portrait">
+      <jc-icon caravan>
+      </jc-icon>
+    </div>
+    <div class="sale">
+      <content></content>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'jc-caravan',
+    });
+  </script>
+</dom-module>

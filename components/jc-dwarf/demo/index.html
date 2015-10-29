@@ -32,7 +32,8 @@
     <jc-card title="Treeent Saplings"
              card-number="87">
       <jc-threat threat-cost="2"
-                 attack="3">
+                 attack="3"
+                 genius="4">
         <span class="trait">Attack</span>
       </jc-threat>
     </jc-card>
@@ -122,6 +123,8 @@
              card-number="48"
              landscape>
       <jc-item>
+        <jc-req build>3</jc-req>
+        <jc-req genius>2</jc-req>
         <jc-ribbon red>
           <jc-icon attack></jc-icon>+1
         </jc-ribbon>
@@ -147,6 +150,7 @@
              card-number="49"
              landscape>
       <jc-item>
+        <jc-req build>2</jc-req>
         <div class="cost">
           <jc-icon wood></jc-icon>
           <jc-icon stone></jc-icon>
@@ -155,10 +159,45 @@
       </jc-item>
     </jc-card>
 
+    <jc-card title="Stone Tools"
+             card-number="73"
+             landscape>
+      <jc-item>
+        <jc-req build>1</jc-req>
+        <jc-ribbon blue>
+          <jc-icon build></jc-icon> +1
+        </jc-ribbon>
+        <div class="cost">
+          <jc-icon stone></jc-icon>
+        </div>
+      </jc-item>
+    </jc-card>
+
+
+    <jc-card title="Master Workbench"
+             card-number="74"
+             landscape>
+      <jc-item>
+        <jc-req build>2</jc-req>
+        <jc-ribbon blue>
+          <jc-icon build></jc-icon> +2
+        </jc-ribbon>
+        <jc-ribbon white>
+          <jc-icon genius></jc-icon> +2
+        </jc-ribbon>
+        <div class="cost">
+          <jc-icon wood-dark></jc-icon>
+          <jc-icon metal></jc-icon>
+        </div>
+      </jc-item>
+    </jc-card>
+
+
     <jc-card title="Stone Pick Axe"
              card-number="50"
              landscape>
       <jc-item>
+        <jc-req build>1</jc-req>
         <jc-ribbon gray>
           <jc-icon mine></jc-icon> +1
         </jc-ribbon>
