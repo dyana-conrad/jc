@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jc-dwarf demo</title>
+    <script>
+      window.Polymer = window.Polymer || {};
+      window.Polymer.dom = 'shadow';
+    </script>
+    <link rel="import" href="../jc-explore.html">
+    <link rel="import" href="../jc-location.html">
+    <link rel="import" href="../jc-card.html">
+    <style>
+
+    @media print {
+      @page {
+        margin-top: 0.25in;
+        margin-bottom: 0in;
+        margin-left: 0.5in;
+        margin-right: 0.5in;
+      }
+      html,body {
+        width: 7.5in;
+        font-size: 0;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <jc-card title="Fungiwood Forest"
+             card-number="14">
+      <jc-explore wood-fungi mine threat="3"></jc-explore>
+    </jc-card>
+
+    <jc-card title="Ruby"
+             card-number="15">
+      <jc-explore gem-ruby mine></jc-explore>
+    </jc-card>
+
+    <jc-card title="Diamond"
+             card-number="16">
+      <jc-explore gem-diamond mine></jc-explore>
+    </jc-card>
+
+    <jc-card title="Emerald"
+             card-number="17">
+      <jc-explore gem-emerald mine></jc-explore>
+    </jc-card>
+
+    <jc-card title="Rough Hewn Light Stone"
+             card-number="18">
+      <jc-explore stone-light mine></jc-explore>
+    </jc-card>
+
+    <jc-card title="Rough Hewn Dark Stone"
+             card-number="19">
+      <jc-explore stone-dark mine threat="1">
+        <div class="flavor">
+          A cold wind blows from down below...
+        </div>
+      </jc-explore>
+    </jc-card>
+
+    <jc-card title="Copper Mine"
+             card-number="20">
+      <jc-explore metal-copper mine></jc-explore>
+    </jc-card>
+
+    <jc-card title="Silver Mine"
+             card-number="21">
+      <jc-explore metal-silver mine threat="1"></jc-explore>
+    </jc-card>
+
+    <jc-card title="Gold Mine"
+             card-number="22">
+      <jc-explore metal-gold mine></jc-explore>
+    </jc-card>
+
+    <jc-card title="Red Mushroom"
+             card-number="24">
+      <jc-explore mushroom-red mine>
+        <div class="flavor">
+          Spicy mushrooms!!!
+        </div>
+      </jc-explore>
+    </jc-card>
+
+    <jc-card title="Blue Mushroom"
+             card-number="25">
+      <jc-explore mushroom-blue mine  threat="3">
+        <div class="flavor">
+          Is this thing really edible?
+        </div>
+      </jc-explore>
+    </jc-card>
+  </body>
+</html>

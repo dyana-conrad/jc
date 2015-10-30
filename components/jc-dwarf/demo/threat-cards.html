@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jc-dwarf demo</title>
+    <script>
+      window.Polymer = window.Polymer || {};
+      window.Polymer.dom = 'shadow';
+    </script>
+    <link rel="import" href="../jc-threat.html">
+    <link rel="import" href="../jc-card.html">
+    <style>
+
+    @media print {
+      @page {
+        margin-top: 0.25in;
+        margin-bottom: 0in;
+        margin-left: 0.5in;
+        margin-right: 0.5in;
+      }
+      html,body {
+        width: 7.5in;
+        font-size: 0;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <jc-card title="Treeent Saplings"
+             card-number="87">
+      <jc-threat threat-cost="2"
+                 attack="3"
+                 genius="4">
+        <span class="trait">Attack</span>
+      </jc-threat>
+    </jc-card>
+
+    <jc-card title="Mine Collapse"
+             card-number="88">
+      <jc-threat threat-cost="5"
+                 mine="8">
+        <span class="trait">Disaster</span>
+        <div class="success">
+          <jc-icon prestige></jc-icon> +3
+        </div>
+        <div class="failure">
+          Kill <jc-icon character></jc-icon><jc-icon character></jc-icon>
+        </div>
+        <div class="unopposed">
+          Discard all <em>mine</em> cards from the supply.  Return all <em>mine</em>
+          special location cards to their respective deck and reshuffle.
+        </div>
+      </jc-threat>
+    </jc-card>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jc-dwarf demo</title>
+    <script>
+      window.Polymer = window.Polymer || {};
+      window.Polymer.dom = 'shadow';
+    </script>
+    <link rel="import" href="../jc-explore.html">
+    <link rel="import" href="../jc-location.html">
+    <link rel="import" href="../jc-card.html">
+    <style>
+
+    @media print {
+      @page {
+        margin-top: 0.25in;
+        margin-bottom: 0in;
+        margin-left: 0.5in;
+        margin-right: 0.5in;
+      }
+      html,body {
+        width: 7.5in;
+        font-size: 0;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <jc-card title="Forest River"
+             card-number="100">
+      <jc-location>
+        <jc-icon water></jc-icon>
+      </jc-location>
+    </jc-card>
+
+    <jc-card title="Elven Ruins"
+             card-number="101">
+      <jc-location>
+        <jc-icon ruin></jc-icon>
+      </jc-location>
+    </jc-card>
+
+    <jc-card title="Forest Lake"
+             card-number="102">
+      <jc-location>
+        <jc-icon water></jc-icon>
+      </jc-location>
+    </jc-card>
+
+    <jc-card title="Forest"
+             card-number="103">
+      <jc-explore wood-light></jc-explore>
+    </jc-card>
+
+    <jc-card title="Forest"
+             card-number="104">
+      <jc-explore wood-light></jc-explore>
+    </jc-card>
+
+    <jc-card title="Forest"
+             card-number="105">
+      <jc-explore wood-light threat="1"></jc-explore>
+    </jc-card>
+
+    <jc-card title="Dark Forest"
+             card-number="106">
+      <jc-explore wood-dark threat="1"></jc-explore>
+    </jc-card>
+
+    <jc-card title="Dark Forest"
+             card-number="107">
+      <jc-explore wood-dark threat="2"></jc-explore>
+    </jc-card>
+
+    <jc-card title="Gold"
+             card-number="108">
+      <jc-explore metal-gold threat="1"></jc-explore>
+    </jc-card>
+
+    <jc-card title="Light Stone Quarry"
+             card-number="109">
+      <jc-explore stone-light></jc-explore>
+    </jc-card>
+
+    <jc-card title="Mushroom"
+             card-number="110">
+      <jc-explore mushroom-brown threat="2"></jc-explore>
+    </jc-card>
+
+    <jc-card title="Red Mushroom"
+             card-number="111">
+      <jc-explore mushroom-red></jc-explore>
+    </jc-card>
+  </body>
+</html>
