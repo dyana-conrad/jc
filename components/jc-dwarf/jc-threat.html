@@ -31,7 +31,7 @@
         height: 1.375in;
         text-align: justify;
         background-color: rgba(255, 255, 255, 0.75);
-        font-size: 0.125in;
+        font-size: 0.12in;
         padding: 0.05in;
         box-sizing: border-box;
       }
@@ -90,7 +90,47 @@
       jc-banner:first-of-type {
         margin-left: 0.05in;
       }
-    </style>
+
+      ::content.effect > *:not(:empty)::before {
+        color: white;
+        padding: 0 0.5em;
+        border-radius: 0.5em;
+        background-color: darkblue;
+        content: 'Effect';
+        font-size: 0.85em;
+        vertical-align: middle;
+      }
+
+      ::content.success > *:not(:empty)::before {
+        color: black;
+        padding: 0 0.5em;
+        border-radius: 0.5em;
+        background-color: lime;
+        content: 'Success';
+        font-size: 0.85em;
+        vertical-align: middle;
+      }
+
+      ::content.failure > *:not(:empty)::before {
+        color: black;
+        padding: 0 0.5em;
+        border-radius: 0.5em;
+        background-color: red;
+        content: 'Failure';
+        font-size: 0.85em;
+        vertical-align: middle;
+      }
+
+      ::content.unopposed > *:not(:empty)::before {
+        color: white;
+        padding: 0 0.5em;
+        border-radius: 0.5em;
+        background-color: black;
+        content: 'Unopposed';
+        font-size: 0.85em;
+        vertical-align: middle;
+      }
+      </style>
 
     <div id="banners">
       <template is="dom-if" if="[[attack]]">
@@ -146,9 +186,11 @@
       <div class="traits">
         <content select=".trait"></content>
       </div>
-      <content select=".success"></content>
-      <content select=".failure"></content>
-      <content select=".unopposed"></content>
+      <content select=".rules"></content>
+      <content class="effect" select=".effect"></content>
+      <content class="success" select=".success"></content>
+      <content class="failure" select=".failure"></content>
+      <content class="unopposed" select=".unopposed"></content>
       <div class="flavor">
         <content select=".flavor"></content>
       </div>

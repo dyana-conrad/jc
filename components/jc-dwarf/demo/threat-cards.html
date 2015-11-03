@@ -51,5 +51,49 @@
         </div>
       </jc-threat>
     </jc-card>
+
+    <jc-card title="Lizardmen"
+             card-number="89">
+      <jc-threat threat-cost="3"
+                 attack="6">
+        <span class="trait">Attack</span>
+        <div class="effect">
+          Lizardmen have +3 <jc-icon attack></jc-icon> if the <em>Underground River</em>
+          <jc-icon location></jc-icon> has been discovered.
+        </div>
+      </jc-threat>
+    </jc-card>
+
+    <jc-card title="Goblin Scouting Party"
+             card-number="91">
+      <jc-threat threat-cost="2"
+                 attack="4">
+        <span class="trait">Attack</span>
+        <div class="success">
+          <jc-icon prestige></jc-icon> +1
+        </div>
+        <div class="failure">
+          Kill <jc-icon character></jc-icon>
+        </div>
+        <div class="unopposed">
+          <jc-icon threat></jc-icon> +5
+        </div>
+      </jc-threat>
+    </jc-card>
+
+    <jc-card title="Renegotiate Trade Agreement"
+             card-number="90">
+      <jc-threat threat-cost="3"
+                 trade="4">
+          <div class="success">
+            Draw two new <jc-icon caravan></jc-icon> Caravan cards and choose one
+            to replace the current Caravan card.
+          </div>
+          <div class="failure">
+            Discard the <jc-icon caravan></jc-icon> Caravan card in play.  There
+            will be no Caravan this year.
+          </div>
+      </jc-threat>
+    </jc-card>
   </body>
 </html>
