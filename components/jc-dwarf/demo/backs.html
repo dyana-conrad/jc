@@ -102,6 +102,10 @@
             background: linear-gradient(135deg, #f6e6b4 0%,#ed9017 100%);
           }
 
+          .threat {
+            background: linear-gradient(to right, #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%);
+          }
+
           .back > jc-icon {
             width: 1.5in;
             height: 1.5in;
@@ -143,6 +147,13 @@
             </div>
           </jc-card>
         </template>
+        <template is="dom-repeat" items="[[threatItems]]">
+          <jc-card>
+            <div class="threat back">
+              <jc-icon threat></jc-card>
+            </div>
+          </jc-card>
+        </template>
       </template>
       <script>
         Polymer({
@@ -167,7 +178,12 @@
             caravanCount: Number,
             caravanItems: {
               computed: 'makeArray(caravanCount)',
-            },          },
+            },
+            threatCount: Number,
+            threatItems: {
+              computed: 'makeArray(threatCount)',
+            },
+          },
           makeArray: function (count) {
             return Array(count);
           }
@@ -181,12 +197,14 @@
       <jc-selector value="{{itemCount}}">Item</jc-selector>
       <jc-selector value="{{characterCount}}">Character</jc-selector>
       <jc-selector value="{{caravanCount}}">Caravan</jc-selector>
+      <jc-selector value="{{threatCount}}">Threat</jc-selector>
       <hr>
       <jc-backs character-count="[[characterCount]]"
                 explore-count="[[exploreCount]]"
                 mine-count="[[mineCount]]"
                 item-count="[[itemCount]]"
-                caravan-count="[[caravanCount]]">
+                caravan-count="[[caravanCount]]"
+                threat-count="[[threatCount]]">
       </jc-backs>
     </template>
   </body>
