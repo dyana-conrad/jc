@@ -5,6 +5,7 @@
     <style>
       a {
         display: block;
+        position: relative;
         width: 200px;
         padding: 20px;
         min-width: 200px;
@@ -15,6 +16,7 @@
         border-color: black;
         color: black;
         margin: 10px;
+        transition: transform 0.3s;
       }
       a:link {
         text-decoration: none;
@@ -24,6 +26,8 @@
       }
       a:hover {
         text-decoration: underline;
+        background: linear-gradient(135deg, #ffd65e 0%,#febf04 100%);
+        transform: translate(-5px, -5px);
       }
     </style>
   </head>
