@@ -29,9 +29,20 @@
     <jc-card title="Treeent Saplings"
              card-number="87">
       <jc-threat threat-cost="2"
-                 attack="3"
-                 genius="4">
+                 attack="4"
+                 genius="3">
         <span class="trait">Attack</span>
+        <span class="trait">Dispute</span>
+        <div class="success">
+          +2 <jc-icon prestige></jc-icon>
+        </div>
+        <div class="failure">
+          Kill <jc-icon character></jc-icon>
+        </div>
+        <div class="unopposed">
+          -2 <jc-icon prestige></jc-icon> Discard all <jc-icon wood></jc-icon> from
+          the supply.
+        </div>
       </jc-threat>
     </jc-card>
 
@@ -69,6 +80,7 @@
              card-number="91">
       <jc-threat threat-cost="2"
                  attack="4">
+        <span class="trait">Goblin</span>
         <span class="trait">Attack</span>
         <div class="success">
           <jc-icon prestige></jc-icon> +1
@@ -82,18 +94,42 @@
       </jc-threat>
     </jc-card>
 
+    <jc-card title="Goblin Raiders"
+             card-number="92">
+      <jc-threat threat-cost="4"
+                 attack="6">
+        <span class="trait">Goblin</span>
+        <span class="trait">Attack</span>
+        <div class="effect">
+          Goblin Raiders have +1 <jc-icon attack></jc-icon> for each
+          <em>Forest Speical Location</em> <jc-icon location></jc-icon>
+          discovered.
+        </div>
+        <div class="success">
+          <jc-icon prestige></jc-icon> +3
+        </div>
+        <div class="failure">
+          Kill <jc-icon character></jc-icon><jc-icon character></jc-icon>
+        </div>
+        <div class="unopposed">
+          Kill <jc-icon character></jc-icon><jc-icon character></jc-icon><jc-icon character></jc-icon><jc-icon character></jc-icon>
+        </div>
+      </jc-threat>
+    </jc-card>
+
     <jc-card title="Renegotiate Trade Agreement"
              card-number="90">
       <jc-threat threat-cost="3"
                  trade="4">
-          <div class="success">
-            Draw two new <jc-icon caravan></jc-icon> Caravan cards and choose one
-            to replace the current Caravan card.
-          </div>
-          <div class="failure">
-            Discard the <jc-icon caravan></jc-icon> Caravan card in play.  There
-            will be no Caravan this year.
-          </div>
+        <span class="trait">Dispute</span>
+        <div class="success">
+          Draw two new <jc-icon caravan></jc-icon> Caravan cards and choose one
+          to replace the current Caravan card.
+        </div>
+        <div class="failure">
+          Discard the <jc-icon caravan></jc-icon> Caravan card in play.  There
+          will be no Caravan this year.
+        </div>
       </jc-threat>
     </jc-card>
   </body>

@@ -122,15 +122,14 @@ Losses:
 Kill Character(s)
 Lose Resources from pool
 Lose Prestige
-Discard Build Cards
+Discard Item Cards
 Increase Threat (start next round with threat)
 Discard Items in play
 Lose the Game
 
 Gains:
 Gain Prestige
-Free Recruit
-Draw Build Cards
+Draw Item Cards
 
 Effects:
 Increased threat for actions or resource draws
