@@ -33,6 +33,10 @@
                  genius="3">
         <span class="trait">Attack</span>
         <span class="trait">Dispute</span>
+        <div class="effect">
+          +1 <jc-icon threat></jc-icon> each time a <jc-icon wood></jc-icon>
+          is added to the resource pool.
+        </div>
         <div class="success">
           +2 <jc-icon prestige></jc-icon>
         </div>
@@ -129,6 +133,43 @@
         <div class="failure">
           Discard the <jc-icon caravan></jc-icon> Caravan card in play.  There
           will be no Caravan this year.
+        </div>
+      </jc-threat>
+    </jc-card>
+
+    <jc-card title="Magma Demon"
+             card-number="99">
+      <jc-threat threat-cost="7"
+                 attack="10">
+        <span class="trait">Attack</span>
+        <div class="effect">
+          Magma Demon has +4 <jc-icon attack></jc-icon> if the <em>Magma River</em>
+          Special Location <jc-icon location></jc-icon> has been discovered.
+        </div>
+        <div class="success">
+          +6 <jc-icon prestige></jc-icon>
+        </div>
+        <div class="failure">
+          All hope is lost.
+          Game Over
+        </div>
+      </jc-threat>
+    </jc-card>
+
+    <jc-card title="Temple to the Gods"
+             card-number="100">
+      <jc-threat threat-cost="4"
+                 build="7">
+        <span class="trait">Crisis</span>
+        <div class="success">
+          +6 <jc-icon prestige></jc-icon>
+        </div>
+        <div class="failure">
+          Kill <jc-icon character></jc-icon> -5 <jc-icon prestige></jc-icon>
+        </div>
+        <div class="unopposed">
+          You have enraged the Gods.
+          Game Over
         </div>
       </jc-threat>
     </jc-card>

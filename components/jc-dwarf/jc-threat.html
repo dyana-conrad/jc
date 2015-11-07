@@ -91,48 +91,47 @@
         margin-left: 0.05in;
       }
 
+      ::content.effect > *:not(:empty)::before,
+      ::content.success > *:not(:empty)::before,
+      ::content.failure > *:not(:empty)::before,
+      ::content.unopposed > *:not(:empty)::before {
+        display: inline-flex;
+        align-items: center;
+        vertical-align: center;
+        flex-direction: column;
+        width: 0.55in;
+        height: 0.125in;
+        border-radius: 0.125in;
+        font-size: 0.85em;
+      }
+
       ::content.effect > *:not(:empty)::before {
         color: white;
-        padding: 0 0.5em;
-        border-radius: 0.5em;
         background-color: darkblue;
         content: 'Effect';
-        font-size: 0.85em;
-        vertical-align: middle;
       }
 
       ::content.success > *:not(:empty)::before {
         color: black;
-        padding: 0 0.5em;
-        border-radius: 0.5em;
         background-color: lime;
         content: 'Success';
-        font-size: 0.85em;
-        vertical-align: middle;
       }
 
       ::content.failure > *:not(:empty)::before {
         color: black;
-        padding: 0 0.5em;
-        border-radius: 0.5em;
         background-color: red;
         content: 'Failure';
-        font-size: 0.85em;
-        vertical-align: middle;
       }
 
       ::content.unopposed > *:not(:empty)::before {
         color: white;
-        padding: 0 0.5em;
-        border-radius: 0.5em;
         background-color: black;
         content: 'Unopposed';
-        font-size: 0.85em;
-        vertical-align: middle;
+        font-size: 0.75em;
       }
       </style>
-
     <div id="banners">
+
       <template is="dom-if" if="[[attack]]">
         <jc-banner red>
           <jc-icon attack></jc-icon><span>[[attack]]</span>
