@@ -1,6 +1,6 @@
 <link rel="import" href="../jc-core/jc-polymer.html">
 
-<dom-module id="jc-req">
+<dom-module id="ste-req">
   <template>
     <style>
       :host {
@@ -37,19 +37,19 @@
         background: linear-gradient(to bottom, #d3d3d3 0%,#dbdbdb 50%,#bababa 51%,#efefef 100%);
       }
     </style>
-    <jc-icon mine$="[[mine]]"
+    <ste-icon mine$="[[mine]]"
              explore$="[[explore]]"
              genius$="[[genius]]"
              caravan$="[[trade]]"
              attack$="[[attack]]"
              prestige$="[[prestige]]"
              build$="[[build]]">
-    </jc-icon>
+    </ste-icon>
     <content></content>
   </template>
   <script>
     Polymer({
-      is: 'jc-req',
+      is: 'ste-req',
       properties: {
         attack: {
           type: Boolean,

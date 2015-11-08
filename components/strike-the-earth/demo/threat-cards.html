@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>Threat Cards</title>
-    <link rel="import" href="../jc-threat.html">
-    <link rel="import" href="../jc-card.html">
+    <link rel="import" href="../ste-threat.html">
+    <link rel="import" href="../ste-card.html">
     <style>
 
     @media print {
@@ -22,152 +22,152 @@
     </style>
   </head>
   <body>
-    <jc-card title="Treeent Saplings"
+    <ste-card title="Treeent Saplings"
              card-number="87">
-      <jc-threat threat-cost="2"
+      <ste-threat threat-cost="2"
                  attack="4"
                  genius="3">
         <span class="trait">Attack</span>
         <span class="trait">Dispute</span>
         <div class="effect">
-          +1 <jc-icon threat></jc-icon> each time a <jc-icon wood></jc-icon>
+          +1 <ste-icon threat></ste-icon> each time a <ste-icon wood></ste-icon>
           is added to the resource pool.
         </div>
         <div class="success">
-          +2 <jc-icon prestige></jc-icon>
+          +2 <ste-icon prestige></ste-icon>
         </div>
         <div class="failure">
-          Kill <jc-icon character></jc-icon>
+          Kill <ste-icon character></ste-icon>
         </div>
         <div class="unopposed">
-          -2 <jc-icon prestige></jc-icon> Discard all <jc-icon wood></jc-icon> from
+          -2 <ste-icon prestige></ste-icon> Discard all <ste-icon wood></ste-icon> from
           the supply.
         </div>
-      </jc-threat>
-    </jc-card>
+      </ste-threat>
+    </ste-card>
 
-    <jc-card title="Mine Collapse"
+    <ste-card title="Mine Collapse"
              card-number="88">
-      <jc-threat threat-cost="5"
+      <ste-threat threat-cost="5"
                  mine="8">
         <span class="trait">Disaster</span>
         <div class="success">
-          <jc-icon prestige></jc-icon> +3
+          <ste-icon prestige></ste-icon> +3
         </div>
         <div class="failure">
-          Kill <jc-icon character></jc-icon><jc-icon character></jc-icon>
+          Kill <ste-icon character></ste-icon><ste-icon character></ste-icon>
         </div>
         <div class="unopposed">
           Discard all <em>mine</em> cards from the supply.  Return all <em>mine</em>
           special location cards to their respective deck and reshuffle.
         </div>
-      </jc-threat>
-    </jc-card>
+      </ste-threat>
+    </ste-card>
 
-    <jc-card title="Lizardmen"
+    <ste-card title="Lizardmen"
              card-number="89">
-      <jc-threat threat-cost="3"
+      <ste-threat threat-cost="3"
                  attack="6">
         <span class="trait">Attack</span>
         <div class="effect">
-          Lizardmen have +3 <jc-icon attack></jc-icon> if the <em>Underground River</em>
-          <jc-icon location></jc-icon> has been discovered.
+          Lizardmen have +3 <ste-icon attack></ste-icon> if the <em>Underground River</em>
+          <ste-icon location></ste-icon> has been discovered.
         </div>
-      </jc-threat>
-    </jc-card>
+      </ste-threat>
+    </ste-card>
 
-    <jc-card title="Goblin Scouting Party"
+    <ste-card title="Goblin Scouting Party"
              card-number="91">
-      <jc-threat threat-cost="2"
+      <ste-threat threat-cost="2"
                  attack="4">
         <span class="trait">Goblin</span>
         <span class="trait">Attack</span>
         <div class="success">
-          <jc-icon prestige></jc-icon> +1
+          <ste-icon prestige></ste-icon> +1
         </div>
         <div class="failure">
-          Kill <jc-icon character></jc-icon>
+          Kill <ste-icon character></ste-icon>
         </div>
         <div class="unopposed">
-          <jc-icon threat></jc-icon> +5
+          <ste-icon threat></ste-icon> +5
         </div>
-      </jc-threat>
-    </jc-card>
+      </ste-threat>
+    </ste-card>
 
-    <jc-card title="Goblin Raiders"
+    <ste-card title="Goblin Raiders"
              card-number="92">
-      <jc-threat threat-cost="4"
+      <ste-threat threat-cost="4"
                  attack="6">
         <span class="trait">Goblin</span>
         <span class="trait">Attack</span>
         <div class="effect">
-          Goblin Raiders have +1 <jc-icon attack></jc-icon> for each
-          <em>Forest Speical Location</em> <jc-icon location></jc-icon>
+          Goblin Raiders have +1 <ste-icon attack></ste-icon> for each
+          <em>Forest Speical Location</em> <ste-icon location></ste-icon>
           discovered.
         </div>
         <div class="success">
-          <jc-icon prestige></jc-icon> +3
+          <ste-icon prestige></ste-icon> +3
         </div>
         <div class="failure">
-          Kill <jc-icon character></jc-icon><jc-icon character></jc-icon>
+          Kill <ste-icon character></ste-icon><ste-icon character></ste-icon>
         </div>
         <div class="unopposed">
-          Kill <jc-icon character></jc-icon><jc-icon character></jc-icon><jc-icon character></jc-icon><jc-icon character></jc-icon>
+          Kill <ste-icon character></ste-icon><ste-icon character></ste-icon><ste-icon character></ste-icon><ste-icon character></ste-icon>
         </div>
-      </jc-threat>
-    </jc-card>
+      </ste-threat>
+    </ste-card>
 
-    <jc-card title="Renegotiate Trade Agreement"
+    <ste-card title="Renegotiate Trade Agreement"
              card-number="90">
-      <jc-threat threat-cost="3"
+      <ste-threat threat-cost="3"
                  trade="4">
         <span class="trait">Dispute</span>
         <div class="success">
-          Draw two new <jc-icon caravan></jc-icon> Caravan cards and choose one
+          Draw two new <ste-icon caravan></ste-icon> Caravan cards and choose one
           to replace the current Caravan card.
         </div>
         <div class="failure">
-          Discard the <jc-icon caravan></jc-icon> Caravan card in play.  There
+          Discard the <ste-icon caravan></ste-icon> Caravan card in play.  There
           will be no Caravan this year.
         </div>
-      </jc-threat>
-    </jc-card>
+      </ste-threat>
+    </ste-card>
 
-    <jc-card title="Magma Demon"
+    <ste-card title="Magma Demon"
              card-number="99">
-      <jc-threat threat-cost="7"
+      <ste-threat threat-cost="7"
                  attack="10">
         <span class="trait">Attack</span>
         <div class="effect">
-          Magma Demon has +4 <jc-icon attack></jc-icon> if the <em>Magma River</em>
-          Special Location <jc-icon location></jc-icon> has been discovered.
+          Magma Demon has +4 <ste-icon attack></ste-icon> if the <em>Magma River</em>
+          Special Location <ste-icon location></ste-icon> has been discovered.
         </div>
         <div class="success">
-          +6 <jc-icon prestige></jc-icon>
+          +6 <ste-icon prestige></ste-icon>
         </div>
         <div class="failure">
           All hope is lost.
           Game Over
         </div>
-      </jc-threat>
-    </jc-card>
+      </ste-threat>
+    </ste-card>
 
-    <jc-card title="Temple to the Gods"
+    <ste-card title="Temple to the Gods"
              card-number="100">
-      <jc-threat threat-cost="4"
+      <ste-threat threat-cost="4"
                  build="7">
         <span class="trait">Crisis</span>
         <div class="success">
-          +6 <jc-icon prestige></jc-icon>
+          +6 <ste-icon prestige></ste-icon>
         </div>
         <div class="failure">
-          Kill <jc-icon character></jc-icon> -5 <jc-icon prestige></jc-icon>
+          Kill <ste-icon character></ste-icon> -5 <ste-icon prestige></ste-icon>
         </div>
         <div class="unopposed">
           You have enraged the Gods.
           Game Over
         </div>
-      </jc-threat>
-    </jc-card>
+      </ste-threat>
+    </ste-card>
   </body>
 </html>

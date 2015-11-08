@@ -1,8 +1,8 @@
 <link rel="import" href="../jc-core/jc-polymer.html">
-<link rel="import" href="jc-icon.html">
-<link rel="import" href="jc-ribbon.html">
+<link rel="import" href="ste-icon.html">
+<link rel="import" href="ste-ribbon.html">
 
-<dom-module id="jc-dwarf">
+<dom-module id="ste-dwarf">
   <template>
     <style>
       :host {
@@ -73,60 +73,60 @@
         margin: 0 0.03in;
       }
 
-      jc-ribbon {
+      ste-ribbon {
         z-index: 1;
         margin-top: 0.015in;
       }
 
-      jc-ribbon:first-of-type {
+      ste-ribbon:first-of-type {
         margin-top: 0.2in;
       }
     </style>
 
     <template is="dom-if" if="[[attack]]">
-      <jc-ribbon red>
-        <jc-icon attack></jc-icon><span>[[attack]]</span>
-      </jc-ribbon>
+      <ste-ribbon red>
+        <ste-icon attack></ste-icon><span>[[attack]]</span>
+      </ste-ribbon>
     </template>
 
     <template is="dom-if" if="[[explore]]">
-      <jc-ribbon green>
-        <jc-icon explore></jc-icon><span>[[explore]]</span>
-      </jc-ribbon>
+      <ste-ribbon green>
+        <ste-icon explore></ste-icon><span>[[explore]]</span>
+      </ste-ribbon>
     </template>
 
     <template is="dom-if" if="[[build]]">
-      <jc-ribbon blue>
-        <jc-icon build></jc-icon><span>[[build]]</span>
-      </jc-ribbon>
+      <ste-ribbon blue>
+        <ste-icon build></ste-icon><span>[[build]]</span>
+      </ste-ribbon>
     </template>
 
     <template is="dom-if" if="[[genius]]">
-      <jc-ribbon white>
-        <jc-icon genius></jc-icon><span>[[genius]]</span>
-      </jc-ribbon>
+      <ste-ribbon white>
+        <ste-icon genius></ste-icon><span>[[genius]]</span>
+      </ste-ribbon>
     </template>
 
     <template is="dom-if" if="[[mine]]">
-      <jc-ribbon gray>
-        <jc-icon mine></jc-icon><span>[[mine]]</span>
-      </jc-ribbon>
+      <ste-ribbon gray>
+        <ste-icon mine></ste-icon><span>[[mine]]</span>
+      </ste-ribbon>
     </template>
 
     <template is="dom-if" if="[[trade]]">
-      <jc-ribbon yellow>
-        <jc-icon caravan></jc-icon><span>[[trade]]</span>
-      </jc-ribbon>
+      <ste-ribbon yellow>
+        <ste-icon caravan></ste-icon><span>[[trade]]</span>
+      </ste-ribbon>
     </template>
 
     <template is="dom-if" if="[[prestige]]">
-      <jc-ribbon purple>
-        <jc-icon prestige></jc-icon><span>[[prestige]]</span>
-      </jc-ribbon>
+      <ste-ribbon purple>
+        <ste-icon prestige></ste-icon><span>[[prestige]]</span>
+      </ste-ribbon>
     </template>
 
     <div class="prestige-req">
-      <jc-icon prestige></jc-icon><span>[[prestigeRequirement]]</span>
+      <ste-icon prestige></ste-icon><span>[[prestigeRequirement]]</span>
     </div>
 
     <div class="portrait"><content select=".portrait"></content></div>
@@ -143,7 +143,7 @@
   </template>
   <script>
     Polymer({
-      is: 'jc-dwarf',
+      is: 'ste-dwarf',
       properties: {
         attack: Number,
         mine: Number,

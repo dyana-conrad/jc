@@ -1,57 +1,58 @@
 <link rel="import" href="../jc-core/jc-polymer.html">
 
-<dom-module id="jc-ribbon">
+<dom-module id="ste-banner">
   <template>
     <style>
       :host {
-        display: block;
+        display: inline-block;
         position: relative;
-        background-image: url('images/banner.png');
+        background-image: url('images/vbanner.png');
         background-size: 100% 100%;
         background-repeat: no-repeat;
-        height: 0.31in;
-        width: 0.75in;
+        height: 0.7in;
+        width: 0.4in;
       }
       :host([red]) {
-        background-image: url('images/banner-red.png');
+        background-image: url('images/vbanner-red.png');
       }
       :host([green]) {
-        background-image: url('images/banner-green.png');
+        background-image: url('images/vbanner-green.png');
       }
       :host([blue]) {
-        background-image: url('images/banner-blue.png');
+        background-image: url('images/vbanner-blue.png');
       }
       :host([yellow]) {
-        background-image: url('images/banner-yellow.png');
+        background-image: url('images/vbanner-yellow.png');
       }
       :host([purple]) {
-        background-image: url('images/banner-purple.png');
+        background-image: url('images/vbanner-purple.png');
       }
       :host([gray]) {
-        background-image: url('images/banner-gray.png');
+        background-image: url('images/vbanner-gray.png');
       }
       :host([white]) {
-        background-image: url('images/banner-white.png');
+        background-image: url('images/vbanner.png');
       }
 
       #content {
         display: flex;
-        justify-content: flex-start;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
         position: absolute;
         top: 0.0in;
         left: 0.0in;
-        width: 0.572in;
-        height: 0.242in;
+        width: 0.37in;
+        height: 0.52in;
         overflow: hidden;
-        font-size: 0.22in;
+        font-size: 0.2in;
       }
     </style>
     <div id="content"><content></content></div>
   </template>
   <script>
     Polymer({
-      is: 'jc-ribbon',
+      is: 'ste-banner',
     });
   </script>
 </dom-module>

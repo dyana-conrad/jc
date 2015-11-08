@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ste-dwarf demo</title>
+    <link rel="import" href="../ste-item.html">
+    <link rel="import" href="../ste-ribbon.html">
+    <link rel="import" href="../ste-card.html">
+    <style>
+
+    @media print {
+      @page {
+        margin-top: 0.25in;
+        margin-bottom: 0in;
+        margin-left: 0.5in;
+        margin-right: 0.5in;
+      }
+      html,body {
+        width: 7.5in;
+        font-size: 0;
+        -webkit-print-color-adjust: exact;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <ste-card title="Crown of Command"
+             card-number="48"
+             landscape>
+      <ste-item>
+        <ste-req build>3</ste-req>
+        <ste-req genius>2</ste-req>
+        <ste-ribbon red>
+          <ste-icon attack></ste-icon>+1
+        </ste-ribbon>
+        <ste-ribbon yellow>
+          <ste-icon caravan></ste-icon>+1
+        </ste-ribbon>
+        <ste-ribbon white>
+          <ste-icon genius></ste-icon>+1
+        </ste-ribbon>
+        <ste-ribbon purple>
+          <ste-icon prestige></ste-icon>+1
+        </ste-ribbon>
+        <div class="rules">
+          Attached Dwarf gains the ability:<br>
+          <ste-icon activate></ste-icon>: defeat one face up threat card.
+        </div>
+        <div class="cost">
+          <ste-icon metal-gold></ste-icon>
+          <ste-icon gem-emerald></ste-icon>
+          <ste-icon gem-ruby></ste-icon>
+          <ste-icon gem-diamond></ste-icon>
+        </div>
+      </ste-item>
+    </ste-card>
+
+    <ste-card title="Saw Mill"
+             card-number="49"
+             landscape>
+      <ste-item>
+        <ste-req build>2</ste-req>
+        <div class="cost">
+          <ste-icon wood></ste-icon>
+          <ste-icon stone></ste-icon>
+          <ste-icon metal></ste-icon>
+        </div>
+      </ste-item>
+    </ste-card>
+
+    <ste-card title="Stone Tools"
+             card-number="73"
+             landscape>
+      <ste-item>
+        <ste-req build>1</ste-req>
+        <ste-ribbon blue>
+          <ste-icon build></ste-icon> +1
+        </ste-ribbon>
+        <div class="cost">
+          <ste-icon stone></ste-icon>
+        </div>
+      </ste-item>
+    </ste-card>
+
+
+    <ste-card title="Master Workbench"
+             card-number="74"
+             landscape>
+      <ste-item>
+        <ste-req build>2</ste-req>
+        <ste-ribbon blue>
+          <ste-icon build></ste-icon> +2
+        </ste-ribbon>
+        <ste-ribbon white>
+          <ste-icon genius></ste-icon> +2
+        </ste-ribbon>
+        <div class="cost">
+          <ste-icon wood-dark></ste-icon>
+          <ste-icon metal></ste-icon>
+        </div>
+      </ste-item>
+    </ste-card>
+
+    <ste-card title="Stone Pick Axe"
+             card-number="50"
+             landscape>
+      <ste-item>
+        <ste-req build>1</ste-req>
+        <ste-ribbon gray>
+          <ste-icon mine></ste-icon> +1
+        </ste-ribbon>
+        <div class="cost">
+          <ste-icon wood></ste-icon>
+          <ste-icon stone></ste-icon>
+        </div>
+      </ste-item>
+    </ste-card>
+
+    <ste-card title="Silver Throne"
+             card-number="51"
+             landscape>
+      <ste-item>
+        <div class="cost">
+          <ste-icon metal-silver></ste-icon>
+          <ste-icon stone></ste-icon>
+          <ste-icon stone></ste-icon>
+        </div>
+      </ste-item>
+    </ste-card>
+
+    <ste-card title="Orb of Vision"
+             card-number="52"
+             landscape>
+      <ste-item>
+        <ste-ribbon green>
+          <ste-icon explore></ste-icon><ste-icon look></ste-icon>
+        </ste-ribbon>
+        <div class="cost">
+          <ste-icon gem></ste-icon>
+          <ste-icon stone></ste-icon>
+        </div>
+      </ste-item>
+    </ste-card>
+
+    <ste-card title="Trebuchet"
+             card-number="53"
+             landscape>
+      <ste-item>
+        <div class="rules">
+          <ste-icon activate></ste-icon>: Discard <ste-icon stone></ste-icon> to add
+          <span style="white-space: nowrap;"><ste-icon attack></ste-icon>+2</span> to one combat.
+        </div>
+        <div class="cost">
+          <ste-icon wood></ste-icon>
+          <ste-icon metal></ste-icon>
+        </div>
+      </ste-item>
+    </ste-card>
+
+    <ste-card title="Crossbow"
+             card-number="54"
+             landscape>
+      <ste-item>
+        <ste-ribbon red>
+          <ste-icon attack></ste-icon>+1
+        </ste-ribbon>
+        <div class="cost">
+          <ste-icon metal></ste-icon>
+          <ste-icon metal></ste-icon>
+        </div>
+    </ste-card>
+
+    <ste-card title="Mace of Power"
+             card-number="55"
+             landscape>
+      <ste-item>
+        <ste-ribbon red>
+          <ste-icon attack></ste-icon>+2
+        </ste-ribbon>
+        <ste-ribbon purple>
+          <ste-icon prestige></ste-icon>+2
+        </ste-ribbon>
+        <div class="cost">
+          <ste-icon metal></ste-icon>
+          <ste-icon gem-ruby></ste-icon>
+        </div>
+        <div class="flavor">
+          This is a pretty sweet mace.  Yes, it really is a good deal, don't sell
+          it to the <ste-icon caravan></ste-icon>
+        </div>
+      </ste-item>
+    </ste-card>
+
+    <ste-card title="Potion of Might"
+             card-number="56">
+      <ste-item>
+        <ste-req build>1</ste-req>
+        <ste-req explore>2</ste-req>
+        <ste-ribbon red>
+          <ste-icon attack></ste-icon>+1
+        </ste-ribbon>
+        <ste-ribbon green>
+          <ste-icon explore></ste-icon>+1
+        </ste-ribbon>
+        <div class="cost">
+          <ste-icon mushroom-red></ste-icon>
+          <ste-icon mushroom-brown></ste-icon>
+        </div>
+    </ste-card>
+
+    <ste-card title="Potion of Wisdom"
+             card-number="57">
+      <ste-item>
+        <ste-req build>1</ste-req>
+        <ste-req explore>2</ste-req>
+        <ste-ribbon white>
+          <ste-icon genius></ste-icon>+1
+        </ste-ribbon>
+        <ste-ribbon yellow>
+          <ste-icon caravan></ste-icon>+1
+        </ste-ribbon>
+        <div class="cost">
+          <ste-icon mushroom-blue></ste-icon>
+          <ste-icon mushroom-brown></ste-icon>
+        </div>
+    </ste-card>
+
+    <ste-card title="Potion of Wild Magic"
+             card-number="57">
+      <ste-item>
+        <ste-req build>1</ste-req>
+        <ste-req explore>2</ste-req>
+        <ste-req prestige>1</ste-req>
+        <ste-ribbon purple>
+          <ste-icon prestige></ste-icon>+1
+        </ste-ribbon>
+        <div class="rules">
+          You won't believe what this thing does... It's so powerful that you
+          really shouldn't give it to any of your dwarves.  That would be absolutely
+          unthinkable.
+        </div>
+        <div class="cost">
+          <ste-icon mushroom-blue></ste-icon>
+          <ste-icon mushroom-red></ste-icon>
+        </div>
+        <div class="flavor">
+          Shrooooooms....
+        </div>
+    </ste-card>
+  </body>
+</html>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>jc-dwarf demo</title>
-    <link rel="import" href="../jc-icon.html">
-    <link rel="import" href="../jc-card.html">
+    <title>ste-dwarf demo</title>
+    <link rel="import" href="../ste-icon.html">
+    <link rel="import" href="../ste-card.html">
     <style>
 
     @media print {
@@ -103,53 +103,53 @@
             background: linear-gradient(to right, #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%);
           }
 
-          .back > jc-icon {
+          .back > ste-icon {
             width: 1.5in;
             height: 1.5in;
           }
         </style>
 
         <template is="dom-repeat" items="[[characterItems]]">
-          <jc-card>
+          <ste-card>
             <div class="character back">
-              <jc-icon character></jc-card>
+              <ste-icon character></ste-card>
             </div>
-          </jc-card>
+          </ste-card>
         </template>
         <template is="dom-repeat" items="[[exploreItems]]">
-          <jc-card>
+          <ste-card>
             <div class="explore back">
-              <jc-icon explore></jc-card>
+              <ste-icon explore></ste-card>
             </div>
-          </jc-card>
+          </ste-card>
         </template>
         <template is="dom-repeat" items="[[mineItems]]">
-          <jc-card>
+          <ste-card>
             <div class="mine back">
-              <jc-icon mine></jc-card>
+              <ste-icon mine></ste-card>
             </div>
-          </jc-card>
+          </ste-card>
         </template>
         <template is="dom-repeat" items="[[itemItems]]">
-          <jc-card>
+          <ste-card>
             <div class="item back">
-              <jc-icon build></jc-card>
+              <ste-icon build></ste-card>
             </div>
-          </jc-card>
+          </ste-card>
         </template>
         <template is="dom-repeat" items="[[caravanItems]]">
-          <jc-card>
+          <ste-card>
             <div class="caravan back">
-              <jc-icon caravan></jc-card>
+              <ste-icon caravan></ste-card>
             </div>
-          </jc-card>
+          </ste-card>
         </template>
         <template is="dom-repeat" items="[[threatItems]]">
-          <jc-card>
+          <ste-card>
             <div class="threat back">
-              <jc-icon threat></jc-card>
+              <ste-icon threat></ste-card>
             </div>
-          </jc-card>
+          </ste-card>
         </template>
       </template>
       <script>

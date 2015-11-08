@@ -1,8 +1,8 @@
 <link rel="import" href="../jc-core/jc-polymer.html">
-<link rel="import" href="jc-icon.html">
-<link rel="import" href="jc-banner.html">
+<link rel="import" href="ste-icon.html">
+<link rel="import" href="ste-banner.html">
 
-<dom-module id="jc-threat">
+<dom-module id="ste-threat">
   <template>
     <style>
       :host {
@@ -78,16 +78,16 @@
         font-size: 0;
       }
 
-      jc-banner {
+      ste-banner {
         transform-origin: top left;
       }
 
-      jc-banner {
+      ste-banner {
         z-index: 1;
         margin: 0;
       }
 
-      jc-banner:first-of-type {
+      ste-banner:first-of-type {
         margin-left: 0.05in;
       }
 
@@ -133,50 +133,50 @@
     <div id="banners">
 
       <template is="dom-if" if="[[attack]]">
-        <jc-banner red>
-          <jc-icon attack></jc-icon><span>[[attack]]</span>
-        </jc-banner>
+        <ste-banner red>
+          <ste-icon attack></ste-icon><span>[[attack]]</span>
+        </ste-banner>
       </template>
 
       <template is="dom-if" if="[[explore]]">
-        <jc-banner green>
-          <jc-icon explore></jc-icon><span>[[explore]]</span>
-        </jc-banner>
+        <ste-banner green>
+          <ste-icon explore></ste-icon><span>[[explore]]</span>
+        </ste-banner>
       </template>
 
       <template is="dom-if" if="[[build]]">
-        <jc-banner blue>
-          <jc-icon build></jc-icon><span>[[build]]</span>
-        </jc-banner>
+        <ste-banner blue>
+          <ste-icon build></ste-icon><span>[[build]]</span>
+        </ste-banner>
       </template>
 
       <template is="dom-if" if="[[genius]]">
-        <jc-banner white>
-          <jc-icon genius></jc-icon><span>[[genius]]</span>
-        </jc-banner>
+        <ste-banner white>
+          <ste-icon genius></ste-icon><span>[[genius]]</span>
+        </ste-banner>
       </template>
 
       <template is="dom-if" if="[[mine]]">
-        <jc-banner gray>
-          <jc-icon mine></jc-icon><span>[[mine]]</span>
-        </jc-banner>
+        <ste-banner gray>
+          <ste-icon mine></ste-icon><span>[[mine]]</span>
+        </ste-banner>
       </template>
 
       <template is="dom-if" if="[[trade]]">
-        <jc-banner yellow>
-          <jc-icon caravan></jc-icon><span>[[trade]]</span>
-        </jc-banner>
+        <ste-banner yellow>
+          <ste-icon caravan></ste-icon><span>[[trade]]</span>
+        </ste-banner>
       </template>
 
       <template is="dom-if" if="[[prestige]]">
-        <jc-banner purple>
-          <jc-icon prestige></jc-icon><span>[[prestige]]</span>
-        </jc-banner>
+        <ste-banner purple>
+          <ste-icon prestige></ste-icon><span>[[prestige]]</span>
+        </ste-banner>
       </template>
     </div>
 
     <div class="threat-cost">
-      <jc-icon threat></jc-icon><span>[[threatCost]]</span>
+      <ste-icon threat></ste-icon><span>[[threatCost]]</span>
     </div>
 
     <div class="portrait"><content select=".portrait"></content></div>
@@ -197,7 +197,7 @@
   </template>
   <script>
     Polymer({
-      is: 'jc-threat',
+      is: 'ste-threat',
       properties: {
         attack: Number,
         mine: Number,

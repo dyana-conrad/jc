@@ -1,8 +1,8 @@
 <link rel="import" href="../jc-core/jc-polymer.html">
 <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700' rel='stylesheet' type='text/css'>
-<link rel="import" href="jc-icon.html">
+<link rel="import" href="ste-icon.html">
 
-<dom-module id="jc-card">
+<dom-module id="ste-card">
   <template>
     <style>
       :host {
@@ -58,7 +58,7 @@
         z-index: 1;
       }
 
-      jc-icon {
+      ste-icon {
         margin: 0 0.02in;
       }
     </style>
@@ -67,7 +67,7 @@
 
     <template is="dom-if" if="[[cardNumber]]">
       <div class="collection">
-        <jc-icon castle></jc-icon> <span><span>[[formatCardNumber(cardNumber)]]</span>/<span style="font-size: 0.75em;">511</span></span>
+        <ste-icon castle></ste-icon> <span><span>[[formatCardNumber(cardNumber)]]</span>/<span style="font-size: 0.75em;">511</span></span>
       </div>
     </template>
 
@@ -75,7 +75,7 @@
   </template>
   <script>
     Polymer({
-      is: 'jc-card',
+      is: 'ste-card',
       properties: {
         title: {
           type: String,

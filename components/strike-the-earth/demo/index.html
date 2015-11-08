@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ste-dwarf demo</title>
+    <link rel="import" href="../ste-dwarf.html">
+    <link rel="import" href="../ste-explore.html">
+    <link rel="import" href="../ste-item.html">
+    <link rel="import" href="../ste-location.html">
+    <link rel="import" href="../ste-threat.html">
+    <link rel="import" href="../ste-card.html">
+    <style>
+
+    @media print {
+      @page {
+        margin-top: 0.25in;
+        margin-bottom: 0in;
+        margin-left: 0.5in;
+        margin-right: 0.5in;
+      }
+      html,body {
+        width: 7.5in;
+        font-size: 0;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <ste-card title="Treeent Saplings"
+             card-number="87">
+      <ste-threat threat-cost="2"
+                 attack="3"
+                 genius="4">
+        <span class="trait">Attack</span>
+      </ste-threat>
+    </ste-card>
+
+    <ste-card title="Mine Collapse"
+             card-number="88">
+      <ste-threat threat-cost="5"
+                 mine="8">
+        <span class="trait">Disaster</span>
+        <div class="success">
+          <ste-icon prestige></ste-icon> +3
+        </div>
+        <div class="failure">
+          Kill <ste-icon character></ste-icon><ste-icon character></ste-icon>
+        </div>
+        <div class="unopposed">
+          Discard all <em>mine</em> cards from the supply.  Return all <em>mine</em>
+          special location cards to their respective deck and reshuffle.
+        </div>
+      </ste-threat>
+    </ste-card>
+
+    <ste-card title="Forest River"
+             card-number="100">
+      <ste-location>
+        <ste-icon water></ste-icon>
+      </ste-location>
+    </ste-card>
+
+    <ste-card title="Elven Ruins"
+             card-number="100">
+      <ste-location>
+        <ste-icon ruin></ste-icon>
+      </ste-location>
+    </ste-card>
+
+    <ste-card title="Forest Lake"
+             card-number="100">
+      <ste-location>
+        <ste-icon water></ste-icon>
+      </ste-location>
+    </ste-card>
+
+    <ste-card title="Ancient Dwarven Ruins"
+             card-number="101">
+      <ste-location mine>
+        <ste-icon ruin></ste-icon>
+      </ste-location>
+    </ste-card>
+
+    <ste-card title="Great Cavern"
+             card-number="102">
+      <ste-location mine>
+        <ste-icon rockfall></ste-icon>
+      </ste-location>
+    </ste-card>
+
+    <ste-card title="Underground River"
+             card-number="103">
+      <ste-location mine>
+        <ste-icon water></ste-icon>
+      </ste-location>
+    </ste-card>
+
+    <ste-card title="Underground Lava Flow"
+             card-number="104">
+      <ste-location mine>
+        <ste-icon water></ste-icon>
+      </ste-location>
+    </ste-card>
+
+    <ste-card title="Deep Chasm"
+             card-number="105">
+      <ste-location mine>
+        <ste-icon rockfall></ste-icon>
+      </ste-location>
+    </ste-card>
+
+    <ste-card title="Strange Glowing Mushrooms"
+             card-number="106">
+      <ste-location mine>
+        <ste-icon mushroom></ste-icon>
+      </ste-location>
+    </ste-card>
+
+    <ste-card title="Crown of Command"
+             card-number="48"
+             landscape>
+      <ste-item>
+        <ste-req build>3</ste-req>
+        <ste-req genius>2</ste-req>
+        <ste-ribbon red>
+          <ste-icon attack></ste-icon>+1
+        </ste-ribbon>
+        <ste-ribbon yellow>
+          <ste-icon caravan></ste-icon>+1
+        </ste-ribbon>
+        <ste-ribbon white>
+          <ste-icon genius></ste-icon>+1
+        </ste-ribbon>
+        <ste-ribbon purple>
+          <ste-icon prestige></ste-icon>+1
+        </ste-ribbon>
+        <div class="cost">
+          <ste-icon metal-gold></ste-icon>
+          <ste-icon gem-emerald></ste-icon>
+          <ste-icon gem-ruby></ste-icon>
+          <ste-icon gem-diamond></ste-icon>
+        </div>
+      </ste-item>
+    </ste-card>
+
+    <ste-card title="Saw Mill"
+             card-number="49"
+             landscape>
+      <ste-item>
+        <ste-req build>2</ste-req>
+        <div class="cost">
+          <ste-icon wood></ste-icon>
+          <ste-icon stone></ste-icon>
+          <ste-icon metal></ste-icon>
+        </div>
+      </ste-item>
+    </ste-card>
+
+    <ste-card title="Stone Tools"
+             card-number="73"
+             landscape>
+      <ste-item>
+        <ste-req build>1</ste-req>
+        <ste-ribbon blue>
+          <ste-icon build></ste-icon> +1
+        </ste-ribbon>
+        <div class="cost">
+          <ste-icon stone></ste-icon>
+        </div>
+      </ste-item>
+    </ste-card>
+
+
+    <ste-card title="Master Workbench"
+             card-number="74"
+             landscape>
+      <ste-item>
+        <ste-req build>2</ste-req>
+        <ste-ribbon blue>
+          <ste-icon build></ste-icon> +2
+        </ste-ribbon>
+        <ste-ribbon white>
+          <ste-icon genius></ste-icon> +2
+        </ste-ribbon>
+        <div class="cost">
+          <ste-icon wood-dark></ste-icon>
+          <ste-icon metal></ste-icon>
+        </div>
+      </ste-item>
+    </ste-card>
+
+
+    <ste-card title="Stone Pick Axe"
+             card-number="50"
+             landscape>
+      <ste-item>
+        <ste-req build>1</ste-req>
+        <ste-ribbon gray>
+          <ste-icon mine></ste-icon> +1
+        </ste-ribbon>
+        <div class="cost">
+          <ste-icon wood></ste-icon>
+          <ste-icon stone></ste-icon>
+        </div>
+      </ste-item>
+    </ste-card>
+
+    <ste-card title="Silver Throne"
+             card-number="51"
+             landscape>
+      <ste-item>
+        <div class="cost">
+          <ste-icon metal-silver></ste-icon>
+          <ste-icon stone></ste-icon>
+          <ste-icon stone></ste-icon>
+        </div>
+      </ste-item>
+    </ste-card>
+
+    <ste-card title="Orb of Vision"
+             card-number="52"
+             landscape>
+      <ste-item>
+        <ste-ribbon green>
+          <ste-icon explore></ste-icon><ste-icon look></ste-icon>
+        </ste-ribbon>
+        <div class="cost">
+          <ste-icon gem></ste-icon>
+          <ste-icon stone></ste-icon>
+        </div>
+      </ste-item>
+    </ste-card>
+
+    <ste-card title="Trebuchet"
+             card-number="53"
+             landscape>
+      <ste-item>
+        <div class="rules">
+          <ste-icon activate></ste-icon>: Discard <ste-icon stone></ste-icon> to add
+          <span style="white-space: nowrap;"><ste-icon attack></ste-icon>+2</span> to one combat.
+        </div>
+        <div class="cost">
+          <ste-icon wood></ste-icon>
+          <ste-icon metal></ste-icon>
+        </div>
+      </ste-item>
+    </ste-card>
+
+    <ste-card title="Crossbow"
+             card-number="54"
+             landscape>
+      <ste-item>
+        <ste-ribbon red>
+          <ste-icon attack></ste-icon>+1
+        </ste-ribbon>
+        <div class="cost">
+          <ste-icon metal></ste-icon>
+          <ste-icon metal></ste-icon>
+        </div>
+    </ste-card>
+
+    <ste-card title="Mace of Power"
+             card-number="55"
+             landscape>
+      <ste-item>
+        <ste-ribbon red>
+          <ste-icon attack></ste-icon>+2
+        </ste-ribbon>
+        <ste-ribbon purple>
+          <ste-icon prestige></ste-icon>+2
+        </ste-ribbon>
+        <div class="cost">
+          <ste-icon metal></ste-icon>
+          <ste-icon gem-ruby></ste-icon>
+        </div>
+        <div class="flavor">
+          This is a pretty sweet mace.  Yes, it really is a good deal, don't sell
+          it to the <ste-icon caravan></ste-icon>
+        </div>
+      </ste-item>
+    </ste-card>
+
+    <ste-card title="Forest"
+             card-number="12">
+      <ste-explore wood-light></ste-explore>
+    </ste-card>
+
+    <ste-card title="Forest"
+             card-number="13">
+      <ste-explore wood-light></ste-explore>
+    </ste-card>
+
+    <ste-card title="Forest"
+             card-number="14">
+      <ste-explore wood-light threat="1"></ste-explore>
+    </ste-card>
+
+    <ste-card title="Dark Forest"
+             card-number="15">
+      <ste-explore wood-dark threat="1"></ste-explore>
+    </ste-card>
+
+    <ste-card title="Dark Forest"
+             card-number="16">
+      <ste-explore wood-dark threat="2"></ste-explore>
+    </ste-card>
+
+    <ste-card title="Gold"
+             card-number="17">
+      <ste-explore metal-gold threat="1"></ste-explore>
+    </ste-card>
+
+    <ste-card title="Light Stone Quarry"
+             card-number="18">
+      <ste-explore stone-light></ste-explore>
+    </ste-card>
+
+    <ste-card title="Mushroom"
+             card-number="19">
+      <ste-explore mushroom-brown threat="2"></ste-explore>
+    </ste-card>
+
+    <ste-card title="Red Mushroom"
+             card-number="20">
+      <ste-explore mushroom-red></ste-explore>
+    </ste-card>
+
+    <ste-card title="Fungiwood Forest"
+             card-number="14">
+      <ste-explore wood-fungi mine threat="3"></ste-explore>
+    </ste-card>
+
+    <ste-card title="Ruby"
+             card-number="15">
+      <ste-explore gem-ruby mine></ste-explore>
+    </ste-card>
+
+    <ste-card title="Diamond"
+             card-number="16">
+      <ste-explore gem-diamond mine></ste-explore>
+    </ste-card>
+
+    <ste-card title="Emerald"
+             card-number="17">
+      <ste-explore gem-emerald mine></ste-explore>
+    </ste-card>
+
+    <ste-card title="Rough Hewn Light Stone"
+             card-number="18">
+      <ste-explore stone-light mine></ste-explore>
+    </ste-card>
+
+    <ste-card title="Rough Hewn Dark Stone"
+             card-number="19">
+      <ste-explore stone-dark mine threat="1">
+        <div class="flavor">
+          A cold wind blows from down below...
+        </div>
+      </ste-explore>
+    </ste-card>
+
+    <ste-card title="Copper Mine"
+             card-number="20">
+      <ste-explore metal-copper mine></ste-explore>
+    </ste-card>
+
+    <ste-card title="Silver Mine"
+             card-number="21">
+      <ste-explore metal-silver mine threat="1"></ste-explore>
+    </ste-card>
+
+    <ste-card title="Gold Mine"
+             card-number="22">
+      <ste-explore metal-gold mine></ste-explore>
+    </ste-card>
+
+    <ste-card title="Red Mushroom"
+             card-number="24">
+      <ste-explore mushroom-red mine>
+        <div class="flavor">
+          Spicy mushrooms!!!
+        </div>
+      </ste-explore>
+    </ste-card>
+
+    <ste-card title="Blue Mushroom"
+             card-number="25">
+      <ste-explore mushroom-blue mine  threat="3">
+        <div class="flavor">
+          Is this thing really edible?
+        </div>
+      </ste-explore>
+    </ste-card>
+
+    <ste-card title="Legendary Miner" card-number="1">
+      <ste-dwarf attack="3"
+               mine="4"
+               prestige-requirement="6">
+        <span class="trait">Hammerdwarf</span>
+        <div class="rules">
+          <ste-icon mine></ste-icon>:
+          <ste-icon look></ste-icon><ste-icon look></ste-icon><ste-icon look></ste-icon>
+        </div>
+        <div class="flavor">
+          Best miner in the west.
+        </div>
+      </ste-dwarf>
+    </ste-card>
+
+    <ste-card title="Stone Crafter" card-number="2">
+      <ste-dwarf attack="2"
+                mine="1"
+                build="3"
+                genius="2"
+                prestige-requirement="1">
+        <div class="rules">
+          <ste-icon caravan></ste-icon>:
+          Sell up to two <ste-icon stone></ste-icon>
+        </div>
+        <div class="flavor">
+          This guy can really cut some stone...<br>
+        </div>
+      </ste-dwarf>
+    </ste-card>
+
+    <ste-card title="Explorer" card-number="3">
+      <ste-dwarf attack="3"
+                explore="3"
+                prestige-requirement="1">
+                <span class="trait">Explorer</span>
+                <span class="trait">Dwarf</span>
+        <div class="rules">
+          <ste-icon explore></ste-icon>:
+          <ste-icon look></ste-icon><ste-icon look></ste-icon>
+        </div>
+        <div class="flavor">
+          He can <ste-icon explore></ste-icon> with the best of them.
+        </div>
+      </ste-dwarf>
+    </ste-card>
+
+    <ste-card title="Brewer" card-number="4">
+      <ste-dwarf explore="2"
+                build="3"
+                prestige-requirement="1">
+        <span class="trait">Craftdwarf</span>
+        <div class="rules">
+          <ste-icon activate></ste-icon>:
+          Discard <ste-icon mushroom></ste-icon><ste-icon mushroom></ste-icon> from
+          the supply.  Gain 3 <ste-icon prestige></ste-icon>
+        </div>
+      </ste-dwarf>
+    </ste-card>
+
+    <ste-card title="Merchant" card-number="5">
+      <ste-dwarf build="1"
+                trade="3"
+                prestige="3"
+                attack="1"
+                prestige-requirement="1">
+        <span class="trait">Merchant</span>
+        <span class="trait">Noble</span>
+        <div class="rules">
+          <ste-icon caravan></ste-icon>:
+          Sell one each of the following:
+            <ste-icon wood></ste-icon>
+            <ste-icon metal></ste-icon>
+            <ste-icon gem></ste-icon>
+        </div>
+        <div class="flavor">
+          Buy or sell, he's got what it takes when it comes to <ste-icon caravan></ste-icon>
+        </div>
+      </ste-dwarf>
+    </ste-card>
+
+    <ste-card title="Fisherdwarf" card-number="6">
+      <ste-dwarf explore="3"
+                build="3"
+                attack="2"
+                prestige-requirement="3">
+      </ste-dwarf>
+    </ste-card>
+  </body>
+</html>

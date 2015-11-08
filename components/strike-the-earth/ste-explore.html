@@ -1,7 +1,7 @@
 <link rel="import" href="../jc-core/jc-polymer.html">
-<link rel="import" href="jc-icon.html">
+<link rel="import" href="ste-icon.html">
 
-<dom-module id="jc-explore">
+<dom-module id="ste-explore">
   <template>
     <style>
       :host {
@@ -37,7 +37,7 @@
         background-color: rgba(255, 255, 255, 0.15);
       }
 
-      .portrait jc-icon {
+      .portrait ste-icon {
         width: 1.25in;
         height: 1.25in;
       }
@@ -54,7 +54,7 @@
         font-size: 0.2in;
       }
 
-      .threat jc-icon {
+      .threat ste-icon {
         width: 1em;
         height: 1em;
       }
@@ -78,7 +78,7 @@
     </style>
 
     <div class="portrait">
-      <jc-icon wood-light$="[[woodLight]]"
+      <ste-icon wood-light$="[[woodLight]]"
                wood-dark$="[[woodDark]]"
                wood-fungi$="[[woodFungi]]"
                stone-light$="[[stoneLight]]"
@@ -92,16 +92,16 @@
                mushroom-red$="[[mushroomRed]]"
                mushroom-blue$="[[mushroomBlue]]"
                mushroom-brown$="[[mushroomBrown]]">
-      </jc-icon><br>
+      </ste-icon><br>
       <template is="dom-if" if="[[threat]]">
-        <div class="threat"><jc-icon threat></jc-icon><span>[[threat]]<span></div>
+        <div class="threat"><ste-icon threat></ste-icon><span>[[threat]]<span></div>
       </template>
     </div>
     <div class="flavor"><content select=".flavor"></content></div>
   </template>
   <script>
     Polymer({
-      is: 'jc-explore',
+      is: 'ste-explore',
       properties: {
         woodLight: Boolean,
         woodDark: Boolean,
