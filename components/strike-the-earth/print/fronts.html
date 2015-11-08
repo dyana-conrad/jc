@@ -4,19 +4,29 @@
     <title>Strike the Earth: Card Viewer</title>
     <link rel="import" href="../../jc-core/jc-polymer.html">
     <link rel="import" href="../../jc-core/jc-pawn.html">
-    <link rel="import" href="../blueprints/caravan-cards.html" class="blueprints">
-    <link rel="import" href="../blueprints/character-cards.html" class="blueprints">
-    <link rel="import" href="../blueprints/explore-cards.html" class="blueprints">
-    <link rel="import" href="../blueprints/item-cards.html" class="blueprints">
-    <link rel="import" href="../blueprints/mine-cards.html" class="blueprints">
-    <link rel="import" href="../blueprints/threat-cards.html" class="blueprints">
+    <link rel="import" href="../blueprints/all.html">
 
     <link rel="stylesheet" type="text/css" href="print.css">
   </head>
   <body>
     <dom-module is="card-front-selector">
       <template>
-        <input id="input" value="[[searchValue]]"></input>
+        <style>
+          span {
+            display: inline-block;
+            background-color: rgb(198, 198, 198);
+            border-radius: 1em;
+            padding: 2px 10px;
+            font-variant: small-caps;
+            text-transform: capitalize;
+          }
+        </style>
+        Search tags: <input id="input" value="[[searchValue]]"></input><br>
+        <br>
+        <template is="dom-repeat" items="[[tags]]">
+          <span on-tap="handleTagSelect">[[item]]</span>
+        </template>
+        <hr>
       </template>
       <script>
         Polymer({
@@ -35,6 +45,20 @@
               type: Boolean,
               readOnly: true,
             },
+            tags: {
+              type: Array,
+              value: function () {
+                return [
+                  'caravan',
+                  'item',
+                  'character',
+                  'threat',
+                  'explore',
+                  'mine',
+                  'card',
+                ];
+              }
+            }
           },
           listeners: {
             'input.input': 'handleInput',
@@ -54,6 +78,10 @@
               this._setIsReady(true);
             });
           },
+          handleTagSelect: function (event) {
+            var selectedText = event.path[0].textContent;
+            this.searchValue = selectedText;
+          },
           handleInput: function (event) {
             this.searchValue =this.$.input.value;
           },
@@ -68,13 +96,13 @@
       <template>
         <style>
         @media print {
-          hr, card-front-selector {
+          card-front-selector {
             display: none;
           }
         }
         </style>
         <card-front-selector results="{{blueprints}}"></card-front-selector>
-        <hr>
+
         <div id="container">
         </div>
       </template>
@@ -103,11 +131,5 @@
     </dom-module>
 
     <card-fronts></card-fronts>
-
-    <script>
-    window.addEventListener("DOMContentLoaded", function(event) {
-      JC.Library.adoptAllBlueprints('link.blueprints');
-    });
-    </script>
   </body>
 </html>

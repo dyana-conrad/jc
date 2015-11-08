@@ -15,6 +15,10 @@
         type: Number,
         value: 0,
       },
+      scale: {
+        type: Number,
+        value: 1,
+      },
       isReady: {
         type: Boolean,
         readOnly: true,
@@ -22,7 +26,7 @@
     },
     observers: [
       '_restampBlueprint(blueprint, isReady)',
-      '_observePosition(x, y)',
+      '_observeTransform(x, y, scale)',
     ],
     attached: function () {
       this.async(function () {
@@ -61,9 +65,9 @@
           }
         });
     },
-    _observePosition: function (x, y) {
+    _observeTransform: function (x, y, scale) {
       this.style.transform =
-        'translate(' + x + 'px, ' + y + 'px)';
+        'translate(' + x + 'px, ' + y + 'px) scale(' + scale + ')';
     },
     _restampBlueprint: function (blueprintId, isReady) {
       if (!isReady) {

@@ -48,21 +48,5 @@ var JC = (function (JC) {
     return Library.searchBlueprints(regex);
   }
 
-  function adoptBlueprints(link) {
-    var nodeList = link.import.querySelectorAll('jc-blueprint');
-    for (var i = 0; i < nodeList.length; ++i) {
-      var node = document.adoptNode(nodeList[i]);
-      document.body.appendChild(node);
-    }
-  }
-
-  Library.adoptAllBlueprints = function (querySelector) {
-    var nodeList = document.querySelectorAll(querySelector);
-    for (var i = 0; i < nodeList.length; ++i) {
-      var link = nodeList[i];
-      adoptBlueprints(link);
-    }
-  }
-
   return JC;
 })(JC || {});

@@ -13,7 +13,7 @@
           type: String,
         },
       },
-      attached: function () {
+      ready: function () {
         if (this.$.template.getDistributedNodes().length < 1) {
           throw new Error('jc-blueprint element must contain a template')
         }
