@@ -1,0 +1,27 @@
+<link rel="import" href="../jc-polymer.html">
+<link rel="import" href="jc-library.html">
+
+<dom-module id="jc-blueprint">
+  <template>
+    <content select="template" id="template"></content>
+  </template>
+  <script>
+    Polymer({
+      is: 'jc-blueprint',
+      attached: function () {
+        if (this.$.template.getDistributedNodes().length < 1) {
+          throw new Error('jc-blueprint element must contain a template')
+        }
+        JC.Library.addBlueprint(this);
+      },
+      detached: function () {
+        JC.Library.removeBlueprint(this);
+      },
+      createElement: function () {
+        var template = this.$.template.getDistributedNodes()[0];
+        var stampedTemplate = document.importNode(template.content, true);
+        return stampedTemplate.firstElementChild;
+      },
+    });
+  </script>
+</dom-module>

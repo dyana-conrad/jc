@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Strike the Earth</title>
+    <link rel="import" href="../Library/jc-blueprint.html">
+    <link rel="import" href="../jc-card.html">
+    <link rel="import" href="../jc-dwarf.html">
+    <link rel="import" href="../jc-pawn.html">
+
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #45484d 0%, #000000 100%);
+      }
+
+      jc-pawn {
+        position: absolute;
+        transition: transform 0.3s;
+        transform: scale(1);
+        user-select: none;
+        transition: opacity 0.3s;
+      }
+
+      .moving {
+        transform: scale(2);
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <jc-blueprint id="card2">
+      <template>
+        <jc-card title="Aleea the Dwarf">
+          <jc-dwarf genius="6"
+                    mine="10"
+                    prestige="90"
+                    prestige-requirement="2">
+            <div class="rules">
+              <jc-icon activate></jc-icon> to send Aleea to school.
+            </div>
+          </jc-dwarf>
+        </jc-card>
+      </template>
+    </jc-blueprint>
+
+    <jc-blueprint id="card">
+      <template>
+        <jc-card title="Kristina the Dwarf">
+          <jc-dwarf build="20"
+                    explore="10"
+                    genius="90"
+                    prestige-requirement="2">
+            <div class="rules">
+              <jc-icon activate></jc-icon> to send Kristina to bed.
+            </div>
+          </jc-dwarf>
+        </jc-card>
+      </template>
+    </jc-blueprint>
+
+    <jc-blueprint id="token">
+      <template>
+        <style>
+        div {
+          width: 0.5in;
+          height: 0.5in;
+          border-radius: 50%;
+          border-width: 2px;
+          border-color: black;
+          border-style: solid;
+          background-color: rgb(115, 168, 237);
+          box-shadow: 5px 5px 15px #000;
+        }
+        </style>
+        <div></div>
+      </template>
+    </jc-blueprint>
+
+    <jc-pawn blueprint="card"></jc-pawn>
+    <jc-pawn blueprint="card2"></jc-pawn>
+    <jc-pawn blueprint="token" x="100" y="100"></jc-pawn>
+    <jc-pawn blueprint="token" x="120" y="75"></jc-pawn>
+    <jc-pawn blueprint="token" x="135" y="124"></jc-pawn>
+  </body>
+</html>
