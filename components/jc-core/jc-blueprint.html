@@ -8,6 +8,11 @@
   <script>
     Polymer({
       is: 'jc-blueprint',
+      properties: {
+        tags: {
+          type: String,
+        },
+      },
       attached: function () {
         if (this.$.template.getDistributedNodes().length < 1) {
           throw new Error('jc-blueprint element must contain a template')

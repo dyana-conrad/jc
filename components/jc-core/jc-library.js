@@ -31,14 +31,15 @@ var JC = (function (JC) {
     var keys = Object.keys(blueprints);
     for (var i = 0; i < keys.length; ++i) {
       var blueprint = blueprints[keys[i]];
-      if (blueprint.tags && regex.exec(blueprint.tags) !== null) {
+      if (blueprint.tags && regex.test(blueprint.tags)) {
         result.push(blueprint);
       }
     }
+    return result;
   }
 
   Library.getBlueprintsByTag = function (tag) {
-    var regex = new RegExp("\b" + escapeForRegEx(tag) + "\b", i);
+    var regex = new RegExp("\\b" + escapeForRegEx(tag) + "\\b", 'i');
     return Library.searchBlueprints(regex);
   }
 
