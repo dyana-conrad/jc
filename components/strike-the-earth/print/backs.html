@@ -4,28 +4,18 @@
     <title>ste-dwarf demo</title>
     <link rel="import" href="../ste-icon.html">
     <link rel="import" href="../ste-card.html">
-    <style>
 
+    <link rel="stylesheet" type="text/css" href="print.css">
+    <style>
     @media print {
-      @page {
-        margin-top: 0.25in;
-        margin-bottom: 0in;
-        margin-left: 0.5in;
-        margin-right: 0.5in;
-      }
-      html, body {
-        width: 7.5in;
-        font-size: 0;
-        -webkit-print-color-adjust: exact;
-      }
-      hr, jc-selector {
+      hr, card-back-selector {
         display: none;
       }
     }
     </style>
   </head>
   <body>
-    <dom-module id="jc-selector">
+    <dom-module id="card-back-selector">
       <template>
         <style>
         :host {
@@ -42,7 +32,7 @@
       </template>
       <script>
         Polymer({
-          is: 'jc-selector',
+          is: 'card-back-selector',
           listeners: {
             'input.input': 'handleInput',
           },
@@ -65,7 +55,7 @@
         });
       </script>
     </dom-module>
-    <dom-module id="jc-backs">
+    <dom-module id="ste-backs">
       <template>
         <style>
           .back {
@@ -154,7 +144,7 @@
       </template>
       <script>
         Polymer({
-          is: 'jc-backs',
+          is: 'ste-backs',
           properties: {
             characterCount: Number,
             characterItems: {
@@ -189,20 +179,20 @@
     </dom-module>
 
     <template is="dom-bind">
-      <jc-selector value="{{mineCount}}">Mine</jc-selector>
-      <jc-selector value="{{exploreCount}}">Explore</jc-selector>
-      <jc-selector value="{{itemCount}}">Item</jc-selector>
-      <jc-selector value="{{characterCount}}">Character</jc-selector>
-      <jc-selector value="{{caravanCount}}">Caravan</jc-selector>
-      <jc-selector value="{{threatCount}}">Threat</jc-selector>
+      <card-back-selector value="{{mineCount}}">Mine</card-back-selector>
+      <card-back-selector value="{{exploreCount}}">Explore</card-back-selector>
+      <card-back-selector value="{{itemCount}}">Item</card-back-selector>
+      <card-back-selector value="{{characterCount}}">Character</card-back-selector>
+      <card-back-selector value="{{caravanCount}}">Caravan</card-back-selector>
+      <card-back-selector value="{{threatCount}}">Threat</card-back-selector>
       <hr>
-      <jc-backs character-count="[[characterCount]]"
+      <ste-backs character-count="[[characterCount]]"
                 explore-count="[[exploreCount]]"
                 mine-count="[[mineCount]]"
                 item-count="[[itemCount]]"
                 caravan-count="[[caravanCount]]"
                 threat-count="[[threatCount]]">
-      </jc-backs>
+      </ste-backs>
     </template>
   </body>
 </html>

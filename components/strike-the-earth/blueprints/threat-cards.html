@@ -1,27 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Threat Cards</title>
-    <link rel="import" href="../ste-threat.html">
-    <link rel="import" href="../ste-card.html">
-    <style>
+<link rel="import" href="../../jc-core/jc-blueprint.html">
+<link rel="import" href="../ste-threat.html">
+<link rel="import" href="../ste-card.html">
 
-    @media print {
-      @page {
-        margin-top: 0.25in;
-        margin-bottom: 0in;
-        margin-left: 0.5in;
-        margin-right: 0.5in;
-      }
-      html,body {
-        width: 7.5in;
-        font-size: 0;
-        -webkit-print-color-adjust: exact;
-      }
-    }
-    </style>
-  </head>
-  <body>
+<jc-blueprint id="threat-treeent-saplings" tags="card front threat">
+  <template>
     <ste-card title="Treeent Saplings"
              card-number="87">
       <ste-threat threat-cost="2"
@@ -45,7 +27,11 @@
         </div>
       </ste-threat>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="threat-mine-collapse" tags="card front threat">
+  <template>
     <ste-card title="Mine Collapse"
              card-number="88">
       <ste-threat threat-cost="5"
@@ -63,7 +49,11 @@
         </div>
       </ste-threat>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="threat-lizardmen" tags="card front threat">
+  <template>
     <ste-card title="Lizardmen"
              card-number="89">
       <ste-threat threat-cost="3"
@@ -75,7 +65,11 @@
         </div>
       </ste-threat>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="threat-goblin-scouts" tags="card front threat">
+  <template>
     <ste-card title="Goblin Scouting Party"
              card-number="91">
       <ste-threat threat-cost="2"
@@ -93,7 +87,11 @@
         </div>
       </ste-threat>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="threat-goblin-raiders" tags="card front threat">
+  <template>
     <ste-card title="Goblin Raiders"
              card-number="92">
       <ste-threat threat-cost="4"
@@ -116,7 +114,11 @@
         </div>
       </ste-threat>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="threat-renegotiate-trade" tags="card front threat">
+  <template>
     <ste-card title="Renegotiate Trade Agreement"
              card-number="90">
       <ste-threat threat-cost="3"
@@ -132,7 +134,11 @@
         </div>
       </ste-threat>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="threat-magma-demon" tags="card front threat">
+  <template>
     <ste-card title="Magma Demon"
              card-number="99">
       <ste-threat threat-cost="7"
@@ -151,7 +157,11 @@
         </div>
       </ste-threat>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="threat-temple-of-the-gods" tags="card front threat">
+  <template>
     <ste-card title="Temple to the Gods"
              card-number="100">
       <ste-threat threat-cost="4"
@@ -169,5 +179,5 @@
         </div>
       </ste-threat>
     </ste-card>
-  </body>
-</html>
+  </template>
+</jc-blueprint>

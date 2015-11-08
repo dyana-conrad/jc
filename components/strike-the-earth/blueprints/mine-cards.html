@@ -1,53 +1,55 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Mine Cards</title>
-    <link rel="import" href="../ste-explore.html">
-    <link rel="import" href="../ste-location.html">
-    <link rel="import" href="../ste-card.html">
-    <style>
+<link rel="import" href="../../jc-core/jc-blueprint.html">
+<link rel="import" href="../ste-explore.html">
+<link rel="import" href="../ste-location.html">
+<link rel="import" href="../ste-card.html">
 
-    @media print {
-      @page {
-        margin-top: 0.25in;
-        margin-bottom: 0in;
-        margin-left: 0.5in;
-        margin-right: 0.5in;
-      }
-      html,body {
-        width: 7.5in;
-        font-size: 0;
-        -webkit-print-color-adjust: exact;
-      }
-    }
-    </style>
-  </head>
-  <body>
+<jc-blueprint id="mine-fungiwood-forest" tags="card front mine">
+  <template>
     <ste-card title="Fungiwood Forest"
              card-number="14">
       <ste-explore wood-fungi mine threat="3"></ste-explore>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="mine-ruby" tags="card front mine">
+  <template>
     <ste-card title="Ruby"
              card-number="15">
       <ste-explore gem-ruby mine></ste-explore>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="mine-diamond" tags="card front mine">
+  <template>
     <ste-card title="Diamond"
              card-number="16">
       <ste-explore gem-diamond mine></ste-explore>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="mine-emerald" tags="card front mine">
+  <template>
     <ste-card title="Emerald"
              card-number="17">
       <ste-explore gem-emerald mine></ste-explore>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="mine-light-stone" tags="card front mine">
+  <template>
     <ste-card title="Rough Hewn Light Stone"
              card-number="18">
       <ste-explore stone-light mine></ste-explore>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="mine-dark-stone" tags="card front mine">
+  <template>
     <ste-card title="Rough Hewn Dark Stone"
              card-number="19">
       <ste-explore stone-dark mine threat="1">
@@ -56,27 +58,47 @@
         </div>
       </ste-explore>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="mine-copper" tags="card front mine">
+  <template>
     <ste-card title="Copper Mine"
              card-number="20">
       <ste-explore metal-copper mine></ste-explore>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="mine-silver1" tags="card front mine">
+  <template>
     <ste-card title="Silver Mine"
              card-number="21">
       <ste-explore metal-silver mine threat="1"></ste-explore>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="mine-silver2" tags="card front mine">
+  <template>
     <ste-card title="Silver Mine"
              card-number="26">
       <ste-explore metal-silver mine threat="2"></ste-explore>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="mine-gold" tags="card front mine">
+  <template>
     <ste-card title="Gold Mine"
              card-number="22">
       <ste-explore metal-gold mine></ste-explore>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="mine-red-mushroom" tags="card front mine">
+  <template>
     <ste-card title="Red Mushroom"
              card-number="24">
       <ste-explore mushroom-red mine>
@@ -85,7 +107,11 @@
         </div>
       </ste-explore>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="mine-blue-mushroom" tags="card front mine">
+  <template>
     <ste-card title="Blue Mushroom"
              card-number="25">
       <ste-explore mushroom-blue mine  threat="3">
@@ -94,5 +120,5 @@
         </div>
       </ste-explore>
     </ste-card>
-  </body>
-</html>
+  </template>
+</jc-blueprint>

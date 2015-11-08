@@ -6,7 +6,7 @@
     <link rel="import" href="../../jc-core/jc-pawn.html">
     <link rel="import" href="../ste-card.html">
     <link rel="import" href="../ste-dwarf.html">
-
+    <link rel="import" href="../blueprints/character-cards.html" class="blueprints">
 
     <style>
       body {
@@ -84,7 +84,13 @@
     <jc-pawn blueprint="card"></jc-pawn>
     <jc-pawn blueprint="card2"></jc-pawn>
     <jc-pawn blueprint="token" x="100" y="100"></jc-pawn>
-    <jc-pawn blueprint="token" x="120" y="75"></jc-pawn>
+    <jc-pawn blueprint="char-miner" x="120" y="75"></jc-pawn>
     <jc-pawn blueprint="token" x="135" y="124"></jc-pawn>
+
+    <script>
+    window.addEventListener("DOMContentLoaded", function(event) {
+      JC.Library.adoptAllBlueprints('link.blueprints');
+    });
+    </script>
   </body>
 </html>

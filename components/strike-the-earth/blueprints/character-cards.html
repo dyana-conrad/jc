@@ -1,27 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Character Cards</title>
-    <link rel="import" href="../ste-dwarf.html">
-    <link rel="import" href="../ste-card.html">
-    <style>
+<link rel="import" href="../../jc-core/jc-blueprint.html">
+<link rel="import" href="../ste-dwarf.html">
+<link rel="import" href="../ste-card.html">
 
-    @media print {
-      @page {
-        margin-top: 0.25in;
-        margin-bottom: 0in;
-        margin-left: 0.5in;
-        margin-right: 0.5in;
-      }
-      html,body {
-        width: 7.5in;
-        font-size: 0;
-        -webkit-print-color-adjust: exact;
-      }
-    }
-    </style>
-  </head>
-  <body>
+<jc-blueprint id="char-miner" tags="card front character">
+  <template>
     <ste-card title="Miner" card-number="1">
       <ste-dwarf mine="2"
                 attack="1"
@@ -29,7 +11,11 @@
         <span class="trait">Miner</span>
       </ste-dwarf>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="char-explorer" tags="card front character">
+  <template>
     <ste-card title="Explorer" card-number="2">
       <ste-dwarf explore="2"
                 attack="1"
@@ -37,7 +23,11 @@
         <span class="trait">Explorer</span>
       </ste-dwarf>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="char-crafter" tags="card front character">
+  <template>
     <ste-card title="Crafter" card-number="3">
       <ste-dwarf build="2"
                 genius="1"
@@ -45,7 +35,11 @@
         <span class="trait">Crafter</span>
       </ste-dwarf>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="char-merchant" tags="card front character">
+  <template>
     <ste-card title="Merchant" card-number="4">
       <ste-dwarf trade="2"
                 prestige="1"
@@ -53,7 +47,11 @@
         <span class="trait">Merchant</span>
       </ste-dwarf>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="char-hammerdwarf" tags="card front character">
+  <template>
     <ste-card title="Hammerdwarf" card-number="5">
       <ste-dwarf attack="2"
                 mine="1"
@@ -61,7 +59,11 @@
         <span class="trait">Soldier</span>
       </ste-dwarf>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="char-brewer" tags="card front character">
+  <template>
     <ste-card title="Brewer" card-number="6">
       <ste-dwarf explore="2"
                 build="1"
@@ -69,7 +71,11 @@
         <span class="trait">Crafter</span>
       </ste-dwarf>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="char-hunter" tags="card front character">
+  <template>
     <ste-card title="Hunter" card-number="7">
       <ste-dwarf attack="2"
                 explore="1"
@@ -77,7 +83,11 @@
         <span class="trait">Soldier</span>
       </ste-dwarf>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="char-manager" tags="card front character">
+  <template>
     <ste-card title="Manager" card-number="8">
       <ste-dwarf prestige="2"
                 prestige-requirement="1">
@@ -87,7 +97,11 @@
         </div>
       </ste-dwarf>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="char-geologist" tags="card front character">
+  <template>
     <ste-card title="Geologist" card-number="9">
       <ste-dwarf genius="2"
                 mine="1"
@@ -95,7 +109,11 @@
         <span class="trait">Thinker</span>
       </ste-dwarf>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="char-navigator" tags="card front character">
+  <template>
     <ste-card title="Navigator" card-number="10">
       <ste-dwarf explore="2"
                 trade="1"
@@ -103,7 +121,11 @@
         <span class="trait">Explorer</span>
       </ste-dwarf>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="char-engraver" tags="card front character">
+  <template>
     <ste-card title="Engraver" card-number="11">
       <ste-dwarf mine="2"
                 genius="1"
@@ -111,7 +133,11 @@
         <span class="trait">Miner</span>
       </ste-dwarf>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="char-carpenter" tags="card front character">
+  <template>
     <ste-card title="Carpenter" card-number="12">
       <ste-dwarf build="2"
                 explore="1"
@@ -119,7 +145,11 @@
         <span class="trait">Crafter</span>
       </ste-dwarf>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="char-mason" tags="card front character">
+  <template>
     <ste-card title="Mason" card-number="13">
       <ste-dwarf mine="2"
                 build="1"
@@ -127,7 +157,11 @@
         <span class="trait">Miner</span>
       </ste-dwarf>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="char-captain" tags="card front character">
+  <template>
     <ste-card title="Captain of the Guard" card-number="14">
       <ste-dwarf attack="2"
                 prestige="1"
@@ -135,7 +169,11 @@
         <span class="trait">Soldier</span>
       </ste-dwarf>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="char-artist" tags="card front character">
+  <template>
     <ste-card title="Artist" card-number="15">
       <ste-dwarf genius="2"
                 prestige="1"
@@ -143,7 +181,11 @@
         <span class="trait">Thinker</span>
       </ste-dwarf>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="char-pirate" tags="card front character">
+  <template>
     <ste-card title="Pirate" card-number="16">
       <ste-dwarf attack="2"
                 trade="1"
@@ -151,7 +193,11 @@
         <span class="trait">Soldier</span>
       </ste-dwarf>
     </ste-card>
+  </template>
+</jc-blueprint>
 
+<jc-blueprint id="char-banker" tags="card front character">
+  <template>
     <ste-card title="Banker" card-number="17">
       <ste-dwarf trade="2"
                 genius="1"
@@ -159,5 +205,5 @@
         <span class="trait">Merchant</span>
       </ste-dwarf>
     </ste-card>
-  </body>
-</html>
+  </template>
+</jc-blueprint>

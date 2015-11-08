@@ -11,6 +11,11 @@ var JC = (function (JC) {
     if (!blueprint.id) {
       throw new Error("Cannot register a blueprint without an id attribute.");
     }
+
+    if (blueprints[blueprint.id]) {
+      throw new Error("Trying to register a blueprint twice: " + blueprint.id);
+    }
+
     blueprints[blueprint.id] = blueprint;
   }
 
@@ -41,6 +46,22 @@ var JC = (function (JC) {
   Library.getBlueprintsByTag = function (tag) {
     var regex = new RegExp("\\b" + escapeForRegEx(tag) + "\\b", 'i');
     return Library.searchBlueprints(regex);
+  }
+
+  function adoptBlueprints(link) {
+    var nodeList = link.import.querySelectorAll('jc-blueprint');
+    for (var i = 0; i < nodeList.length; ++i) {
+      var node = document.adoptNode(nodeList[i]);
+      document.body.appendChild(node);
+    }
+  }
+
+  Library.adoptAllBlueprints = function (querySelector) {
+    var nodeList = document.querySelectorAll(querySelector);
+    for (var i = 0; i < nodeList.length; ++i) {
+      var link = nodeList[i];
+      adoptBlueprints(link);
+    }
   }
 
   return JC;

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ste-dwarf demo</title>
+    <link rel="import" href="../../jc-core/jc-polymer.html">
+    <link rel="import" href="../../jc-core/jc-pawn.html">
+    <link rel="import" href="../blueprints/caravan-cards.html" class="blueprints">
+    <link rel="import" href="../blueprints/character-cards.html" class="blueprints">
+    <link rel="import" href="../blueprints/explore-cards.html" class="blueprints">
+    <link rel="import" href="../blueprints/item-cards.html" class="blueprints">
+    <link rel="import" href="../blueprints/mine-cards.html" class="blueprints">
+    <link rel="import" href="../blueprints/threat-cards.html" class="blueprints">
+
+    <link rel="stylesheet" type="text/css" href="print.css">
+  </head>
+  <body>
+    <dom-module is="card-front-selector">
+      <template>
+        <input id="input" value="[[searchValue]]"></input>
+      </template>
+      <script>
+        Polymer({
+          is: 'card-front-selector',
+          properties: {
+            searchValue: {
+              type: String,
+              value: 'card',
+            },
+            results: {
+              type: Array,
+              notify: true,
+              computed: '_computeResults(searchValue, isReady)',
+            },
+            isReady: {
+              type: Boolean,
+              readOnly: true,
+            },
+          },
+          listeners: {
+            'input.input': 'handleInput',
+          },
+          attached: function () {
+            function getParameterByName(name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+            var initialSearch = getParameterByName('search');
+            if (initialSearch) {
+              this.searchValue = initialSearch;
+            }
+            this.async(function () {
+              this._setIsReady(true);
+            });
+          },
+          handleInput: function (event) {
+            this.searchValue =this.$.input.value;
+          },
+          _computeResults: function (searchValue) {
+            return JC.Library.getBlueprintsByTag(searchValue);
+          },
+        })
+      </script>
+    </dom-module>
+
+    <dom-module id="card-fronts">
+      <template>
+        <style>
+        @media print {
+          hr, card-front-selector {
+            display: none;
+          }
+        }
+        </style>
+        <card-front-selector results="{{blueprints}}"></card-front-selector>
+        <hr>
+        <div id="container">
+        </div>
+      </template>
+      <script>
+        Polymer({
+          is: 'card-fronts',
+          properties: {
+            blueprints: {
+              type: Array,
+              observer: 'blueprintsChanged',
+            },
+          },
+          blueprintsChanged: function (newValue, oldValue) {
+            var container = this.$.container;
+            while (container.firstChild) {
+              container.removeChild(container.firstChild);
+            }
+
+            for (var i = 0; i < newValue.length; i++) {
+              var element = newValue[i].createElement();
+              container.appendChild(element);
+            }
+          }
+        });
+      </script>
+    </dom-module>
+
+    <card-fronts></card-fronts>
+
+    <script>
+    window.addEventListener("DOMContentLoaded", function(event) {
+      JC.Library.adoptAllBlueprints('link.blueprints');
+    });
+    </script>
+  </body>
+</html>
