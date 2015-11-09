@@ -4,6 +4,7 @@
     <title>Strike the Earth</title>
     <link rel="import" href="../../jc-core/jc-blueprint.html">
     <link rel="import" href="../../jc-core/jc-pawn.html">
+    <link rel="import" href="../../jc-core/jc-supply.html">
     <link rel="import" href="../ste-card.html">
     <link rel="import" href="../ste-dwarf.html">
     <link rel="import" href="../blueprints/all.html">
@@ -33,6 +34,8 @@
     </style>
   </head>
   <body>
+    <jc-supply pawn-blueprint="token"></jc-supply>
+
     <jc-blueprint id="card2" tags="dwarf character aleea">
       <template>
         <ste-card title="Aleea the Dwarf">
@@ -83,9 +86,9 @@
 
     <jc-pawn blueprint="card" scale="0.75"></jc-pawn>
     <jc-pawn blueprint="card2" scale="0.75"></jc-pawn>
-    <jc-pawn blueprint="token" x="100" y="100" scale="0.75"></jc-pawn>
-    <jc-pawn blueprint="char-miner" x="120" y="75" scale="0.75"></jc-pawn>
-    <jc-pawn blueprint="item-crown-of-command" x="135" y="124" scale="0.75"></jc-pawn>
-    <jc-pawn blueprint="item-stone-pickaxe" x="135" y="124" scale="0.75"></jc-pawn>
+    <jc-pawn blueprint="token" x-offset="100" y-offset="100" scale="0.75"></jc-pawn>
+    <jc-pawn blueprint="char-miner" x-offset="120" y-offset="75" scale="0.75"></jc-pawn>
+    <jc-pawn blueprint="item-crown-of-command" x-offset="135" y-offset="124" scale="0.75"></jc-pawn>
+    <jc-pawn blueprint="item-stone-pickaxe" x-offset="135" y-offset="124" scale="0.75"></jc-pawn>
   </body>
 </html>

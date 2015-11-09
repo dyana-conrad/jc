@@ -1,6 +1,4 @@
 (function () {
-  var maxZ = 1;
-
   Polymer({
     is: 'jc-pawn',
     properties: {
@@ -48,6 +46,10 @@
 
           // call this function on every dragmove event
           onmove: function (event) {
+            // sanity check the input
+            if (isNaN(event.dx) || isNaN(event.dy)) {
+              return;
+            }
             var target = event.target;
             target.x += event.dx;
             target.y += event.dy;
@@ -61,7 +63,9 @@
           },
           onstart: function (event) {
             event.target.classList.add('moving');
-            event.target.style.zIndex = maxZ++;
+            var oldParent = event.target.parentNode;
+            oldParent.removeChild(event.target);
+            oldParent.appendChild(event.target);
           }
         });
     },
