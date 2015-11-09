@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Machi Koro</title>
+  </head>
+  <body>
+    <style>
+      .card {
+        position: relative;
+        display: inline-block;
+        width: 56mm;
+        height: 86mm;
+        background: linear-gradient(to bottom, #506696 0%,#248fd6 11%,#9ec2d6 19%,#adc2d3 65%,#2989d8 75%,#506696 100%);
+        border-radius: 2mm;
+      }
+      .cost {
+        position: absolute;
+        bottom: 3mm;
+        left: 3mm;
+        width: 7mm;
+        height: 7mm;
+        background-color: rgb(235, 216, 53);
+        border-width: 1.5mm;
+        border-style: solid;
+        border-color: rgb(224, 175, 27);
+        font-size: 6mm;
+        border-radius: 50%;
+        text-align: center;
+        font-weight: bold;
+      }
+      .title {
+        position: absolute;
+        top: 15mm;
+        text-align: center;
+        font-size: 5mm;
+        color: rgb(80, 102, 150);
+        font-weight: bold;
+        font-variant: small-caps;
+        width: 100%;
+      }
+      .dieRoll {
+        position: absolute;
+        width: 100%;
+        top: 3mm;
+        text-align: center;
+        font-size: 6mm;
+        color: white;
+        font-weight: bold;
+      }
+      .description {
+        position: absolute;
+        bottom: 7mm;
+        color: white;
+        font-size: 4mm;
+        font-variant: small-caps;
+        text-align: center;
+        width: 100%;
+      }
+      .wheat {
+        display: inline-block;
+        width: 6mm;
+        height: 6mm;
+        border-radius: 50%;
+        background-color: rgb(80, 102, 150);
+        -webkit-mask: url(wheatIcon.svg) no-repeat 50% 50%;
+        -webkit-mask-size: 100% 100%;
+      }
+      .green .title {
+        color: rgb(65, 93, 13);
+      }
+      .card.green {
+        background: linear-gradient(to bottom, #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%);
+      }
+    </style>
+    <div class="card blue">
+      <div class="cost">1</div>
+      <div class="title">
+        <div class="wheat"></div>
+        Wheat Field</div>
+      <div class="dieRoll">1</div>
+      <div class="description">Get 1 coin from<br>the bank, on<br>anyone's turn.</div>
+    </div>
+  </body>
+</html>
