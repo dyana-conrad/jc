@@ -1,0 +1,81 @@
+<link rel="import" href="jc-polymer.html">
+<link rel="import" href="jc-interact.html">
+<link rel="import" href="jc-pawn.html">
+
+<dom-module id="jc-supply">
+  <template>
+    <style>
+      div {
+        position: absolute;
+        background-color: rgb(217, 0, 104);
+        border-radius: 50%;
+        border-style: solid;
+        border-width: 2px;
+        width: 0.5in;
+        height: 0.5in;
+      }
+    </style>
+    <div id="base">
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'jc-supply',
+      properties: {
+        pawnBlueprint: {
+          type: String,
+        },
+      },
+      observers: [
+        '_updateOffset(xOffset, yOffset)',
+      ],
+      attached: function () {
+        interact(this.$.base)
+          .draggable({
+            // enable inertial throwing
+            inertia: false,
+            // keep the element within the area of it's parent
+            restrict: {
+              restriction: this.parentNode,
+              endOnly: true,
+              elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+            },
+            // enable autoScroll
+            autoScroll: false,
+
+            // call this function on every dragmove event
+            onmove: function (event) {
+              this.pawn.x += event.dx;
+              this.pawn.y += event.dy;
+            }.bind(this),
+            // call this function on every dragend event
+            onend: function (event) {
+              this.pawn.classList.remove('moving');
+              delete this.pawn;
+            }.bind(this),
+            oncancel: function (event) {
+              this.pawn.classList.remove('moving');
+              delete this.pawn;
+            }.bind(this),
+            onstart: function (event) {
+
+              var bounds = event.target.getBoundingClientRect();
+              this.createPawn(bounds.left, bounds.top);
+              this.pawn.classList.add('moving');
+            }.bind(this),
+          });
+      },
+      _updateOffset: function (xOffset, yOffset) {
+        this.$.draggable.style.transform = 'translate(' + xOffset + 'px, ' + yOffset +'px)';
+      },
+      createPawn: function (x, y) {
+        var pawn = document.createElement('jc-pawn');
+        pawn.blueprint = this.pawnBlueprint;
+        pawn.x = x;
+        pawn.y = y;
+        this.parentNode.appendChild(pawn);
+        this.pawn = pawn;
+      },
+    });
+  </script>
+</dom-module>
