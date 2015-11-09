@@ -5,6 +5,7 @@
     <link rel="import" href="../../jc-core/jc-blueprint.html">
     <link rel="import" href="../../jc-core/jc-pawn.html">
     <link rel="import" href="../../jc-core/jc-supply.html">
+    <link rel="import" href="../../jc-core/jc-discard.html">
     <link rel="import" href="../ste-card.html">
     <link rel="import" href="../ste-dwarf.html">
     <link rel="import" href="../blueprints/all.html">
@@ -31,10 +32,18 @@
         transform: scale(2);
         opacity: 0.5;
       }
+
+      #discard {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
     </style>
   </head>
   <body>
     <jc-supply pawn-blueprint="token"></jc-supply>
+
+    <jc-discard id="discard"></jc-discard>
 
     <jc-blueprint id="card2" tags="dwarf character aleea">
       <template>

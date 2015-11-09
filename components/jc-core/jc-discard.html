@@ -1,0 +1,62 @@
+<link rel="import" href="jc-polymer.html">
+<link rel="import" href="jc-interact.html">
+
+<dom-module id="jc-discard">
+  <template>
+    <style>
+      #dropzone {
+        display: block;
+        width: 150px;
+        height: 210px;
+        background-color: red;
+        border-radius: 15px;
+      }
+      #dropzone.drop-active {
+        background-color: green;
+      }
+      #dropzone.drop-target {
+        background-color: blue;
+      }
+    </style>
+    <div id="dropzone">
+      <content></content>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'jc-discard',
+      attached: function () {
+        interact(this.$.dropzone).dropzone({
+          accept: 'jc-pawn',
+          overlap: 0.25,
+          // listen for drop related events:
+          ondropactivate: function (event) {
+            // add active dropzone feedback
+            event.target.classList.add('drop-active');
+          },
+          ondragenter: function (event) {
+            var draggableElement = event.relatedTarget,
+                dropzoneElement = event.target;
+
+            // feedback the possibility of a drop
+            dropzoneElement.classList.add('drop-target');
+            draggableElement.classList.add('can-drop');
+          },
+          ondragleave: function (event) {
+            // remove the drop feedback style
+            event.target.classList.remove('drop-target');
+            event.relatedTarget.classList.remove('can-drop');
+          },
+          ondrop: function (event) {
+            event.relatedTarget.parentNode.removeChild(event.relatedTarget);
+          },
+          ondropdeactivate: function (event) {
+            // remove active dropzone feedback
+            event.target.classList.remove('drop-active');
+            event.target.classList.remove('drop-target');
+          }
+        });
+      },
+    });
+  </script>
+</dom-module>
