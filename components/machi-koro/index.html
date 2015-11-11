@@ -2,168 +2,114 @@
 <html>
   <head>
     <title>Machi Koro</title>
+    <link rel="import" href="mk-card.html">
   </head>
   <body>
-    <style>
-      .card {
-        position: relative;
-        display: inline-block;
-        width: 56mm;
-        height: 86mm;
-        background: linear-gradient(to bottom, rgba(80,102,150,1) 15%,
-                    rgba(125,185,232,1) 16%,rgba(175,214,255,1) 36%,rgba(175,214,255,1) 58%,rgba(125,185,232,1) 73%,
-                    rgba(80,102,150,1) 74%);
-        --background: linear-gradient(to bottom, #506696 0%,#248fd6 11%,#9ec2d6 19%,#adc2d3 65%,#2989d8 75%,#506696 100%);
-        border-radius: 2mm;
-      }
-      .cost {
-        position: absolute;
-        bottom: 3mm;
-        left: 3mm;
-        width: 7mm;
-        height: 7mm;
-        background-color: rgb(235, 216, 53);
-        border-width: 1.5mm;
-        border-style: solid;
-        border-color: rgb(224, 175, 27);
-        font-size: 6mm;
-        border-radius: 50%;
-        text-align: center;
-        font-weight: bold;
-      }
-      .title {
-        position: absolute;
-        top: 15mm;
-        text-align: center;
-        font-size: 5mm;
-        color: rgb(80, 102, 150);
-        font-weight: bold;
-        font-variant: small-caps;
-        width: 100%;
-      }
-      .dieRoll {
-        position: absolute;
-        width: 100%;
-        top: 3mm;
-        text-align: center;
-        font-size: 6mm;
-        color: white;
-        font-weight: bold;
-      }
-      .description {
-        position: absolute;
-        bottom: 7mm;
-        color: white;
-        font-size: 4mm;
-        font-variant: small-caps;
-        text-align: center;
-        width: 100%;
-      }
-      .cow,.gear,.store,.fruit,.factory,.coffee,.tower,
-      .wheat {
-        display: inline-block;
-        width: 6mm;
-        height: 6mm;
-        border-radius: 50%;
-        background-color: rgb(80, 102, 150);
-        -webkit-mask: url(wheat.svg) no-repeat 50% 50%;
-        -webkit-mask-size: 100% 100%;
-      }
-      .cow {
-        -webkit-mask: url(cow.svg) no-repeat 50% 50%;
-        -webkit-mask-size: 80% 80%;
-        background-color: rgb(80, 102, 150);
-      }
-      .gear {
-        -webkit-mask: url(gear.svg) no-repeat 50% 50%;
-        -webkit-mask-size: 80% 80%;
-        background-color: rgb(80, 102, 150);
-      }
-      .store {
-        -webkit-mask: url(store.svg) no-repeat 50% 50%;
-        -webkit-mask-size: 80% 80%;
-        background-color: rgb(72, 127, 0);
-      }
-      .fruit {
-        -webkit-mask: url(fruit.svg) no-repeat 50% 50%;
-        -webkit-mask-size: 80% 80%;
-        background-color: rgb(72, 127, 0);
-      }
-      .factory {
-        -webkit-mask: url(factory.svg) no-repeat 50% 50%;
-        -webkit-mask-size: 80% 80%;
-        background-color: rgb(72, 127, 0);
-      }
-      .coffee {
-        -webkit-mask: url(coffee.svg) no-repeat 50% 50%;
-        -webkit-mask-size: 80% 80%;
-        background-color: rgb(191, 0, 0);
-      }
-      .tower {
-        -webkit-mask: url(tower.svg) no-repeat 50% 50%;
-        -webkit-mask-size: 100% 100%;
-        background-color: #A80077;
-      }
-      .card.red {
-        background: linear-gradient(to bottom, #bf0000 15%,
-                    rgba(125,185,232,1) 16%,rgba(175,214,255,1) 36%,rgba(175,214,255,1) 58%,rgba(125,185,232,1) 73%,
-                    #bf0000 74%);
-      }
-      .red .title {
-        color: rgb(191, 0, 0);
-      }
-      .card.purple{
-        background: linear-gradient(to bottom, #a80077 15%,
-                    rgba(125,185,232,1) 16%,rgba(175,214,255,1) 36%,rgba(175,214,255,1) 58%,rgba(125,185,232,1) 73%,
-                    #a80077 74%);
-      }
-      .purple .title {
-        color: #A80077;
-      }
-      .card.green {
-        background: linear-gradient(to bottom, #487f00 15%,
-                    rgba(125,185,232,1) 16%,rgba(175,214,255,1) 36%,rgba(175,214,255,1) 58%,rgba(125,185,232,1) 73%,
-                    #487f00 74%);
-      }
-      .green .title {
-        color: rgb(72, 127, 0);
-      }
-    </style>
-    <div class="card blue">
-      <div class="title">
-        <div class="wheat"></div>
-          Wheat Field
-      </div>
-      <div class="dieRoll">1</div>
-      <div class="description">Get 1 coin from<br>the bank, on<br>anyone's turn.</div>
-      <div class="cost">1</div>
-    </div>
-    <div class="card green">
-      <div class="title">
-        <div class="store"></div>
-        Bakery
-      </div>
-      <div class="dieRoll">2 ~ 3</div>
-      <div class="description">Get 1 coin from<br>the bank, on<br>your turn only.</div>
-      <div class="cost">1</div>
-    </div>
-    <div class="card red">
-      <div class="title">
-        <div class="coffee"></div>
-        Cafe
-      </div>
-      <div class="dieRoll">3</div>
-      <div class="description">Get 1 coin from<br>the player who<br>rolled the dice.</div>
-      <div class="cost">2</div>
-    </div>
-    <div class="card purple">
-      <div class="title">
-        <div class="tower"></div>
-        TV Station
-      </div>
-      <div class="dieRoll">6</div>
-      <div class="description">Take 5 coins from any<br>one player, on<br>your turn only.</div>
-      <div class="cost">7</div>
-    </div>
+    <mk-card title="Wheat Field"
+              die-roll="1"
+              cost="1"
+              color="blue"
+              icon="wheat">
+          <div>Get 1 coin from<br>the bank, on<br>anyone's turn.</div>
+    </mk-card>
+      <mk-card title="Ranch"
+                die-roll="2"
+                cost="1"
+                color="blue"
+                icon="cow">
+            <div>Get 1 coin from<br>the bank, on<br>anyone's turn.</div>
+      </mk-card>
+        <mk-card title="Bakery"
+                  die-roll="2 ~ 3"
+                  cost="1"
+                  color="green"
+                  icon="store">
+              <div>Get 1 coin from<br>the bank, on<br>your turn only.</div>
+        </mk-card>
+          <mk-card title="cafe"
+                    die-roll="3"
+                    cost="2"
+                    color="red"
+                    icon="coffee">
+                <div>Get 1 coin from<br>the player who<br>rolled the dice.</div>
+          </mk-card>
+            <mk-card title="Convenience Store"
+                      die-roll="4"
+                      cost="2"
+                      color="green"
+                      icon="store"
+                  <div>Get 3 coins from<br>the bank, on<br>your turn only.</div>
+            </mk-card>
+            <mk-card title="Forest"
+                      die-roll="5"
+                      cost="3"
+                      color="blue"
+                      icon="gear"
+                  <div>Get 1 coin from<br>the bank, on<br>anyone's turn.</div>
+            </mk-card>
+              <mk-card title="Business Center"
+                        die-roll="6"
+                        cost="8"
+                        color="purple"
+                        icon="tower"
+                    <div>Trade one non tower<br>establishment with<br>another player, on<br>your turn only.</div>
+              </mk-card>
+            <mk-card title="Stadium"
+                      die-roll="6"
+                      cost="6"
+                      color="purple"
+                      icon="tower"
+                  <div>Get 2 coins from<br>all players, on<br>on your turn only.</div>
+            </mk-card>
+            <mk-card title="TV Station"
+                      die-roll="6"
+                      cost="7"
+                      color="purple"
+                      icon="tower"
+                  <div>Take 5 coins from any<br>one player, on<br>your turn only.</div>
+            </mk-card>
+            <mk-card title="Cheese Factory"
+                      die-roll="7"
+                      cost="5"
+                      color="green"
+                      icon="factory"
+                  <div>Get 3 coins from the bank<br>for each cow establishment<br>that you own, on<br>your turn only.</div>
+            </mk-card>
+            <mk-card title="Furniture Factory"
+                      die-roll="8"
+                      cost="3"
+                      color="green"
+                      icon="factory"
+                  <div>Get 3 coins from the bank<br>for each gear establishment<br>that you own, on<br>your turn only.</div>
+            </mk-card>
+            <mk-card title="Mine"
+                      die-roll="9"
+                      cost="6"
+                      color="blue"
+                      icon="gear"
+                  <div>Get 5 coins from<br>the bank, on<br>anyone's turn.</div>
+            </mk-card>
+            <mk-card title="Family Restaurant"
+                      die-roll="9 ~ 10"
+                      cost="3"
+                      color="red"
+                      icon="coffee"
+                  <div>Get 2 coins from<br>the player<br>who rolled the dice.</div>
+            </mk-card>
+            <mk-card title="Apple Orchard"
+                      die-roll="10"
+                      cost="3"
+                      color="blue"
+                      icon="wheat"
+                  <div>Get 3 coins from<br>the bank, on<br>anyone's turn.</div>
+            </mk-card>
+            <mk-card title="Fruit and Vegetable Market"
+                      die-roll="11 ~ 12"
+                      cost="2"
+                      color="green"
+                      icon="fruit"
+                  <div>Get 2 coins from the bank<br>for each wheat extablishment<br>that you own on<br>your turn only.</div>
+            </mk-card>
+
   </body>
 </html>

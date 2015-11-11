@@ -1,0 +1,179 @@
+<link rel="import" href="../jc-core/jc-polymer.html">
+
+<dom-module id="mk-card">
+  <template>
+  <style>
+    :host {
+      position: relative;
+      display: inline-block;
+      width: 56mm;
+      height: 86mm;
+      background: linear-gradient(to bottom, rgba(80,102,150,1) 15%,
+                  rgba(125,185,232,1) 16%,rgba(175,214,255,1) 36%,rgba(175,214,255,1) 58%,rgba(125,185,232,1) 73%,
+                  rgba(80,102,150,1) 75%);
+      --background: linear-gradient(to bottom, #506696 0%,#248fd6 11%,#9ec2d6 19%,#adc2d3 65%,#2989d8 75%,#506696 100%);
+      border-radius: 2mm;
+    }
+    .cost {
+      position: absolute;
+      bottom: 3mm;
+      left: 3mm;
+      width: 7mm;
+      height: 7mm;
+      background-color: rgb(235, 216, 53);
+      border-width: 1.5mm;
+      border-style: solid;
+      border-color: rgb(224, 175, 27);
+      font-size: 6mm;
+      border-radius: 50%;
+      text-align: center;
+      font-weight: bold;
+    }
+    .title {
+      position: absolute;
+      top: 15mm;
+      text-align: center;
+      font-size: 5mm;
+      color: rgb(80, 102, 150);
+      font-weight: bold;
+      font-variant: small-caps;
+      width: 100%;
+    }
+    .dieRoll {
+      position: absolute;
+      width: 100%;
+      top: 3mm;
+      text-align: center;
+      font-size: 6mm;
+      color: white;
+      font-weight: bold;
+    }
+    .description {
+      position: absolute;
+      bottom: 6mm;
+      color: white;
+      font-size: 4mm;
+      font-variant: small-caps;
+      text-align: center;
+      width: 100%;
+    }
+    :host([icon]) .icon {
+      width: 100%;
+      height: 100%;
+      background-color: white;
+    }
+    :host([icon]) .iconbg {
+      display: inline-block;
+      width: 6mm;
+      height: 6mm;
+      border-radius: 50%;
+      background-color: black;
+    }
+    :host([icon="wheat"]) .iconbg,
+    :host([icon="cow"]) .iconbg,
+    :host([icon="gear"]) .iconbg {
+      background-color: rgb(80, 102, 150);
+    }
+    :host([icon="wheat"]) .icon {
+      -webkit-mask: url(wheat.svg) no-repeat 50% 50%;
+      -webkit-mask-size: 72% 72%;
+    }
+    :host([icon="cow"]) .icon {
+      -webkit-mask: url(cow.svg) no-repeat 50% 50%;
+      -webkit-mask-size: 80% 80%;
+    }
+    :host([icon="gear"]) .icon {
+      -webkit-mask: url(gear.svg) no-repeat 50% 50%;
+      -webkit-mask-size: 80% 80%;
+    }
+
+    :host([icon="store"]) .iconbg,
+    :host([icon="fruit"]) .iconbg,
+    :host([icon="factory"]) .iconbg {
+       background-color: rgb(72, 127, 0);
+    }
+    :host([icon="store"]) .icon {
+      -webkit-mask: url(store.svg) no-repeat 50% 50%;
+      -webkit-mask-size: 80% 80%;
+    }
+    :host([icon="fruit"]) .icon {
+      -webkit-mask: url(fruit.svg) no-repeat 50% 50%;
+      -webkit-mask-size: 80% 80%;
+    }
+    :host([icon="factory"]) .icon {
+      -webkit-mask: url(factory.svg) no-repeat 50% 50%;
+      -webkit-mask-size: 80% 80%;
+    }
+    :host([icon="coffee"]) .iconbg {
+      background-color: rgb(191, 0, 0);
+    }
+    :host([icon="coffee"]) .icon {
+      -webkit-mask: url(coffee.svg) no-repeat 50% 50%;
+      -webkit-mask-size: 80% 80%;
+    }
+    :host([icon="tower"]) .iconbg {
+      background-color: #A80077;
+    }
+    :host([icon="tower"]) .icon {
+      -webkit-mask: url(tower.svg) no-repeat 50% 50%;
+      -webkit-mask-size: 100% 100%;
+    }
+    :host([color="red"]) {
+      background: linear-gradient(to bottom, #bf0000 15%,
+                  rgba(125,185,232,1) 16%,rgba(175,214,255,1) 36%,rgba(175,214,255,1) 58%,rgba(125,185,232,1) 73%,
+                  #bf0000 74%);
+    }
+    :host([color="red"]) .title {
+      color: rgb(191, 0, 0);
+    }
+    :host([color="purple"]){
+      background: linear-gradient(to bottom, #a80077 15%,
+                  rgba(125,185,232,1) 16%,rgba(175,214,255,1) 36%,rgba(175,214,255,1) 58%,rgba(125,185,232,1) 73%,
+                  #a80077 75%);
+    }
+    :host([color="purple"]) .title {
+      color: #A80077;
+    }
+    :host([color="green"]) {
+      background: linear-gradient(to bottom, #487f00 15%,
+                  rgba(125,185,232,1) 16%,rgba(175,214,255,1) 36%,rgba(175,214,255,1) 58%,rgba(125,185,232,1) 73%,
+                  #487f00 74%);
+    }
+    :host([color="green"]) .title {
+      color: rgb(72, 127, 0);
+    }
+  </style>
+
+    <div class="title"><div class="iconbg"><div class="icon"></div></div>[[title]]</div>
+    <div class="dieRoll">[[dieRoll]]</div>
+    <div class="description"><content></content></div>
+    <div class="cost">[[cost]]</div>
+  </template>
+  <script>
+    Polymer({
+      is: 'mk-card',
+      properties: {
+        title: {
+          type: String,
+        },
+        dieRoll: {
+          type: String,
+        },
+        cost: {
+          type: String,
+          value: '0',
+        },
+        color: {
+          type: String,
+          value: 'blue',
+          reflectToAttribute: true,
+        },
+        icon: {
+          type: String,
+          reflectToAttribute: true,
+        },
+      },
+    });
+  </script>
+
+</dom-module>
