@@ -17,20 +17,11 @@
         type: Number,
         value: 1,
       },
-      isReady: {
-        type: Boolean,
-        readOnly: true,
-      },
     },
     observers: [
-      '_restampBlueprint(blueprint, isReady)',
       '_observeTransform(x, y, scale)',
     ],
     attached: function () {
-      this.async(function () {
-        this._setIsReady(true);
-      });
-
       interact(this)
         .draggable({
           // enable inertial throwing
@@ -72,24 +63,6 @@
     _observeTransform: function (x, y, scale) {
       this.style.transform =
         'translate(' + x + 'px, ' + y + 'px) scale(' + scale + ')';
-    },
-    _restampBlueprint: function (blueprintId, isReady) {
-      if (!isReady) {
-        return;
-      }
-
-      if (this.blueprintElement) {
-        this.$.container.removeChild(this.blueprintElement);
-        delete this.blueprintElement;
-      }
-
-      var blueprint = JC.Library.getBlueprintById(blueprintId);
-
-      if (blueprint) {
-        var blueprintElement = blueprint.createElement();
-        this.$.container.appendChild(blueprintElement);
-        this.blueprintElement = blueprintElement;
-      }
     },
   });
 })();

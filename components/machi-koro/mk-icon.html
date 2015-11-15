@@ -1,0 +1,79 @@
+<link rel="import" href="../jc-core/jc-polymer.html">
+
+<dom-module id="mk-icon">
+  <template>
+    <style>
+      :host {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        background-color: black;
+      }
+      :host([wheat]),
+      :host([cow]),
+      :host([gear]) {
+        background-color: rgb(80, 102, 150);
+      }
+      :host([store]),
+      :host([fruit]),
+      :host([factory]) {
+         background-color: rgb(72, 127, 0);
+      }
+      :host([coffee]) {
+        background-color: rgb(191, 0, 0);
+      }
+      :host([tower]) {
+        background-color: #A80077;
+      }
+
+      #icon {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+      }
+
+      :host([wheat]) #icon {
+        -webkit-mask: url(images/wheat.svg) no-repeat 50% 50%;
+        -webkit-mask-size: 72% 72%;
+      }
+      :host([cow]) #icon {
+        -webkit-mask: url(images/cow.svg) no-repeat 50% 50%;
+        -webkit-mask-size: 80% 80%;
+      }
+      :host([gear]) #icon {
+        -webkit-mask: url(images/gear.svg) no-repeat 50% 50%;
+        -webkit-mask-size: 80% 80%;
+      }
+
+      :host([store]) #icon {
+        -webkit-mask: url(images/store.svg) no-repeat 50% 50%;
+        -webkit-mask-size: 80% 80%;
+      }
+      :host([fruit]) #icon {
+        -webkit-mask: url(images/fruit.svg) no-repeat 50% 50%;
+        -webkit-mask-size: 80% 80%;
+      }
+      :host([factory]) #icon {
+        -webkit-mask: url(images/factory.svg) no-repeat 50% 50%;
+        -webkit-mask-size: 80% 80%;
+      }
+
+      :host([coffee]) #icon {
+        -webkit-mask: url(images/coffee.svg) no-repeat 50% 50%;
+        -webkit-mask-size: 80% 80%;
+      }
+
+      :host([tower]) #icon {
+        -webkit-mask: url(images/tower.svg) no-repeat 50% 50%;
+        -webkit-mask-size: 100% 100%;
+      }
+    </style>
+    <div id="icon"></div>
+  </template>
+  <script>
+    Polymer({
+      is: 'mk-icon',
+    });
+  </script>
+</dom-module>

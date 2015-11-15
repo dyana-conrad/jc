@@ -2,114 +2,41 @@
 <html>
   <head>
     <title>Machi Koro</title>
-    <link rel="import" href="mk-card.html">
+    <link rel="import" href="../jc-core/jc-pawn.html">
+    <link rel="import" href="../jc-core/jc-supply.html">
+    <link rel="import" href="blueprints/cards.html">
+    <link rel="import" href="mk-icon.html">
+    <link rel="import" href="../jc-core/jc-stamp.html">
+
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #45484d 0%, #000000 100%);
+      }
+
+      jc-pawn {
+        position: absolute;
+        opacity: 1.0;
+        transition: opacity 0.3s;
+      }
+
+      .moving {
+        opacity: 0.5;
+      }
+    </style>
   </head>
   <body>
-    <mk-card title="Wheat Field"
-              die-roll="1"
-              cost="1"
-              color="blue"
-              icon="wheat">
-          <div>Get 1 coin from<br>the bank, on<br>anyone's turn.</div>
-    </mk-card>
-      <mk-card title="Ranch"
-                die-roll="2"
-                cost="1"
-                color="blue"
-                icon="cow">
-            <div>Get 1 coin from<br>the bank, on<br>anyone's turn.</div>
-      </mk-card>
-        <mk-card title="Bakery"
-                  die-roll="2 ~ 3"
-                  cost="1"
-                  color="green"
-                  icon="store">
-              <div>Get 1 coin from<br>the bank, on<br>your turn only.</div>
-        </mk-card>
-          <mk-card title="cafe"
-                    die-roll="3"
-                    cost="2"
-                    color="red"
-                    icon="coffee">
-                <div>Get 1 coin from<br>the player who<br>rolled the dice.</div>
-          </mk-card>
-            <mk-card title="Convenience Store"
-                      die-roll="4"
-                      cost="2"
-                      color="green"
-                      icon="store"
-                  <div>Get 3 coins from<br>the bank, on<br>your turn only.</div>
-            </mk-card>
-            <mk-card title="Forest"
-                      die-roll="5"
-                      cost="3"
-                      color="blue"
-                      icon="gear"
-                  <div>Get 1 coin from<br>the bank, on<br>anyone's turn.</div>
-            </mk-card>
-              <mk-card title="Business Center"
-                        die-roll="6"
-                        cost="8"
-                        color="purple"
-                        icon="tower"
-                    <div>Trade one non tower<br>establishment with<br>another player, on<br>your turn only.</div>
-              </mk-card>
-            <mk-card title="Stadium"
-                      die-roll="6"
-                      cost="6"
-                      color="purple"
-                      icon="tower"
-                  <div>Get 2 coins from<br>all players, on<br>on your turn only.</div>
-            </mk-card>
-            <mk-card title="TV Station"
-                      die-roll="6"
-                      cost="7"
-                      color="purple"
-                      icon="tower"
-                  <div>Take 5 coins from any<br>one player, on<br>your turn only.</div>
-            </mk-card>
-            <mk-card title="Cheese Factory"
-                      die-roll="7"
-                      cost="5"
-                      color="green"
-                      icon="factory"
-                  <div>Get 3 coins from the bank<br>for each cow establishment<br>that you own, on<br>your turn only.</div>
-            </mk-card>
-            <mk-card title="Furniture Factory"
-                      die-roll="8"
-                      cost="3"
-                      color="green"
-                      icon="factory"
-                  <div>Get 3 coins from the bank<br>for each gear establishment<br>that you own, on<br>your turn only.</div>
-            </mk-card>
-            <mk-card title="Mine"
-                      die-roll="9"
-                      cost="6"
-                      color="blue"
-                      icon="gear"
-                  <div>Get 5 coins from<br>the bank, on<br>anyone's turn.</div>
-            </mk-card>
-            <mk-card title="Family Restaurant"
-                      die-roll="9 ~ 10"
-                      cost="3"
-                      color="red"
-                      icon="coffee"
-                  <div>Get 2 coins from<br>the player<br>who rolled the dice.</div>
-            </mk-card>
-            <mk-card title="Apple Orchard"
-                      die-roll="10"
-                      cost="3"
-                      color="blue"
-                      icon="wheat"
-                  <div>Get 3 coins from<br>the bank, on<br>anyone's turn.</div>
-            </mk-card>
-            <mk-card title="Fruit and Vegetable Market"
-                      die-roll="11 ~ 12"
-                      cost="2"
-                      color="green"
-                      icon="fruit"
-                  <div>Get 2 coins from the bank<br>for each wheat extablishment<br>that you own on<br>your turn only.</div>
-            </mk-card>
-
+    <mk-icon wheat></mk-icon>
+    <jc-supply pawn-blueprint="mk-card-wheat-field">
+      <jc-stamp blueprint="mk-card-wheat-field"></jc-stamp>
+    </jc-supply>
+    <jc-supply pawn-blueprint="mk-card-ranch">
+      <jc-stamp blueprint="mk-card-ranch"></jc-stamp>
+    </jc-supply>
+    <jc-pawn blueprint="mk-card-bakery"></jc-pawn>
   </body>
 </html>

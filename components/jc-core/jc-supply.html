@@ -6,16 +6,12 @@
   <template>
     <style>
       div {
-        position: absolute;
-        background-color: rgb(217, 0, 104);
-        border-radius: 50%;
-        border-style: solid;
-        border-width: 2px;
-        width: 0.5in;
-        height: 0.5in;
+        display: inline-block;
+        position: relative;
       }
     </style>
     <div id="base">
+      <content></content>
     </div>
   </template>
   <script>
@@ -71,6 +67,8 @@
       createPawn: function (x, y) {
         var pawn = document.createElement('jc-pawn');
         pawn.blueprint = this.pawnBlueprint;
+        pawn.style.top = "0";
+        pawn.style.left = "0";
         pawn.x = x;
         pawn.y = y;
         this.parentNode.appendChild(pawn);

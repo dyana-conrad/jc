@@ -1,6 +1,6 @@
 <link rel="import" href="jc-polymer.html">
-<link rel="import" href="jc-library.html">
 <link rel="import" href="jc-interact.html">
+<link rel="import" href="jc-stamp.html">
 
 <dom-module id="jc-pawn">
   <template>
@@ -9,8 +9,8 @@
         position: absolute;
       }
     </style>
-    <div id="container">
-    </div>
+    <content></content>
+    <jc-stamp blueprint="[[blueprint]]"></jc-stamp>
   </template>
   <script src="jc-pawn.js"></script>
 </dom-module>
