@@ -1,0 +1,141 @@
+<link rel="import" href="jc-polymer.html">
+
+<dom-module id="jc-die">
+  <template>
+    <style>
+      :host {
+        display: inline-block;
+        position: relative;
+        width: 15mm;
+        height: 15mm;
+        background-color: #ffffff;
+        color: #000;
+        border-radius: 3mm;
+        border: 1px black solid;
+      }
+      :host(.rolling) {
+        background-color: lightgray;
+      }
+      .face {
+        display: none;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      .pip {
+        display: block;
+        position: absolute;
+        width: 3mm;
+        height: 3mm;
+        transform: translate(-50%, -50%);
+        border-width: 0;
+        background-color: black;
+        border-radius: 100%;
+      }
+      .pip.center {
+        top: 50%;
+        left: 50%;
+      }
+      .pip.top {
+        top: 20%;
+      }
+      .pip.bottom {
+        top: 80%;
+      }
+      .pip.left {
+        left: 20%;
+      }
+      .pip.right {
+        left: 80%;
+      }
+      :host([face="1"]) .face.one {
+        display: block;
+      }
+      :host([face="2"]) .face.two {
+        display: block;
+      }
+      :host([face="3"]) .face.three {
+        display: block;
+      }
+      :host([face="4"]) .face.four {
+        display: block;
+      }
+      :host([face="5"]) .face.five {
+        display: block;
+      }
+      :host([face="6"]) .face.six {
+        display: block;
+      }
+    </style>
+    <div class="face one">
+      <div class="pip center"></div>
+    </div>
+    <div class="face two">
+      <div class="pip left top"></div>
+      <div class="pip right bottom"></div>
+    </div>
+    <div class="face three">
+      <div class="pip center"></div>
+      <div class="pip left top"></div>
+      <div class="pip bottom right"></div>
+    </div>
+    <div class="face four">
+      <div class="pip left bottom"></div>
+      <div class="pip left top"></div>
+      <div class="pip right top"></div>
+      <div class="pip right bottom"></div>
+    </div>
+    <div class="face five">
+      <div class="pip center"></div>
+      <div class="pip left top"></div>
+      <div class="pip left bottom"></div>
+      <div class="pip right top"></div>
+      <div class="pip right bottom"></div>
+    </div>
+    <div class="face six">
+      <div class="pip left center"></div>
+      <div class="pip left top"></div>
+      <div class="pip left bottom"></div>
+      <div class="pip right top"></div>
+      <div class="pip right center"></div>
+      <div class="pip right bottom"></div>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'jc-die',
+      properties: {
+        face: {
+          type: Number,
+          value: 1,
+          reflectToAttribute: true,
+        },
+      },
+      listeners: {
+        'tap': 'rollDie',
+      },
+      rollDie: function () {
+        var numRolls = 10;
+        var rollFunction = function () {
+          numRolls--;
+          if (numRolls > 0) {
+            this.pickRandomFace();
+            setTimeout(rollFunction, 100);
+          } else {
+            this.stopRoll();
+          }
+        }.bind(this);
+
+        this.classList.add('rolling');
+        rollFunction();
+      },
+      stopRoll: function () {
+        this.classList.remove('rolling');
+      },
+      pickRandomFace: function () {
+        this.face = Math.floor(Math.random()*6)+1;
+      }
+    });
+  </script>
+</dom-module>
