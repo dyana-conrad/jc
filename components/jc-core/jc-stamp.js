@@ -21,17 +21,16 @@
         return;
       }
 
-      if (this.blueprintElement) {
-        this.$.container.removeChild(this.blueprintElement);
-        delete this.blueprintElement;
+      var container = this.$.container;
+      while (container.firstChild) {
+          container.removeChild(container.firstChild);
       }
 
       var blueprint = JC.Library.getBlueprintById(blueprintId);
 
       if (blueprint) {
         var blueprintElement = blueprint.createElement();
-        this.$.container.appendChild(blueprintElement);
-        this.blueprintElement = blueprintElement;
+        container.appendChild(blueprintElement);
       }
     },
   })

@@ -1,0 +1,62 @@
+<link rel="import" href="../jc-core/jc-polymer.html">
+
+<dom-module id="mk-coin">
+  <template>
+    <style>
+      :host {
+        display: inline-block;
+        border-style: solid;
+        border-radius: 50%;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        width: 8mm;
+        height: 8mm;
+        border-width: 2mm;
+        font-size: 7mm;
+        border-color: rgb(245, 153, 87);
+        background-color: rgb(179, 102, 0);
+      }
+
+      :host([value="5"]) {
+        width: 10mm;
+        height: 10mm;
+        border-width: 2.5mm;
+        font-size: 9mm;
+        border-color: rgb(224, 224, 224);
+        background-color: rgb(129, 129, 129);
+      }
+
+      :host([value="10"]) {
+        width: 13mm;
+        height: 13mm;
+        border-width: 3.5mm;
+        font-size: 11mm;
+        border-color: rgb(224, 175, 27);
+        background-color: rgb(235, 216, 53);
+      }
+
+      :host([value="20"]) {
+        width: 14.5mm;
+        height: 14.5mm;
+        border-width: 2.5mm;
+        font-size: 12mm;
+        border-color: rgb(196, 11, 219);
+        background-color: rgb(234, 156, 246);
+      }
+    </style>
+    <span>[[value]]</span>
+  </template>
+  <script>
+    Polymer({
+      is: 'mk-coin',
+      properites: {
+        value: {
+          type: Number,
+          value: 1,
+          reflectToAttribute: true,
+        },
+      },
+    });
+  </script>
+</dom-module>
