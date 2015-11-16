@@ -13,7 +13,7 @@
         border-radius: 3mm;
         border: 1px black solid;
       }
-      :host(.rolling) {
+      :host([rolling]) {
         background-color: lightgray;
       }
       .face {
@@ -38,16 +38,16 @@
         left: 50%;
       }
       .pip.top {
-        top: 20%;
+        top: 22%;
       }
       .pip.bottom {
-        top: 80%;
+        top: 78%;
       }
       .pip.left {
-        left: 20%;
+        left: 22%;
       }
       .pip.right {
-        left: 80%;
+        left: 78%;
       }
       :host([face="1"]) .face.one {
         display: block;
@@ -111,11 +111,20 @@
           value: 1,
           reflectToAttribute: true,
         },
+        rolling: {
+          type: Boolean,
+          value: false,
+          reflectToAttribute: true,
+        }
       },
       listeners: {
         'tap': 'rollDie',
       },
       rollDie: function () {
+        if (this.rolling) {
+          return;
+        }
+
         var numRolls = 10;
         var rollFunction = function () {
           numRolls--;
@@ -123,15 +132,12 @@
             this.pickRandomFace();
             setTimeout(rollFunction, 100);
           } else {
-            this.stopRoll();
+            this.rolling = false;
           }
         }.bind(this);
 
-        this.classList.add('rolling');
+        this.rolling = true;
         rollFunction();
-      },
-      stopRoll: function () {
-        this.classList.remove('rolling');
       },
       pickRandomFace: function () {
         this.face = Math.floor(Math.random()*6)+1;
