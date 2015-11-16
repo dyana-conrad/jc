@@ -9,6 +9,7 @@
         height: 1em;
         border-radius: 50%;
         background-color: black;
+        box-sizing: border-box;
       }
       :host([wheat]),
       :host([cow]),
@@ -25,6 +26,16 @@
       }
       :host([tower]) {
         background-color: #A80077;
+      }
+      :host([landmark]) {
+        background-color: #932902;
+      }
+      :host([construction]) {
+        background-color: #F9B300;
+        border: 0.1em solid black;
+      }
+      :host([gray]) {
+        background-color: rgb(79, 79, 79);
       }
 
       #icon {
@@ -67,6 +78,17 @@
       :host([tower]) #icon {
         -webkit-mask: url(images/tower.svg) no-repeat 50% 50%;
         -webkit-mask-size: 100% 100%;
+      }
+
+      :host([landmark]) #icon {
+        -webkit-mask: url(images/tower.svg) no-repeat 50% 50%;
+        -webkit-mask-size: 100% 100%;
+      }
+
+      :host([construction]) #icon {
+        background-color: black;
+        -webkit-mask: url(images/construction.svg) no-repeat 25% 50%;
+        -webkit-mask-size: 75% 75%;
       }
     </style>
     <div id="icon"></div>

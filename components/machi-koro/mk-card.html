@@ -12,11 +12,12 @@
                   rgba(125,185,232,1) 16%,rgba(175,214,255,1) 36%,rgba(175,214,255,1) 58%,rgba(125,185,232,1) 73%,
                   rgba(80,102,150,1) 75%);
       border-radius: 2mm;
+      border: 1px solid black;
     }
     .cost {
       position: absolute;
-      bottom: 3mm;
-      left: 3mm;
+      bottom: 2mm;
+      left: 2mm;
       width: 7mm;
       height: 7mm;
       background-color: rgb(235, 216, 53);
@@ -56,6 +57,11 @@
       text-align: center;
       width: 100%;
     }
+    .construction {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
     :host([color="red"]) {
       background: linear-gradient(to bottom, #bf0000 15%,
                   rgba(125,185,232,1) 16%,rgba(175,214,255,1) 36%,rgba(175,214,255,1) 58%,rgba(125,185,232,1) 73%,
@@ -80,11 +86,39 @@
     :host([color="green"]) .title {
       color: rgb(72, 127, 0);
     }
+    :host([color="yellow"]) {
+      background: linear-gradient(to bottom, rgba(252,234,187,1) 0%,rgba(252,205,77,1) 49%,rgba(147,41,2,1) 74%,rgba(147,41,2,1) 100%);
+    }
+    :host([color="yellow"]) .title {
+      color: rgb(147, 41, 2);
+      top: 3mm;
+    }
+    :host([color="gray"]) {
+      background: linear-gradient(to bottom, rgba(219,219,219,1) 0%,rgba(219,219,219,1) 49%,rgba(79,79,79,1) 74%,rgba(79,79,79,1) 100%);
+    }
+    :host([color="gray"]) .title {
+      color: rgb(79, 79, 79);
+      top: 3mm;
+    }
+    .construction {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 40%;
+      transform: translate(-50%, -50%);
+      width: 30mm;
+      height: 30mm;
+      font-size: 30mm;
+    }
+    :host([color="gray"]) .construction {
+      display: block;
+    }
   </style>
     <div class="title"><content select=".title"></content></div>
     <div class="dieRoll">[[dieRoll]]</div>
     <div class="description"><content></content></div>
     <div class="cost">[[cost]]</div>
+    <div class="construction"><mk-icon construction></mk-icon></div>
   </template>
   <script>
     Polymer({
