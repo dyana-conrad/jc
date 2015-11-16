@@ -34,11 +34,13 @@
 
 <jc-blueprint id="mk-card-bakery" tags="card green store">
   <template>
-    <mk-card title="Bakery"
-              die-roll="2 ~ 3"
+    <mk-card  die-roll="2 ~ 3"
               cost="1"
               color="green"
               icon="store">
+       <div class="title">
+         <mk-icon store></mk-icon> Bakery
+       </div>
           <div>Get 1 coin from<br>the bank, on<br>your turn only.</div>
     </mk-card>
   </template>
@@ -46,11 +48,13 @@
 
 <jc-blueprint id="mk-card-cafe" tags="card red coffee">
   <template>
-    <mk-card title="Cafe"
-              die-roll="3"
+    <mk-card die-roll="3"
               cost="2"
               color="red"
               icon="coffee">
+       <div class="title">
+         <mk-icon coffee></mk-icon> cafe
+       </div>
           <div>Get 1 coin from<br>the player who<br>rolled the dice.</div>
     </mk-card>
   </template>
@@ -58,11 +62,13 @@
 
 <jc-blueprint id="mk-card-connvenience-store" tags="card green store">
   <template>
-    <mk-card title="Convenience Store"
-              die-roll="4"
+    <mk-card die-roll="4"
               cost="2"
               color="green"
-              icon="store"
+              icon="store">
+       <div class="title">
+         <mk-icon store></mk-icon> Convenience Store
+       </div>
           <div>Get 3 coins from<br>the bank, on<br>your turn only.</div>
     </mk-card>
   </template>
@@ -70,11 +76,13 @@
 
 <jc-blueprint id="mk-card-forest" tags="card blue gear">
   <template>
-    <mk-card title="Forest"
-              die-roll="5"
+    <mk-card die-roll="5"
               cost="3"
               color="blue"
-              icon="gear"
+              icon="gear">
+       <div class="title">
+         <mk-icon gear></mk-icon> Forest
+       </div>
           <div>Get 1 coin from<br>the bank, on<br>anyone's turn.</div>
     </mk-card>
   </template>
@@ -82,35 +90,41 @@
 
 <jc-blueprint id="mk-card-business-center" tags="card purprle tower">
   <template>
-    <mk-card title="Business Center"
-              die-roll="6"
+    <mk-card die-roll="6"
               cost="8"
               color="purple"
-              icon="tower"
-          <div>Trade one non tower<br>establishment with<br>another player, on<br>your turn only.</div>
+              icon="tower">
+       <div class="title">
+         <mk-icon tower></mk-icon> Business Center
+       </div>
+          <div style="font-size: 90%;">Trade one non <mk-icon tower></mk-icon><br>establishment with<br>another player, on<br>your turn only.</div>
     </mk-card>
   </template>
 </jc-blueprint>
 
 <jc-blueprint id="mk-card-stadium" tags="card purple tower">
   <template>
-    <mk-card title="Stadium"
-              die-roll="6"
+    <mk-card die-roll="6"
               cost="6"
               color="purple"
-              icon="tower"
-          <div>Get 2 coins from<br>all players, on<br>on your turn only.</div>
+              icon="tower">
+       <div class="title">
+         <mk-icon tower></mk-icon> Stadium
+       </div>
+          <div>Get 2 coins from<br>all players, on<br>your turn only.</div>
     </mk-card>
   </template>
 </jc-blueprint>
 
 <jc-blueprint id="mk-card-tv-station" tags="card purple tower">
   <template>
-    <mk-card title="TV Station"
-              die-roll="6"
+    <mk-card  die-roll="6"
               cost="7"
               color="purple"
-              icon="tower"
+              icon="tower">
+       <div class="title">
+         <mk-icon tower></mk-icon> TV Station
+       </div>
           <div>Take 5 coins from any<br>one player, on<br>your turn only.</div>
     </mk-card>
   </template>
@@ -119,24 +133,28 @@
 
 <jc-blueprint id="mk-card-cheese-factory" tags="card green factory">
   <template>
-    <mk-card title="Cheese Factory"
-              die-roll="7"
+    <mk-card  die-roll="7"
               cost="5"
               color="green"
-              icon="factory"
-          <div>Get 3 coins from the bank<br>for each cow establishment<br>that you own, on<br>your turn only.</div>
+              icon="factory">
+       <div class="title">
+         <mk-icon factory></mk-icon> Cheese Factory
+       </div>
+          <div style="font-size: 90%;">Get 3 coins from the bank<br>for each <mk-icon cow></mk-icon> establishment<br>that you own, on<br>your turn only.</div>
     </mk-card>
   </template>
 </jc-blueprint>
 
 <jc-blueprint id="mk-card-furniture-factory" tags="card green factory">
   <template>
-    <mk-card title="Furniture Factory"
-              die-roll="8"
+    <mk-card die-roll="8"
               cost="3"
               color="green"
-              icon="factory"
-          <div>Get 3 coins from the bank<br>for each gear establishment<br>that you own, on<br>your turn only.</div>
+              icon="factory">
+       <div class="title">
+         <mk-icon factory></mk-icon> Furniture Factory
+       </div>
+          <div style="font-size: 90%;">Get 3 coins from the bank<br>for each <mk-icon gear></mk-icon> establishment<br>that you own, on<br>your turn only.</div>
     </mk-card>
   </template>
 </jc-blueprint>
@@ -144,11 +162,13 @@
 
 <jc-blueprint id="mk-card-mine" tags="card blue gear">
   <template>
-    <mk-card title="Mine"
-              die-roll="9"
+    <mk-card  die-roll="9"
               cost="6"
               color="blue"
-              icon="gear"
+              icon="gear">
+       <div class="title">
+         <mk-icon gear></mk-icon> Mine
+       </div>
           <div>Get 5 coins from<br>the bank, on<br>anyone's turn.</div>
     </mk-card>
   </template>
@@ -157,12 +177,14 @@
 
 <jc-blueprint id="mk-card-family-restaurant" tags="card red coffee">
   <template>
-    <mk-card title="Family Restaurant"
-              die-roll="9 ~ 10"
+    <mk-card  die-roll="9 ~ 10"
               cost="3"
               color="red"
-              icon="coffee"
-          <div>Get 2 coins from<br>the player<br>who rolled the dice.</div>
+              icon="coffee">
+       <div class="title">
+         <mk-icon coffee></mk-icon> Family Restaurant
+       </div>
+          <div>Get 2 coins from<br>the player who<br>rolled the dice.</div>
     </mk-card>
   </template>
 </jc-blueprint>
@@ -170,11 +192,13 @@
 
 <jc-blueprint id="mk-card-apple-orchard" tags="card blue wheat">
   <template>
-    <mk-card title="Apple Orchard"
-              die-roll="10"
+    <mk-card  die-roll="10"
               cost="3"
               color="blue"
-              icon="wheat"
+              icon="wheat">
+       <div class="title">
+         <mk-icon wheat></mk-icon> Apple Orchard
+       </div>
           <div>Get 3 coins from<br>the bank, on<br>anyone's turn.</div>
     </mk-card>
   </template>
@@ -183,12 +207,14 @@
 
 <jc-blueprint id="mk-card-fruit-and-vegetable-market" tags="card green fruit">
   <template>
-    <mk-card title="Fruit and Vegetable Market"
-              die-roll="11 ~ 12"
+    <mk-card  die-roll="11 ~ 12"
               cost="2"
               color="green"
-              icon="fruit"
-          <div>Get 2 coins from the bank<br>for each wheat extablishment<br>that you own on<br>your turn only.</div>
+              icon="fruit">
+       <div class="title">
+         <mk-icon fruit></mk-icon> Fruit and Vegetable Market
+       </div>
+          <div style="font-size: 90%;">Get 2 coins from the bank<br>for each <mk-icon wheat></mk-icon> establishment<br>that you own on<br>your turn only.</div>
     </mk-card>
   </template>
 </jc-blueprint>
