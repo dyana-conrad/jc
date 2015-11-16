@@ -15,11 +15,15 @@
         overflow: hidden;
         margin: 0;
         padding: 0;
+      }
+
+      #board {
+        width: 100%;
+        height: 100%;
         background: linear-gradient(135deg, #45484d 0%, #000000 100%);
       }
 
       jc-pawn {
-        position: absolute;
         opacity: 1.0;
         transition: opacity 0.3s;
       }
@@ -30,14 +34,50 @@
     </style>
   </head>
   <body>
-    <jc-supply pawn-blueprint="mk-card-wheat-field">
-      <jc-stamp blueprint="mk-card-wheat-field"></jc-stamp>
-    </jc-supply>
-    <jc-supply pawn-blueprint="mk-card-ranch">
-      <jc-stamp blueprint="mk-card-ranch"></jc-stamp>
-    </jc-supply>
-      <jc-supply pawn-blueprint="mk-card-forest">
-        <jc-stamp blueprint="mk-card-forest"></jc-stamp>
+    <div id="board">
+      <jc-supply count="6" pawn-blueprint="mk-card-wheat-field">
+        <jc-stamp blueprint="mk-card-wheat-field"></jc-stamp>
       </jc-supply>
+      <jc-supply count="6" pawn-blueprint="mk-card-ranch">
+        <jc-stamp blueprint="mk-card-ranch"></jc-stamp>
+      </jc-supply>
+      <jc-supply count="6" pawn-blueprint="mk-card-bakery">
+        <jc-stamp blueprint="mk-card-bakery"></jc-stamp>
+      </jc-supply>
+      <jc-supply count="6" pawn-blueprint="mk-card-cafe">
+        <jc-stamp blueprint="mk-card-cafe"></jc-stamp>
+      </jc-supply>
+      <jc-supply count="6" pawn-blueprint="mk-card-convenience-store">
+        <jc-stamp blueprint="mk-card-convenience-store"></jc-stamp>
+      </jc-supply>
+      <jc-supply count="6" pawn-blueprint="mk-card-forest">
+      <jc-supply count="5" pawn-blueprint="mk-card-stadium">
+        <jc-stamp blueprint="mk-card-stadium"></jc-stamp>
+      </jc-supply>
+      <jc-supply count="5" pawn-blueprint="mk-card-tv-station">
+        <jc-stamp blueprint="mk-card-tv-station"></jc-stamp>
+      </jc-supply>
+      <jc-supply count="5" pawn-blueprint="mk-card-business-center">
+        <jc-stamp blueprint="mk-card-business-center"></jc-stamp>
+      </jc-supply>
+      <jc-supply count="6" pawn-blueprint="mk-card-cheese-factory">
+        <jc-stamp blueprint="mk-card-cheese-factory"></jc-stamp>
+      </jc-supply>
+      <jc-supply count="6" pawn-blueprint="mk-card-furniture-factory">
+        <jc-stamp blueprint="mk-card-furniture-factory"></jc-stamp>
+      </jc-supply>
+      <jc-supply count="6" pawn-blueprint="mk-card-mine">
+        <jc-stamp blueprint="mk-card-mine"></jc-stamp>
+      </jc-supply>
+      <jc-supply count="6" pawn-blueprint="mk-card-family-restaurant">
+        <jc-stamp blueprint="mk-card-family-restaurant"></jc-stamp>
+      </jc-supply>
+      <jc-supply count="6" pawn-blueprint="mk-card-apple-orchard">
+        <jc-stamp blueprint="mk-card-apple-orchard"></jc-stamp>
+      </jc-supply>
+      <jc-supply count="6" pawn-blueprint="mk-card-fruit-and-vegetable-market">
+        <jc-stamp blueprint="mk-card-fruit-and-vegetable-market"></jc-stamp>
+      </jc-supply>
+    </div>
   </body>
 </html>

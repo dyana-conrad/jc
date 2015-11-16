@@ -5,13 +5,47 @@
 <dom-module id="jc-supply">
   <template>
     <style>
-      div {
+      #base {
         display: inline-block;
         position: relative;
+      }
+
+      #count-container {
+        display: flex;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #count {
+        display: flex;
+        width: 150px;
+        height: 150px;
+        border-radius: 75px;
+        background-color: #000;
+        color: white;
+        align-items: center;
+        justify-content: center;
+        font-size: 75px;
+        opacity: 0.5;
+      }
+
+      :host([count=NaN]) #count {
+        display: none;
+      }
+      :host([count="0"]) #count-container {
+        background-color: rgba(0, 0, 0, 0.5);
       }
     </style>
     <div id="base">
       <content></content>
+      <div id="count-container">
+        <div id="count">[[count]]</div>
+      </div>
     </div>
   </template>
   <script>
@@ -20,6 +54,11 @@
       properties: {
         pawnBlueprint: {
           type: String,
+        },
+        count: {
+          type: Number,
+          reflectToAttribute: true,
+          value: NaN,
         },
       },
       observers: [
@@ -41,19 +80,31 @@
 
             // call this function on every dragmove event
             onmove: function (event) {
-              this.pawn.x += event.dx;
-              this.pawn.y += event.dy;
+              if (this.pawn) {
+                this.pawn.x += event.dx;
+                this.pawn.y += event.dy;
+              }
             }.bind(this),
             // call this function on every dragend event
             onend: function (event) {
-              this.pawn.classList.remove('moving');
-              delete this.pawn;
+              if (this.pawn) {
+                this.pawn.classList.remove('moving');
+                delete this.pawn;
+              }
             }.bind(this),
             oncancel: function (event) {
-              this.pawn.classList.remove('moving');
-              delete this.pawn;
+              if (this.pawn) {
+                this.pawn.classList.remove('moving');
+                delete this.pawn;
+              }
             }.bind(this),
             onstart: function (event) {
+              if (!isNaN(this.count)) {
+                if (this.count <= 0) {
+                  return;
+                }
+                this.count --;
+              }
 
               var bounds = event.target.getBoundingClientRect();
               this.createPawn(bounds.left, bounds.top);
