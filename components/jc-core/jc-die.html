@@ -12,9 +12,10 @@
         color: #000;
         border-radius: 3mm;
         border: 1px black solid;
+        transition: transform 0.05s;
       }
       :host([rolling]) {
-        background-color: lightgray;
+        background-color: darkgray;
       }
       .face {
         display: none;
@@ -29,9 +30,8 @@
         width: 3mm;
         height: 3mm;
         transform: translate(-50%, -50%);
-        border-width: 0;
         background-color: black;
-        border-radius: 100%;
+        border-radius: 1.5mm;
       }
       .pip.center {
         top: 50%;
@@ -130,8 +130,12 @@
           numRolls--;
           if (numRolls > 0) {
             this.pickRandomFace();
+            var x = Math.random() * 10 - 5;
+            var y = Math.random() * 10 - 5;
+            this.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
             setTimeout(rollFunction, 100);
           } else {
+            this.style.transform = 'translate(0,0)';
             this.rolling = false;
           }
         }.bind(this);
