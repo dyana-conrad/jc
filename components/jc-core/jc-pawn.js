@@ -5,6 +5,9 @@
       blueprint: {
         type: String,
       },
+      backBlueprint: {
+        type: String,
+      },
       x: {
         type: Number,
         value: 0,
@@ -17,12 +20,38 @@
         type: Number,
         value: 1,
       },
+      rotation: {
+        type: Number,
+        value: 0,
+      },
+      faceUp: {
+        type: Boolean,
+        value: true,
+      },
     },
     observers: [
-      '_observeTransform(x, y, scale)',
+      '_observeTransform(x, y, scale, rotation)',
     ],
     attached: function () {
       interact(this)
+        .gesturable({
+          onstart: function (event) {
+            console.log('gesture');
+          },
+          onmove: function (event) {
+            console.log('gesture move', event);
+            this.rotation += event.da;
+          }.bind(this),
+          onend: function (event) {
+            var totalX = event.pageX - event.x0;
+            var totalY = event.pageY - event.y0;
+            var totalDistance = Math.sqrt(totalX * totalX + totalY * totalY);
+            if (totalDistance > 200 && this.backBlueprint) {
+              this.faceUp = !this.faceUp
+            };
+            this.rotation = Math.round(this.rotation / 90) * 90;
+          }.bind(this),
+        })
         .draggable({
           // enable inertial throwing
           inertia: false,
@@ -60,9 +89,9 @@
           }
         });
     },
-    _observeTransform: function (x, y, scale) {
+    _observeTransform: function (x, y, scale, rotation) {
       this.style.transform =
-        'translate(' + x + 'px, ' + y + 'px) scale(' + scale + ')';
+        'translate(' + x + 'px, ' + y + 'px) rotate(' + rotation + 'deg) scale(' + scale + ')';
     },
   });
 })();

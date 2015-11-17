@@ -55,6 +55,9 @@
         pawnBlueprint: {
           type: String,
         },
+        pawnBackBlueprint: {
+          type: String,
+        },
         count: {
           type: Number,
           reflectToAttribute: true,
@@ -118,6 +121,7 @@
       createPawn: function (x, y) {
         var pawn = document.createElement('jc-pawn');
         pawn.blueprint = this.pawnBlueprint;
+        pawn.backBlueprint = this.pawnBackBlueprint;
         pawn.style.top = "0";
         pawn.style.left = "0";
         pawn.x = x;
