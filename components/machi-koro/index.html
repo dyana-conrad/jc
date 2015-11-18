@@ -5,6 +5,7 @@
     <link rel="import" href="../jc-core/jc-stamp.html">
     <link rel="import" href="../jc-core/jc-supply.html">
     <link rel="import" href="../jc-core/jc-die.html">
+    <link rel="import" href="../jc-core/jc-discard.html">
     <link rel="import" href="blueprints/cards.html">
     <link rel="import" href="blueprints/coins.html">
 
@@ -26,6 +27,13 @@
       jc-pawn {
         opacity: 1.0;
         transition: opacity 0.3s;
+      }
+
+      jc-discard {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
       }
 
       .moving {
@@ -51,13 +59,13 @@
                  pawn-back-blueprint="mk-card-radio-tower">
         <jc-stamp blueprint="mk-card-radio-tower-construction"></jc-stamp>
       </jc-supply>
-      <jc-supply count="6" pawn-blueprint="mk-card-wheat-field">
+      <jc-supply count="9" pawn-blueprint="mk-card-wheat-field">
         <jc-stamp blueprint="mk-card-wheat-field"></jc-stamp>
       </jc-supply>
       <jc-supply count="6" pawn-blueprint="mk-card-ranch">
         <jc-stamp blueprint="mk-card-ranch"></jc-stamp>
       </jc-supply>
-      <jc-supply count="6" pawn-blueprint="mk-card-bakery">
+      <jc-supply count="9" pawn-blueprint="mk-card-bakery">
         <jc-stamp blueprint="mk-card-bakery"></jc-stamp>
       </jc-supply>
       <jc-supply count="6" pawn-blueprint="mk-card-cafe">
@@ -110,6 +118,7 @@
       </jc-supply>
       <jc-die></jc-die>
       <jc-die></jc-die>
+      <jc-discard></jc-discard>
 
     </div>
   </body>
