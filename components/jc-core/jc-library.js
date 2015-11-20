@@ -19,6 +19,10 @@ var JC = (function (JC) {
     blueprints[blueprint.id] = blueprint;
   }
 
+  Library.getBlueprints = function () {
+    return blueprints;
+  }
+
   Library.removeBlueprint = function (blueprint) {
     delete blueprints[blueprint.id];
   }

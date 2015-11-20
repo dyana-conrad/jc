@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mystery Rummy: Jack the Ripper - Blueprint Viewer</title>
+    <link rel="import" href="cards.html">
+    <link rel="import" href="../../jc-core/jc-stamp.html">
+</head>
+<body>
+    <script>
+      // Create a stamp of every blueprint in the library
+      var library = JC.Library;
+      var blueprints = library.getBlueprints();
+      Object.keys(blueprints).forEach(function (key) {
+        var stamp = document.createElement("jc-stamp");
+        stamp.blueprint = key;
+        document.body.appendChild(stamp);
+      });
+    </script>
+</body>

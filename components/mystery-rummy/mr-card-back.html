@@ -1,0 +1,44 @@
+<link rel="import" href="../jc-core/jc-polymer.html">
+<link href='https://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+
+<dom-module id="mr-card-back">
+  <template>
+  <style>
+    :host {
+      position: relative;
+      display: inline-block;
+      width: 63mm;
+      height: 88mm;
+      background-color: rgb(242, 239, 201);
+      border-radius: 4mm;
+      overflow: hidden;
+      border: 3mm solid #888;
+      box-sizing: border-box;
+      font-size: 8mm;
+      text-align: center;
+      font-family: "Berkshire Swash";
+    }
+    .top {
+      position: absolute;
+      top: 4mm;
+      width: 100%;
+    }
+    .bottom {
+      position: absolute;
+      bottom: 4mm;
+      width: 100%;
+    }
+    </style>
+    <div class="top text">
+      Mystery
+    </div>
+    <div class="bottom text">
+      Rummy
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'mr-card-back',
+    });
+  </script>
+</dom-module>

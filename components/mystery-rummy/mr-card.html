@@ -12,7 +12,6 @@
       background: black;
       border-radius: 4mm;
       overflow: hidden;
-      border: 1px solid white;
     }
     .image {
       position: absolute;
@@ -36,15 +35,74 @@
       color: white;
 	    transform: rotate(90deg);
 	    transform-origin: left top 0;
-      background-color: rgb(34, 121, 50);
+      background-color: rgb(99, 99, 99);
+    }
+    :host([gray]) .stripe {
+      background-color: rgb(99, 99, 99);
     }
     :host([dark-green]) .stripe {
-      background-color: darkgreen;
+      background-color: rgb(0, 131, 80);
+    }
+    :host([light-green]) .stripe {
+      background-color: rgb(145, 204, 49);
+    }
+    :host([red]) .stripe {
+      background-color: rgb(230, 0, 69);
+    }
+    :host([blue]) .stripe {
+      background-color: rgb(36, 136, 218);
+    }
+    :host([light-purple]) .stripe {
+      background-color: rgb(220, 150, 249);
+    }
+    :host([dark-purple]) .stripe {
+      background-color: purple;
+    }
+    :host([light-brown]) .stripe {
+      background-color: rgb(241, 201, 123);
+    }
+    :host([dark-brown]) .stripe {
+      background-color: rgb(152, 68, 0);
+    }
+    :host([orange]) .stripe {
+      background-color: rgb(255, 122, 0);
+    }
+    :host([yellow]) .stripe {
+      background-color: rgb(255, 222, 0);
+    }
+    :host([light-blue]) .stripe {
+      background-color: rgb(156, 193, 214);
+    }
+    :host([pink]) .stripe {
+      background-color: rgb(255, 161, 197);
+    }
+    :host([wild]) .stripe {
+      background: linear-gradient(to right,
+        rgb(156, 193, 214) 0%,
+        rgb(156, 193, 214) 16.7%,
+        rgb(255, 222, 0) 16.8%,
+        rgb(255, 222, 0) 33.3%,
+        rgb(255, 122, 0) 33.4%,
+        rgb(255, 122, 0) 50.0%,
+        rgb(230, 0, 69) 50.1%,
+        rgb(230, 0, 69) 66.7%,
+        rgb(241, 201, 123) 66.8%,
+        rgb(241, 201, 123) 83.3%,
+        rgb(255, 161, 197) 83.4%,
+        rgb(255, 161, 197) 100%);
+    }
+    :host([yellow-orange]) .stripe {
+      background: linear-gradient(to right,
+        rgb(255, 222, 0) 0%,
+        rgb(255, 222, 0) 50%,
+        rgb(255, 122, 0) 51%,
+        rgb(255, 122, 0) 100%);
     }
     .title {
       position: absolute;
       left: 13mm;
       font-family: "Berkshire Swash";
+      text-shadow: 0px 0px 2mm #000;
     }
     .name {
       position: absolute;
@@ -105,12 +163,15 @@
     :host([evidence]) .icon {
       background-image: url(images/evidence.svg);
     }
+    :host([noicon]) .icon {
+      background-image: url();
+    }
     .rules {
-      font-size: 3mm;
+      font-size: 2.75mm;
       font-family: sans-serif;
     }
     .flavor {
-      font-size: 3mm;
+      font-size: 2.75mm;
       font-family: "Berkshire Swash";
     }
     </style>
