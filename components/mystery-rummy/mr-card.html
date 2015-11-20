@@ -1,0 +1,162 @@
+<link rel="import" href="../jc-core/jc-polymer.html">
+<link href='https://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+
+<dom-module id="mr-card">
+  <template>
+  <style>
+    :host {
+      position: relative;
+      display: inline-block;
+      width: 63mm;
+      height: 88mm;
+      background: black;
+      border-radius: 4mm;
+      overflow: hidden;
+      border: 1px solid white;
+    }
+    .image {
+      position: absolute;
+      left: 13mm;
+      right: 3mm;
+      top: 7mm;
+      bottom: 45mm;
+      background-color: rgb(242, 239, 201);
+      border-radius: 4mm;
+      box-sizing: border-box;
+    }
+    .stripe {
+      position: absolute;
+      top: 0mm;
+      left: 10mm;
+      width: 88mm;
+      height: 10mm;
+      font-size: 6mm;
+      text-align: left;
+      font-weight: bold;
+      color: white;
+	    transform: rotate(90deg);
+	    transform-origin: left top 0;
+      background-color: rgb(34, 121, 50);
+    }
+    :host([dark-green]) .stripe {
+      background-color: darkgreen;
+    }
+    .title {
+      position: absolute;
+      left: 13mm;
+      font-family: "Berkshire Swash";
+    }
+    .name {
+      position: absolute;
+      text-align: center;
+      top: 45mm;
+      left: 10mm;
+      right: 0mm;
+      color: white;
+      font-weight: bold;
+      font-size: 4mm;
+      font-family: "Berkshire Swash";
+    }
+    .sub-title {
+      position: absolute;
+      text-align: center;
+      top: 50mm;
+      left: 10mm;
+      right: 0;
+      color: white;
+      font-size: 2mm;
+      text-transform: uppercase;
+      font-family: sans-serif;
+    }
+    .value {
+      position: absolute;
+      top: 2mm;
+      right: 4mm;
+      color: white;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+    .bottom-box {
+      position: absolute;
+      left: 13mm;
+      right: 3mm;
+      top: 54mm;
+      bottom: 3mm;
+      background-color: rgb(242, 239, 201);
+      border-radius: 4mm;
+      text-align: center;
+      text-decoration-color: black;
+      font-size: 3mm;
+      padding: 2mm;
+      box-sizing: border-box;
+    }
+    .icon {
+      position: absolute;
+      top: 2mm;
+      left: 2mm;
+      height: 6mm;
+      width: 6mm;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+    :host([gavel]) .icon {
+      background-image: url(images/gavel.svg);
+    }
+    :host([evidence]) .icon {
+      background-image: url(images/evidence.svg);
+    }
+    .rules {
+      font-size: 3mm;
+      font-family: sans-serif;
+    }
+    .flavor {
+      font-size: 3mm;
+      font-family: "Berkshire Swash";
+    }
+    </style>
+    <div class="image">
+      <content select=".image"></content>
+    </div>
+    <div class="stripe">
+      <div class="title">
+        <content select=".title"></content>
+      </div>
+    </div>
+    <div class="icon"></div>
+    <div class="value">
+      <content select=".value"></content>
+    </div>
+    <div class="name">
+      <content select=".name"></content>
+    </div>
+    <div class="sub-title">
+      <content select=".sub-title"></content>
+    </div>
+    <div class="bottom-box">
+      <div class="rules">
+        <content select=".rules"></content>
+      </div>
+      <hr>
+      <div class="flavor">
+        <content select=".flavor"></content>
+      </div>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: 'mr-card',
+    });
+  </script>
+</dom-module>
+
+
+<dom-module id="my-thing">
+  <template>
+    <div>HELLO!!</div>
+  </template>
+  <script>
+    Polymer({
+      is: 'my-thing',
+    });
+  </script>
+</dom-module>
